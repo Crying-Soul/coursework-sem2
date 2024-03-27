@@ -1,62 +1,42 @@
 #include "bmp.h"
+#include "logger.h"
 #include "operation_params.h"
 
 int main(int argc, char *argv[]) {
   OperationParams params = parseCommandLine(argc, argv);
   std::string input_file = "imgs/" + params.input_file;
-  std::string output_file = params.output_file;
+
+  Logger::setColorsEnabled(params.colorful);
+
   BMP bmp(input_file);
   if (!bmp.isValid()) {
-    std::cerr << "Failed to load BMP file." << std::endl;
+    Logger::error("Invalid bmp file!");
     return 1;
   }
 
-  if (params.info){
+  if (params.info) {
     bmp.getInfo();
   }
 
   if (params.mirror) {
-    std::cout << "Mirror operation requested" << std::endl;
+    Logger::warn("=Mirror operation requested!=");
     bmp.mirror(params.axis, params.left_up, params.right_down);
+    Logger::log("Success!");
   }
 
-  // if (params.copy) {
-  //   std::cout << "Copy operation requested" << std::endl;
-  //   if (!params.left_up.empty()) {
-  //     std::cout << "Source top-left corner coordinates: " << params.left_up
-  //               << std::endl;
-  //   }
-  //   if (!params.right_down.empty()) {
-  //     std::cout << "Source bottom-right corner coordinates: "
-  //               << params.right_down << std::endl;
-  //   }
-  //   if (!params.dest_left_up.empty()) {
-  //     std::cout << "Destination top-left corner coordinates: "
-  //               << params.dest_left_up << std::endl;
-  //   }
-  // }
+  if (params.color_replace) {
+    Logger::warn("=Color replace operation requested!=");
+    bmp.colorReplace(params.old_color, params.new_color);
+    Logger::log("Success!");
+  }
 
-  // if (params.color_replace) {
-  //   std::cout << "Color replacement operation requested" << std::endl;
-  //   if (!params.old_color.empty()) {
-  //     std::cout << "Old color: " << params.old_color << std::endl;
-  //   }
-  //   if (!params.new_color.empty()) {
-  //     std::cout << "New color: " << params.new_color << std::endl;
-  //   }
-  // }
+  if (params.split) {
+    Logger::warn("=Image split operation requested=.");
+    bmp.split(params.number_x, params.number_y, params.thickness, params.line_color);
+    Logger::log("Success!");
+  }
 
-  // if (params.split) {
-  //   std::cout << "Split operation requested" << std::endl;
-  //   std::cout << "Number of parts along X-axis: " << params.number_x
-  //             << std::endl;
-  //   std::cout << "Number of parts along Y-axis: " << params.number_y
-  //             << std::endl;
-  //   std::cout << "Line thickness: " << params.thickness << std::endl;
-  //   std::cout << "Line color: " << params.line_color << std::endl;
-  // }
-
-  bmp.save(output_file);
+  bmp.save(params.output_file);
 
   return 0;
 }

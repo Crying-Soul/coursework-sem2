@@ -1,28 +1,30 @@
 #include "bmp.h"
+#include "logger.h"
+#include <fstream>
 
 BMP::BMP(const std::string &fileName) : header(), pixelData() {
   std::ifstream file(fileName, std::ios::binary);
-  if (!file) {
-    std::cerr << "Failed to open input BMP file." << std::endl;
+  if (!file.is_open()) {
+    Logger::error("Failed to open input BMP file.");
     return;
   }
 
   file.read(reinterpret_cast<char *>(&header), sizeof(header));
 
   pixelData.resize(header.fileSize - header.dataOffset);
-  file.read(pixelData.data(), pixelData.size());
+  file.read(reinterpret_cast<char *>(pixelData.data()), pixelData.size());
 
   file.close();
 }
 
-void BMP::mirror(const std::string &axis, const std::vector<int> &left_up,
-                 const std::vector<int> &right_down) {
-  int width = right_down[0] - left_up[0];
-  int height = right_down[1] - left_up[1];
+void BMP::mirror(const std::string &axis, const Coordinate &left_up,
+                 const Coordinate &right_down) {
+  int width = right_down.x - left_up.x;
+  int height = right_down.y - left_up.y;
   if (axis == "x") {
-    for (int y = left_up[1]; y < right_down[1]; ++y) {
-      for (int x = left_up[0]; x < left_up[0] + width / 2; ++x) {
-        int mirroredX = right_down[0] - (x - left_up[0]) - 1;
+    for (int y = left_up.y; y < right_down.y; ++y) {
+      for (int x = left_up.x; x < left_up.x + width / 2; ++x) {
+        int mirroredX = right_down.x - (x - left_up.x) - 1;
 
         RGB tempColor = getColor(x, y);
         setColor(x, y, getColor(mirroredX, y));
@@ -30,12 +32,9 @@ void BMP::mirror(const std::string &axis, const std::vector<int> &left_up,
       }
     }
   } else if (axis == "y") {
-    for (int y = left_up[1]; y < left_up[1] + height / 2;
-         ++y) { // Change loop condition
-      for (int x = left_up[0]; x < right_down[0]; ++x) {
-
-        int mirroredY =
-            right_down[1] - (y - left_up[1]) - 1; // Fix mirroredY calculation
+    for (int y = left_up.y; y < left_up.y + height / 2; ++y) {
+      for (int x = left_up.x; x < right_down.x; ++x) {
+        int mirroredY = right_down.y - (y - left_up.y) - 1;
 
         RGB tempColor = getColor(x, y);
         setColor(x, y, getColor(x, mirroredY));
@@ -47,13 +46,13 @@ void BMP::mirror(const std::string &axis, const std::vector<int> &left_up,
 
 void BMP::save(const std::string &fileName) {
   std::ofstream file(fileName, std::ios::binary);
-  if (!file) {
-    std::cerr << "Failed to create output BMP file." << std::endl;
+  if (!file.is_open()) {
+    Logger::error("Failed to create output BMP file.");
     return;
   }
 
   file.write(reinterpret_cast<char *>(&header), sizeof(header));
-  file.write(pixelData.data(), pixelData.size());
+  file.write(reinterpret_cast<char *>(pixelData.data()), pixelData.size());
 
   file.close();
 }
@@ -79,17 +78,52 @@ void BMP::setColor(int x, int y, const RGB &newColor) {
   pixelData[index + 1] = newColor.green;
   pixelData[index + 2] = newColor.red;
 }
+void BMP::colorReplace(const RGB &old_color, const RGB &new_color) {
+  for (int y = 0; y < header.height; y++) {
+    for (int x = 0; x < header.width; x++) {
+      RGB current_color = getColor(x, y);
+      if (current_color.red == old_color.red &&
+          current_color.green == old_color.green &&
+          current_color.blue == old_color.blue) {
+        setColor(x, y, new_color);
+      }
+    }
+  }
+}
+void BMP::split(int number_x, int number_y, int thickness, const RGB &color) {
+
+  for (int i = 1; i < number_y; i++) {
+    int gap = header.height / number_y;
+    for (int x = 0; x < header.width; x++) {
+      for (int y = 0; y < thickness; y++) {
+        setColor(x, i * gap + y, color);
+      }
+    }
+  }
+  for (int i = 1; i < number_x; i++) {
+    int gap = header.width / number_x;
+    for (int x = 0; x < thickness; x++) {
+      for (int y = 0; y < header.height; y++) {
+        setColor(i * gap + x, y, color);
+      }
+    }
+  }
+}
 void BMP::getInfo() const {
-  std::cout << "Signature: " << header.signature[0] << header.signature[1] << std::endl;
-  std::cout << "File size: " << header.fileSize << " bytes" << std::endl;
-  std::cout << "Data offset: " << header.dataOffset << " bytes" << std::endl;
-  std::cout << "Header size: " << header.headerSize << " bytes" << std::endl;
-  std::cout << "Image dimensions: " << header.width << "x" << header.height << std::endl;
-  std::cout << "Bits per pixel: " << header.bitsPerPixel << std::endl;
-  std::cout << "Compression: " << header.compression << std::endl;
-  std::cout << "Image size: " << header.imageSize << " bytes" << std::endl;
-  std::cout << "Pixels per meter (X axis): " << header.xPixelsPerMeter << std::endl;
-  std::cout << "Pixels per meter (Y axis): " << header.yPixelsPerMeter << std::endl;
-  std::cout << "Colors used: " << header.colorsUsed << std::endl;
-  std::cout << "Important colors: " << header.colorsImportant << std::endl;
+
+  Logger::log("Signature: " + std::string(header.signature, 2));
+  Logger::log("File size: " + std::to_string(header.fileSize) + " bytes");
+  Logger::log("Data offset: " + std::to_string(header.dataOffset) + " bytes");
+  Logger::log("Header size: " + std::to_string(header.headerSize) + " bytes");
+  Logger::log("Image dimensions: " + std::to_string(header.width) + "x" +
+              std::to_string(header.height));
+  Logger::log("Bits per pixel: " + std::to_string(header.bitsPerPixel));
+  Logger::log("Compression: " + std::to_string(header.compression));
+  Logger::log("Image size: " + std::to_string(header.imageSize) + " bytes");
+  Logger::log("Pixels per meter (X axis): " +
+              std::to_string(header.xPixelsPerMeter));
+  Logger::log("Pixels per meter (Y axis): " +
+              std::to_string(header.yPixelsPerMeter));
+  Logger::log("Colors used: " + std::to_string(header.colorsUsed));
+  Logger::log("Important colors: " + std::to_string(header.colorsImportant));
 }

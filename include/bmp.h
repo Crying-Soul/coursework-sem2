@@ -1,40 +1,14 @@
 #ifndef BMP_H
 #define BMP_H
 
+#include "operation_params.h"
+#include "structures.h"
 #include <cstdint>
 #include <fstream>
 #include <iostream>
 #include <string>
 #include <vector>
 
-#pragma pack(push, 1)
-struct BMPHeader {
-  char signature[2];
-  uint32_t fileSize;
-  uint16_t reserved1;
-  uint16_t reserved2;
-  uint32_t dataOffset;
-  uint32_t headerSize;
-  int32_t width;
-  int32_t height;
-  uint16_t planes;
-  uint16_t bitsPerPixel;
-  uint32_t compression;
-  uint32_t imageSize;
-  int32_t xPixelsPerMeter;
-  int32_t yPixelsPerMeter;
-  uint32_t colorsUsed;
-  uint32_t colorsImportant;
-};
-#pragma pack(pop)
-
-#pragma pack(push, 1)
-struct RGB {
-  uint8_t blue;
-  uint8_t green;
-  uint8_t red;
-};
-#pragma pack(pop)
 
 class BMP {
 private:
@@ -46,12 +20,21 @@ public:
 
   void getInfo() const;
 
-  void mirror(const std::string &axis, const std::vector<int> &left_up,
-              const std::vector<int> &right_down);
+  void mirror(const std::string &axis, const Coordinate &left_up,
+              const Coordinate &right_down);
 
   void save(const std::string &fileName);
 
+  
+
   bool isValid() const;
+ 
+  void copy(const Coordinate &src_left_up, const Coordinate &src_right_down,
+            const Coordinate &dest_left_up);
+
+  void colorReplace(const RGB &old_color, const RGB &new_color);
+
+  void split(int number_x, int number_y, int thickness, const RGB &color);
 
 private:
   RGB getColor(int x, int y) const;
@@ -59,4 +42,4 @@ private:
   void setColor(int x, int y, const RGB &newColor);
 };
 
-#endif 
+#endif

@@ -1,5 +1,5 @@
 CC=g++
-CXXFLAGS=-Wall -Wextra -Werror -pedantic -std=c++11 -Wshadow -Wformat=2 -Wconversion -Weffc++ -Wfloat-equal -fstack-protector-strong -fPIE -pie -O2
+CXXFLAGS=-Wall -Wextra -pedantic -std=c++11 -Wshadow -Wformat=2 -Wconversion -Weffc++ -Wfloat-equal -fstack-protector-strong -fPIE -pie -O2
 SRC_DIR=src
 INCDIR=include
 OBJDIR=obj
