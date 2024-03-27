@@ -30,10 +30,12 @@ void BMP::mirror(const std::string &axis, const std::vector<int> &left_up,
       }
     }
   } else if (axis == "y") {
-    for (int y = left_up[1]; y < left_up[1] + height / 2; ++y) {
+    for (int y = left_up[1]; y < left_up[1] + height / 2;
+         ++y) { // Change loop condition
       for (int x = left_up[0]; x < right_down[0]; ++x) {
 
-        int mirroredY = right_down[1] - (y - left_up[1]) - 1;
+        int mirroredY =
+            right_down[1] - (y - left_up[1]) - 1; // Fix mirroredY calculation
 
         RGB tempColor = getColor(x, y);
         setColor(x, y, getColor(x, mirroredY));
@@ -59,7 +61,9 @@ void BMP::save(const std::string &fileName) {
 bool BMP::isValid() const { return !pixelData.empty(); }
 
 RGB BMP::getColor(int x, int y) const {
-  int index = (y * header.width + x) * (header.bitsPerPixel / 8);
+  unsigned int index =
+      ((header.height - 1 - y) * header.width + x) * (header.bitsPerPixel / 8);
+
   RGB color;
   color.blue = pixelData[index];
   color.green = pixelData[index + 1];
@@ -68,9 +72,24 @@ RGB BMP::getColor(int x, int y) const {
 }
 
 void BMP::setColor(int x, int y, const RGB &newColor) {
-  unsigned int index = (y * header.width + x) * (header.bitsPerPixel / 8);
+  unsigned int index =
+      ((header.height - 1 - y) * header.width + x) * (header.bitsPerPixel / 8);
 
   pixelData[index] = newColor.blue;
   pixelData[index + 1] = newColor.green;
   pixelData[index + 2] = newColor.red;
+}
+void BMP::getInfo() const {
+  std::cout << "Signature: " << header.signature[0] << header.signature[1] << std::endl;
+  std::cout << "File size: " << header.fileSize << " bytes" << std::endl;
+  std::cout << "Data offset: " << header.dataOffset << " bytes" << std::endl;
+  std::cout << "Header size: " << header.headerSize << " bytes" << std::endl;
+  std::cout << "Image dimensions: " << header.width << "x" << header.height << std::endl;
+  std::cout << "Bits per pixel: " << header.bitsPerPixel << std::endl;
+  std::cout << "Compression: " << header.compression << std::endl;
+  std::cout << "Image size: " << header.imageSize << " bytes" << std::endl;
+  std::cout << "Pixels per meter (X axis): " << header.xPixelsPerMeter << std::endl;
+  std::cout << "Pixels per meter (Y axis): " << header.yPixelsPerMeter << std::endl;
+  std::cout << "Colors used: " << header.colorsUsed << std::endl;
+  std::cout << "Important colors: " << header.colorsImportant << std::endl;
 }

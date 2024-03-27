@@ -3,11 +3,16 @@
 
 int main(int argc, char *argv[]) {
   OperationParams params = parseCommandLine(argc, argv);
-  std::string fileName = "./imgs/24_2.bmp";
-  BMP bmp(fileName);
+  std::string input_file = "imgs/" + params.input_file;
+  std::string output_file = params.output_file;
+  BMP bmp(input_file);
   if (!bmp.isValid()) {
     std::cerr << "Failed to load BMP file." << std::endl;
     return 1;
+  }
+
+  if (params.info){
+    bmp.getInfo();
   }
 
   if (params.mirror) {
@@ -51,7 +56,7 @@ int main(int argc, char *argv[]) {
   //   std::cout << "Line color: " << params.line_color << std::endl;
   // }
 
-  bmp.save("output.bmp");
+  bmp.save(output_file);
 
   return 0;
 }

@@ -5,6 +5,9 @@
 #include <vector> 
 
 struct OperationParams {
+    std::string input_file;
+    std::string output_file = "out.bmp";
+    bool info = false;
     bool mirror = false;
     std::string axis;
     std::vector<int> left_up; 
@@ -20,7 +23,7 @@ struct OperationParams {
     int thickness = 1;
     std::vector<int> line_color; 
 
-    OperationParams() : mirror(false), axis(), left_up(), right_down(), copy(false), dest_left_up(), color_replace(false), old_color(), new_color(), split(false), number_x(1), number_y(1), thickness(1), line_color() {}
+    OperationParams() : input_file(), output_file("out.bmp"), info(false), mirror(false), axis(), left_up(), right_down(), copy(false), dest_left_up(), color_replace(false), old_color(), new_color(), split(false), number_x(1), number_y(1), thickness(1), line_color() {}
 };
 
 OperationParams parseCommandLine(int argc, char* argv[]);

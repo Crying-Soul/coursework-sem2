@@ -43,7 +43,11 @@ private:
 
 public:
   BMP(const std::string &fileName);
-  void mirror(const std::string& axis, const std::vector<int>& left_up, const std::vector<int>& right_down);
+
+  void getInfo() const;
+
+  void mirror(const std::string &axis, const std::vector<int> &left_up,
+              const std::vector<int> &right_down);
 
   void save(const std::string &fileName);
 
@@ -53,7 +57,6 @@ private:
   RGB getColor(int x, int y) const;
 
   void setColor(int x, int y, const RGB &newColor);
-
 };
 
-#endif // BMP_H
+#endif 
