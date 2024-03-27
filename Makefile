@@ -1,20 +1,21 @@
 CC=g++
 CXXFLAGS=-Wall -Wextra -Werror -pedantic -std=c++11 -Wshadow -Wformat=2 -Wconversion -Weffc++ -Wfloat-equal -fstack-protector-strong -fPIE -pie -O2
-SRC_DIR=.
-BUILD_DIR=.
+SRC_DIR=src
+INCDIR=include
+OBJDIR=obj
+
+SOURCES=$(wildcard $(SRC_DIR)/*.cpp)
+OBJECTS=$(patsubst $(SRC_DIR)/%.cpp, $(OBJDIR)/%.o, $(SOURCES))
 EXECUTABLE=coursework
-
-
-SRCS=$(wildcard $(SRC_DIR)/*.cpp)
-OBJS=$(patsubst $(SRC_DIR)/%.cpp,$(BUILD_DIR)/%.o,$(SRCS))
 
 all: $(EXECUTABLE)
 
-$(EXECUTABLE): $(OBJS)
-	$(CC) $(CXXFLAGS) -o $@ $^
+$(EXECUTABLE): $(OBJECTS)
+	$(CC) $(CXXFLAGS) $(OBJECTS) -o $@
 
-$(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp
-	$(CC) $(CXXFLAGS) -c -o $@ $<
+$(OBJDIR)/%.o: $(SRC_DIR)/%.cpp
+	@mkdir -p $(OBJDIR)
+	$(CC) $(CXXFLAGS) -I$(INCDIR) -c $< -o $@
 
 clean:
-	rm -f $(BUILD_DIR)/*.o $(EXECUTABLE)
+	$(RM) -r $(OBJDIR) $(EXECUTABLE)
