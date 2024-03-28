@@ -1,29 +1,22 @@
 /**
  * @file logger.cpp
- * @brief Файл реализации класса Logger.
+ * @brief Implementation file for the Logger class.
  */
 
 #include "logger.h"
 #include "messages.h"
 #include <iostream>
 
-/**
- * @brief Инициализация статического члена colorsEnabled значением false.
- */
+
 bool Logger::colorsEnabled = false;
 
-/**
- * @brief Установить использование цветов для логирования.
- */
+
 void Logger::setColorsEnabled(bool enableColors)
 {
   colorsEnabled = enableColors;
 }
 
-/**
- * @brief Залогировать сообщение в консоль.
 
- */
 void Logger::log(const std::string &message)
 {
   if (colorsEnabled)
@@ -36,10 +29,7 @@ void Logger::log(const std::string &message)
   }
 }
 
-/**
- * @brief Залогировать предупреждение в консоль.
 
- */
 void Logger::warn(const std::string &message)
 {
   if (colorsEnabled)
@@ -52,9 +42,7 @@ void Logger::warn(const std::string &message)
   }
 }
 
-/**
- * @brief Залогировать сообщение об ошибке в консоль.
- */
+
 void Logger::error(const std::string &message)
 {
   if (colorsEnabled)
@@ -67,9 +55,7 @@ void Logger::error(const std::string &message)
   }
 }
 
-/**
- * @brief Залогировать сообщение об ошибке и завершить программу с указанным кодом завершения.
- */
+
 void Logger::exit(const int exitCode, const std::string &exitMessage)
 {
   if (!exitMessage.empty())

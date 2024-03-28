@@ -1,3 +1,9 @@
+/**
+ * @file operation_params.h
+ * @brief Заголовочный файл, содержащий определения структур и классов.
+ */
+
+
 #ifndef OPERATION_PARAMS_H
 #define OPERATION_PARAMS_H
 

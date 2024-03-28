@@ -24,7 +24,18 @@
 */
 var NAVTREE =
 [
-  [ "Coursework", "index.html", [
+  [ "Coursework v5.2", "index.html", [
+    [ "Курсовая работа", "index.html", [
+      [ "Содержание", "index.html#autotoc_md1", null ],
+      [ "Предварительные требования", "index.html#autotoc_md2", null ],
+      [ "Установка", "index.html#autotoc_md3", null ],
+      [ "Использование", "index.html#autotoc_md4", null ],
+      [ "Пример", "index.html#autotoc_md5", null ],
+      [ "Credits", "index.html#autotoc_md6", [
+        [ "Разработчики", "index.html#autotoc_md7", null ],
+        [ "Инструменты и библиотеки", "index.html#autotoc_md8", null ]
+      ] ]
+    ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
@@ -38,7 +49,8 @@ var NAVTREE =
       [ "File List", "files.html", "files_dup" ],
       [ "File Members", "globals.html", [
         [ "All", "globals.html", null ],
-        [ "Functions", "globals_func.html", null ]
+        [ "Functions", "globals_func.html", null ],
+        [ "Variables", "globals_vars.html", null ]
       ] ]
     ] ]
   ] ]
@@ -46,7 +58,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"Makefile_source.html"
+"_makefile.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

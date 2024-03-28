@@ -1,27 +1,31 @@
-# BMP Image Processor
+# Курсовая работа
 
-This is a command-line tool for processing BMP image files according to the specified functionalities. It allows for operations such as reflection, copying of regions, color replacement, and splitting images into multiple parts.
+Это инструмент командной строки для обработки файлов изображений BMP в соответствии с указанными функциональными возможностями. Он позволяет выполнять операции, такие как отражение, копирование областей, замена цвета и разделение изображений на несколько частей.
 
-## Prerequisites
+## Содержание
+- [Предварительные требования](#предварительные-требования)
+- [Установка](#установка)
+- [Использование](#использование)
+- [Пример](#пример)
+- [Авторы](#авторы)
 
-- C++ compiler
+<a name="предварительные-требования"></a> 
+
+## Предварительные требования
+
+- Компилятор C++
 - Make
 
-## Installation
+<a name="установка"></a> 
 
-1. Clone the repository:
-`
-   git clone https://github.com/Crying-Soul/coursework-sem2.git ./cw
-`
-2. Navigate to the project directory:
-`
-   cd cw
-`
-3. Build the project using Make:
-`
-   ./run.sh
-`
-## Usage
+## Установка
+
+1. Клонируйте репозиторий:`git clone https://github.com/Crying-Soul/coursework-sem2.git ./cw`
+2. Перейдите в каталог проекта:`cd cw`
+3. Соберите проект с помощью make:`make`
+<a name="использование"></a> 
+
+## Использование
 ```css
 ./coursework [--mirror --axis <x/y> --left_up <x.y> --right_down <x.y>] \
                 [--copy --left_up <x.y> --right_down <x.y> --dest_left_up <x.y>] \
@@ -29,22 +33,25 @@ This is a command-line tool for processing BMP image files according to the spec
                 [--split --number_x <N> --number_y <M> --thickness <T> --color <rrr.ggg.bbb>] \
                 -i <input_file.bmp> -o <output_file.bmp>
 ```
-- `--mirror`: Reflects a specified region of the image.
-- `--axis`: Specifies the axis (x or y) for reflection.
-- `--left_up`: Coordinates of the top-left corner of the region.
-- `--right_down`: Coordinates of the bottom-right corner of the region.
-- `--copy`: Copies a specified region of the image to another location.
-- `--dest_left_up`: Coordinates of the top-left corner of the destination region.
-- `--color_replace`: Replaces all pixels of a specified color with another color.
-- `--old_color`: Color to replace (in the format rrr.ggg.bbb).
-- `--new_color`: Color to replace with (in the format rrr.ggg.bbb).
-- `--split`: Divides the image into N*M parts with specified line thickness and color.
-- `--number_x`: Number of parts along the Y-axis.
-- `--number_y`: Number of parts along the X-axis.
-- `--thickness`: Thickness of the dividing lines.
-- `--color`: Color of the dividing lines (in the format rrr.ggg.bbb).
 
-## Example
+- `--mirror`: Отражает указанную область изображения.
+- `--axis`: Указывает ось (x или y) для отражения.
+- `--left_up`: Координаты верхнего левого угла области.
+- `--right_down`: Координаты нижнего правого угла области.
+- `--copy`: Копирует указанную область изображения в другое место.
+- `--dest_left_up`: Координаты верхнего левого угла целевой области.
+- `--color_replace`: Заменяет все пиксели указанного цвета другим цветом.
+- `--old_color`: Цвет для замены (в формате rrr.ggg.bbb).
+- `--new_color`: Цвет для замены (в формате rrr.ggg.bbb).
+- `--split`: Делит изображение на N*M частей с указанной толщиной линии и цветом.
+- `--number_x`: Количество частей вдоль оси Y.
+- `--number_y`: Количество частей вдоль оси X.
+- `--thickness`: Толщина разделительных линий.
+- `--color`: Цвет разделительных линий (в формате rrr.ggg.bbb).
+
+<a name="example"></a>
+
+## Пример
 ```css
 ./coursework --mirror --axis x --left_up 100.100 --right_down 200.200 \
                 --copy --left_up 50.50 --right_down 150.150 --dest_left_up 300.300 \
@@ -52,3 +59,18 @@ This is a command-line tool for processing BMP image files according to the spec
                 --split --number_x 3 --number_y 3 --thickness 2 --color 0.0.255 \
                 -i input.bmp -o output.bmp
 ```
+<a name="credits"></a> 
+
+## Credits
+
+### Разработчики
+
+- **Grebnev Egor** - Project Lead, Frontend Developer
+- **ChatGPT** - Backend Developer
+
+### Инструменты и библиотеки
+
+Наш проект использует следующие инструменты и библиотеки:
+
+- **[Doxygen](https://doxygen.nl)** - Инструмент для генерации документации из комментариев в исходном коде.
+- **[DoxygenAwesome](https://github.com/jothepro/doxygen-awesome-css)** - Пользовательская тема CSS для документации Doxygen.

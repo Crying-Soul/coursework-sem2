@@ -1,3 +1,9 @@
+/**
+ * @file logger.h
+ * @brief Заголовочный файл, содержащий определения структур и классов.
+ */
+
+
 #ifndef LOGGER_H
 #define LOGGER_H
 

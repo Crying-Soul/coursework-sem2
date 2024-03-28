@@ -1,0 +1,7 @@
+<map id="Logger::warn" name="Logger::warn">
+<area shape="rect" id="node1" title="Записывает предупреждение в лог." alt="" coords="308,81,415,108"/>
+<area shape="rect" id="node2" href="$class_b_m_p.html#aa5efccdbbacffe75174e3c126efc06ad" title="Копировать область изображения." alt="" coords="139,5,229,32"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="Главная функция программы" alt="" coords="5,81,60,108"/>
+<area shape="rect" id="node4" href="$operation__params_8h.html#a00a944e8a68555a108c478465b5e9018" title="Парсинг командной строки и создание объекта OperationParams." alt="" coords="108,107,260,133"/>
+<area shape="rect" id="node5" href="$class_b_m_p.html#aaff3df7f32657d64bf3b5f07e76a4edd" title="Разделить изображение на части." alt="" coords="141,157,227,184"/>
+</map>

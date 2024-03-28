@@ -1,5 +1,5 @@
 /**
- * @file operation_params.h
+ * @file operation_params.cpp
  * @brief Определяет функции для анализа параметров операций из командной строки.
  */
 
@@ -13,10 +13,7 @@
 #include <string>
 #include <vector>
 
-/**
- * @brief Разбирает строку значений и возвращает вектор целочисленных значений.
- * @return Вектор целочисленных значений, полученных из строки.
- */
+
 std::vector<int> parseValues(const std::string &str)
 {
   std::vector<int> values;
@@ -29,10 +26,7 @@ std::vector<int> parseValues(const std::string &str)
   return values;
 }
 
-/**
- * @brief Разбирает строку RGB-цвета и возвращает структуру RGB.
- * @return Структура RGB, содержащая значения красного, зеленого и синего каналов.
- */
+
 RGB parseRGB(const std::string &str)
 {
   std::vector<int> values = parseValues(str);
@@ -51,9 +45,6 @@ RGB parseRGB(const std::string &str)
           static_cast<uint8_t>(values[2])};
 }
 
-/**
- * @brief Отображает справку по использованию программы.
- */
 void displayHelp()
 {
   Logger::log(help_usage_description);
@@ -77,10 +68,7 @@ void displayHelp()
   Logger::log(help_option_description);
 }
 
-/**
- * @brief Разбирает параметры операции из командной строки.
- * @return Структура параметров операции.
- */
+
 OperationParams parseCommandLine(int argc, char *argv[])
 {
   OperationParams params;

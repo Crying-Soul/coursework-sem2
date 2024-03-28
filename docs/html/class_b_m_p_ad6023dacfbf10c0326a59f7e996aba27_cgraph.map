@@ -1,0 +1,5 @@
+<map id="BMP::save" name="BMP::save">
+<area shape="rect" id="node1" title="Сохранить изображение в файл." alt="" coords="5,5,96,32"/>
+<area shape="rect" id="node2" href="$class_logger.html#ac2b605d549e7b4d89fd229230fe99bb4" title="Записывает сообщение и завершает программу с заданным кодом выхода." alt="" coords="144,5,243,32"/>
+<area shape="rect" id="node3" href="$class_logger.html#ab6042fdfcbb14026098e0df9d6b32f27" title="Записывает ошибку в лог." alt="" coords="291,5,396,32"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="BMP::getInfo" name="BMP::getInfo">
+<area shape="rect" id="node1" title="Получить информацию о изображении." alt="" coords="5,5,111,32"/>
+<area shape="rect" id="node2" href="$class_logger.html#af5bd3aa615eb67a5a49c02d8040812db" title="Записывает сообщение в лог." alt="" coords="159,5,253,32"/>
+</map>
