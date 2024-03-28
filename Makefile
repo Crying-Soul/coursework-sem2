@@ -3,7 +3,7 @@ CXXFLAGS=-Wall -Wextra -pedantic -std=c++11 -Wshadow -Wformat=2 -Wconversion -We
 SRC_DIR=src
 INCDIR=include
 OBJDIR=obj
-LANGUAGE=
+LANGUAGE=-DRU
 
 SOURCES=$(wildcard $(SRC_DIR)/*.cpp)
 OBJECTS=$(patsubst $(SRC_DIR)/%.cpp, $(OBJDIR)/%.o, $(SOURCES))
