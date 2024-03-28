@@ -1,3 +1,7 @@
+
+#! @file   Makefile
+#! @brief  Файл сборки программы
+
 CC=g++
 CXXFLAGS=-Wall -Wextra -pedantic -std=c++11 -Wshadow -Wformat=2 -Wconversion -Weffc++ -Wfloat-equal -fstack-protector-strong -fPIE -pie -O2
 SRC_DIR=src

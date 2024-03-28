@@ -95,7 +95,7 @@ constexpr char invalid_dimensions_error[] = "Недопустимые разме
 /**
  * @brief Предупреждение о недопустимой глубине цвета BMP.
  */
-constexpr char invalid_bpp_warning[] = "Недопустимая глубина цвета BMP, изображение может быть некорректным";
+constexpr char invalid_bpp_warning[] = "Недопустимая глубина цвета BMP, итоговое изображение может быть некорректным";
 
 /**
  * @brief Ошибка при неподдерживаемом типе сжатия BMP.
@@ -105,7 +105,7 @@ constexpr char unsupported_compression_error[] = "Неподдерживаемы
 /**
  * @brief Ошибка при недопустимом размере изображения BMP.
  */
-constexpr char invalid_image_size_error[] = "Недопустимый размер изображения BMP";
+constexpr char invalid_image_size_error[] = "Недопустимый размер изображения BMP, итоговое изображение может быть некорректным";
 
 /**
  * @brief Предупреждение о попытке доступа к цвету за пределами границ изображения.
@@ -391,7 +391,7 @@ constexpr char invalid_dimensions_error[] = "Invalid BMP dimensions";
 /**
  * @brief Warning for invalid BMP bits per pixel.
  */
-constexpr char invalid_bpp_warning[] = "Invalid BMP bits per pixel, image may be incorrect";
+constexpr char invalid_bpp_warning[] = "Invalid BMP bits per pixel, output image may be incorrect";
 
 /**
  * @brief Error for unsupported BMP compression type.
@@ -401,7 +401,7 @@ constexpr char unsupported_compression_error[] = "Unsupported BMP compression ty
 /**
  * @brief Error for invalid BMP image size.
  */
-constexpr char invalid_image_size_error[] = "Invalid BMP image size";
+constexpr char invalid_image_size_error[] = "Invalid BMP image size, output image may be incorrect";
 
 /**
  * @brief Warning for trying to access color outside image bounds.

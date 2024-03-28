@@ -63,8 +63,8 @@ bool BMP::validateHeader() const
       header.width * header.height * (header.bitsPerPixel / 8);
   if (header.imageSize != expectedImageSize)
   {
-    Logger::exit(1, invalid_image_size_error);
-    return false;
+
+    Logger::warn(invalid_image_size_error);
   }
 
   return true;
@@ -205,6 +205,12 @@ void BMP::split(int number_x, int number_y, int thickness, const RGB &color)
 void BMP::copy(const Coordinate &src_left_up, const Coordinate &src_right_down,
                const Coordinate &dest_left_up)
 {
+  if (src_left_up.x < 0 || src_left_up.y < 0 || dest_left_up.x <= 0 ||
+      dest_left_up.x < 0)
+  {
+    Logger::exit(1, invalid_copy_region);
+    return;
+  }
   int src_width = src_right_down.x - src_left_up.x;
   int src_height = src_right_down.y - src_left_up.y;
   int dest_width = header.width - dest_left_up.x;

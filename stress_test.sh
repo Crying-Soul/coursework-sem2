@@ -4,7 +4,7 @@ FILE="24.bmp"
 OUT_DIR="stress_test_out"
 mkdir -p "$OUT_DIR"
 
-MIRROR_OPTIONS=(" --mirror --axis x --left_up 10.10 --right_down 500.500" " --mirror --axis y --left_up 500.500 --right_down 10.10" " --mirror --axis z --left_up 1000.1000 --right_down 500.500" "" " --mirror" )
+MIRROR_OPTIONS=(" --mirror --axis x --left_up 10.10 --right_down 500.500" " --mirror --axis y --left_up 500.500 --right_down 10.10" " --mirror --axis --left_up 1000.1000 --right_down 500.500" "" " --mirror" )
 COLOR_REPLACE_OPTIONS=(" --color_replace --old_color 255.255.255 --new_color 255.12.200 -fake_flag" " --color_replace --old_color 255.255.255 --new_color 255.12.200" " --color_replace --old_color 255.255.255 --new_color 255.12.200" "" )
 SPLIT_OPTIONS=(" --split --number_x 20 --number_y 20 --thickness 2 --color 255.100.0" " --split --number_x 0 --number_y 20 --thickness 2 --color 255.100.0" "" )
 COPY_OPTIONS=(" --copy --left_up 10.10 --right_down 200.200 --dest_left_up 300.300" " --copy --left_up 500.500 --right_down 200.200 --dest_left_up 300.300" "" )
