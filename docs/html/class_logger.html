@@ -118,6 +118,7 @@ $(document).ready(function(){initNavTree('class_logger.html',''); initResizable(
 
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
 <a href="#pub-static-methods">Открытые статические члены</a> &#124;
 <a href="class_logger-members.html">Полный список членов класса</a>  </div>
   <div class="headertitle">
@@ -125,32 +126,60 @@ $(document).ready(function(){initNavTree('class_logger.html',''); initResizable(
 </div><!--header-->
 <div class="contents">
 
-<p>Класс для записи логов.  
- <a href="class_logger.html#details">Подробнее...</a></p>
-
 <p><code>#include &lt;<a class="el" href="logger_8h_source.html">logger.h</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:aa496086b7f219a11683f482d421070cd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_logger.html#aa496086b7f219a11683f482d421070cd">Logger</a> (bool enableColors=true)</td></tr>
+<tr class="memdesc:aa496086b7f219a11683f482d421070cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор для класса <a class="el" href="class_logger.html">Logger</a>.  <a href="class_logger.html#aa496086b7f219a11683f482d421070cd">Подробнее...</a><br /></td></tr>
+<tr class="separator:aa496086b7f219a11683f482d421070cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Открытые статические члены</h2></td></tr>
 <tr class="memitem:ab7e9747c046ab01e065bde00aa26b44b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_logger.html#ab7e9747c046ab01e065bde00aa26b44b">setColorsEnabled</a> (bool enableColors)</td></tr>
 <tr class="memdesc:ab7e9747c046ab01e065bde00aa26b44b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает разрешение использования цветов в выводе.  <a href="class_logger.html#ab7e9747c046ab01e065bde00aa26b44b">Подробнее...</a><br /></td></tr>
 <tr class="separator:ab7e9747c046ab01e065bde00aa26b44b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af5bd3aa615eb67a5a49c02d8040812db"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_logger.html#af5bd3aa615eb67a5a49c02d8040812db">log</a> (const std::string &amp;message)</td></tr>
-<tr class="memdesc:af5bd3aa615eb67a5a49c02d8040812db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Записывает сообщение в лог.  <a href="class_logger.html#af5bd3aa615eb67a5a49c02d8040812db">Подробнее...</a><br /></td></tr>
-<tr class="separator:af5bd3aa615eb67a5a49c02d8040812db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad83dbe66156650acca19d3772ce41229"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_logger.html#ad83dbe66156650acca19d3772ce41229">log</a> (const std::string &amp;message, <a class="el" href="logger_8h.html#ab87bacfdad76e61b9412d7124be44c1c">Color</a> color=<a class="el" href="logger_8h.html#ab87bacfdad76e61b9412d7124be44c1ca9de0e5dd94e861317e74964bed179fa0">Color::GREEN</a>)</td></tr>
+<tr class="memdesc:ad83dbe66156650acca19d3772ce41229"><td class="mdescLeft">&#160;</td><td class="mdescRight">Записывает сообщение в лог с определенным цветом.  <a href="class_logger.html#ad83dbe66156650acca19d3772ce41229">Подробнее...</a><br /></td></tr>
+<tr class="separator:ad83dbe66156650acca19d3772ce41229"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24b519e0f53e73937f93edd2da37ea76"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_logger.html#a24b519e0f53e73937f93edd2da37ea76">warn</a> (const std::string &amp;message)</td></tr>
-<tr class="memdesc:a24b519e0f53e73937f93edd2da37ea76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Записывает предупреждение в лог.  <a href="class_logger.html#a24b519e0f53e73937f93edd2da37ea76">Подробнее...</a><br /></td></tr>
+<tr class="memdesc:a24b519e0f53e73937f93edd2da37ea76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Записывает предупреждение в лог с желтым цветом.  <a href="class_logger.html#a24b519e0f53e73937f93edd2da37ea76">Подробнее...</a><br /></td></tr>
 <tr class="separator:a24b519e0f53e73937f93edd2da37ea76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6042fdfcbb14026098e0df9d6b32f27"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_logger.html#ab6042fdfcbb14026098e0df9d6b32f27">error</a> (const std::string &amp;message)</td></tr>
-<tr class="memdesc:ab6042fdfcbb14026098e0df9d6b32f27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Записывает ошибку в лог.  <a href="class_logger.html#ab6042fdfcbb14026098e0df9d6b32f27">Подробнее...</a><br /></td></tr>
+<tr class="memdesc:ab6042fdfcbb14026098e0df9d6b32f27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Записывает ошибку в лог с красным цветом.  <a href="class_logger.html#ab6042fdfcbb14026098e0df9d6b32f27">Подробнее...</a><br /></td></tr>
 <tr class="separator:ab6042fdfcbb14026098e0df9d6b32f27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2b605d549e7b4d89fd229230fe99bb4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_logger.html#ac2b605d549e7b4d89fd229230fe99bb4">exit</a> (const int exitCode, const std::string &amp;exitMessage)</td></tr>
-<tr class="memdesc:ac2b605d549e7b4d89fd229230fe99bb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Записывает сообщение и завершает программу с заданным кодом выхода.  <a href="class_logger.html#ac2b605d549e7b4d89fd229230fe99bb4">Подробнее...</a><br /></td></tr>
-<tr class="separator:ac2b605d549e7b4d89fd229230fe99bb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adaa34620512b5fa13d3098602eb4aef0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_logger.html#adaa34620512b5fa13d3098602eb4aef0">exit</a> (int exitCode, const std::string &amp;exitMessage=&quot;&quot;)</td></tr>
+<tr class="memdesc:adaa34620512b5fa13d3098602eb4aef0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Записывает сообщение и завершает программу с заданным кодом выхода.  <a href="class_logger.html#adaa34620512b5fa13d3098602eb4aef0">Подробнее...</a><br /></td></tr>
+<tr class="separator:adaa34620512b5fa13d3098602eb4aef0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
-<div class="textblock"><p>Класс для записи логов. </p>
-</div><h2 class="groupheader">Методы</h2>
+<h2 class="groupheader">Конструктор(ы)</h2>
+<a id="aa496086b7f219a11683f482d421070cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa496086b7f219a11683f482d421070cd">&#9670;&nbsp;</a></span>Logger()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Logger::Logger </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>enableColors</em> = <code>true</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Конструктор для класса <a class="el" href="class_logger.html">Logger</a>. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">enableColors</td><td>Если true, разрешает использование цветов в логах, иначе - нет. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
 <a id="ab6042fdfcbb14026098e0df9d6b32f27"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab6042fdfcbb14026098e0df9d6b32f27">&#9670;&nbsp;</a></span>error()</h2>
 
@@ -175,7 +204,7 @@ $(document).ready(function(){initNavTree('class_logger.html',''); initResizable(
 </table>
 </div><div class="memdoc">
 
-<p>Записывает ошибку в лог. </p>
+<p>Записывает ошибку в лог с красным цветом. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
     <tr><td class="paramname">message</td><td>Сообщение ошибки для записи в лог. </td></tr>
@@ -183,15 +212,22 @@ $(document).ready(function(){initNavTree('class_logger.html',''); initResizable(
   </dd>
 </dl>
 <div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_logger_ab6042fdfcbb14026098e0df9d6b32f27_cgraph.svg" width="396" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
 Граф вызова функции:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_logger_ab6042fdfcbb14026098e0df9d6b32f27_icgraph.svg" width="704" height="342"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_logger_ab6042fdfcbb14026098e0df9d6b32f27_icgraph.svg" width="702" height="392"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
 </div>
-<a id="ac2b605d549e7b4d89fd229230fe99bb4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac2b605d549e7b4d89fd229230fe99bb4">&#9670;&nbsp;</a></span>exit()</h2>
+<a id="adaa34620512b5fa13d3098602eb4aef0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adaa34620512b5fa13d3098602eb4aef0">&#9670;&nbsp;</a></span>exit()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -202,14 +238,14 @@ $(document).ready(function(){initNavTree('class_logger.html',''); initResizable(
         <tr>
           <td class="memname">void Logger::exit </td>
           <td>(</td>
-          <td class="paramtype">const int&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>exitCode</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>exitMessage</em>&#160;</td>
+          <td class="paramname"><em>exitMessage</em> = <code>&quot;&quot;</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -235,18 +271,20 @@ $(document).ready(function(){initNavTree('class_logger.html',''); initResizable(
 <div class="dynheader">
 Граф вызовов:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_logger_ac2b605d549e7b4d89fd229230fe99bb4_cgraph.svg" width="263" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_logger_adaa34620512b5fa13d3098602eb4aef0_cgraph.svg" width="543" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 <div class="dynheader">
 Граф вызова функции:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_logger_ac2b605d549e7b4d89fd229230fe99bb4_icgraph.svg" width="551" height="342"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_logger_adaa34620512b5fa13d3098602eb4aef0_icgraph.svg" width="548" height="392"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
 </div>
-<a id="af5bd3aa615eb67a5a49c02d8040812db"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af5bd3aa615eb67a5a49c02d8040812db">&#9670;&nbsp;</a></span>log()</h2>
+<a id="ad83dbe66156650acca19d3772ce41229"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad83dbe66156650acca19d3772ce41229">&#9670;&nbsp;</a></span>log()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -258,8 +296,18 @@ $(document).ready(function(){initNavTree('class_logger.html',''); initResizable(
           <td class="memname">void Logger::log </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>message</em></td><td>)</td>
+          <td class="paramname"><em>message</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="logger_8h.html#ab87bacfdad76e61b9412d7124be44c1c">Color</a>&#160;</td>
+          <td class="paramname"><em>color</em> = <code><a class="el" href="logger_8h.html#ab87bacfdad76e61b9412d7124be44c1ca9de0e5dd94e861317e74964bed179fa0">Color::GREEN</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -269,17 +317,25 @@ $(document).ready(function(){initNavTree('class_logger.html',''); initResizable(
 </table>
 </div><div class="memdoc">
 
-<p>Записывает сообщение в лог. </p>
+<p>Записывает сообщение в лог с определенным цветом. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
     <tr><td class="paramname">message</td><td>Сообщение для записи в лог. </td></tr>
+    <tr><td class="paramname">color</td><td>Цвет сообщения (по умолчанию GREEN). </td></tr>
   </table>
   </dd>
 </dl>
 <div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_logger_ad83dbe66156650acca19d3772ce41229_cgraph.svg" width="243" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
 Граф вызова функции:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_logger_af5bd3aa615eb67a5a49c02d8040812db_icgraph.svg" width="555" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_logger_ad83dbe66156650acca19d3772ce41229_icgraph.svg" width="863" height="595"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -311,14 +367,15 @@ $(document).ready(function(){initNavTree('class_logger.html',''); initResizable(
 <p>Устанавливает разрешение использования цветов в выводе. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">enableColors</td><td>true, если цвета разрешены, false в противном случае. </td></tr>
+    <tr><td class="paramname">enableColors</td><td>Если true, разрешает использование цветов в логах, иначе - нет. </td></tr>
   </table>
   </dd>
 </dl>
 <div class="dynheader">
 Граф вызова функции:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_logger_ab7e9747c046ab01e065bde00aa26b44b_icgraph.svg" width="500" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_logger_ab7e9747c046ab01e065bde00aa26b44b_icgraph.svg" width="500" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -347,7 +404,7 @@ $(document).ready(function(){initNavTree('class_logger.html',''); initResizable(
 </table>
 </div><div class="memdoc">
 
-<p>Записывает предупреждение в лог. </p>
+<p>Записывает предупреждение в лог с желтым цветом. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
     <tr><td class="paramname">message</td><td>Сообщение предупреждения для записи в лог. </td></tr>
@@ -355,9 +412,16 @@ $(document).ready(function(){initNavTree('class_logger.html',''); initResizable(
   </dd>
 </dl>
 <div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_logger_a24b519e0f53e73937f93edd2da37ea76_cgraph.svg" width="398" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
 Граф вызова функции:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_logger_a24b519e0f53e73937f93edd2da37ea76_icgraph.svg" width="420" height="190"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_logger_a24b519e0f53e73937f93edd2da37ea76_icgraph.svg" width="420" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>

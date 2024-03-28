@@ -3,9 +3,7 @@ var dir_d44c64559bbebec7f509842c48db8b23 =
     [ "bmp.h", "bmp_8h.html", [
       [ "BMP", "class_b_m_p.html", "class_b_m_p" ]
     ] ],
-    [ "logger.h", "logger_8h.html", [
-      [ "Logger", "class_logger.html", null ]
-    ] ],
+    [ "logger.h", "logger_8h.html", "logger_8h" ],
     [ "messages.h", "messages_8h.html", "messages_8h" ],
     [ "operation_params.h", "operation__params_8h.html", "operation__params_8h" ],
     [ "structures.h", "structures_8h.html", [

@@ -17,7 +17,7 @@
 int main(int argc, char *argv[])
 {
   // Логирование информации о программе
-  Logger::log("Course work for option 5.2, created by Egor Grebnev.");
+  Logger::log("Course work for option 5.2, created by Egor Grebnev.", Color::CYAN);
 
   // Парсинг параметров командной строки
   OperationParams params = parseCommandLine(argc, argv);

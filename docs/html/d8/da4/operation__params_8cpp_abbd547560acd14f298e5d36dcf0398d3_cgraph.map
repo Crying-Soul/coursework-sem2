@@ -1,6 +1,0 @@
-<map id="parseRGB" name="parseRGB">
-<area shape="rect" id="node1" title="Парсинг строки с RGB&#45;значением цвета." alt="" coords="5,31,92,57"/>
-<area shape="rect" id="node2" href="$d3/d42/class_logger.html#ac2b605d549e7b4d89fd229230fe99bb4" title="Записывает сообщение и завершает программу с заданным кодом выхода." alt="" coords="141,5,240,32"/>
-<area shape="rect" id="node4" href="$d8/da4/operation__params_8cpp.html#acb9b051691fc7054f0232d28aef686c4" title="Парсинг строки с числами, разделенными пробелами." alt="" coords="140,56,241,83"/>
-<area shape="rect" id="node3" href="$d3/d42/class_logger.html#ab6042fdfcbb14026098e0df9d6b32f27" title="Записывает ошибку в лог." alt="" coords="289,5,395,32"/>
-</map>

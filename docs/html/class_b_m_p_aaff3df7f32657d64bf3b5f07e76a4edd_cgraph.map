@@ -1,4 +1,8 @@
 <map id="BMP::split" name="BMP::split">
-<area shape="rect" id="node1" title="Разделить изображение на части." alt="" coords="5,5,92,32"/>
-<area shape="rect" id="node2" href="$class_logger.html#a24b519e0f53e73937f93edd2da37ea76" title="Записывает предупреждение в лог." alt="" coords="140,5,247,32"/>
+<area shape="rect" id="node1" title="Разделить изображение на части." alt="" coords="5,31,92,57"/>
+<area shape="rect" id="node2" href="$class_logger.html#adaa34620512b5fa13d3098602eb4aef0" title="Записывает сообщение и завершает программу с заданным кодом выхода." alt="" coords="140,31,239,57"/>
+<area shape="rect" id="node3" href="$class_logger.html#ab6042fdfcbb14026098e0df9d6b32f27" title="Записывает ошибку в лог с красным цветом." alt="" coords="287,31,392,57"/>
+<area shape="rect" id="node4" href="$class_logger.html#ad83dbe66156650acca19d3772ce41229" title="Записывает сообщение в лог с определенным цветом." alt="" coords="440,31,535,57"/>
+<area shape="rect" id="node5" href="$logger_8cpp.html#afe00396766eb6b8ca4674de4c5d3d949" title=" " alt="" coords="583,5,672,32"/>
+<area shape="rect" id="node6" href="$logger_8cpp.html#a47a17bf6298ba8d1f42d32b14449e277" title=" " alt="" coords="589,56,665,83"/>
 </map>

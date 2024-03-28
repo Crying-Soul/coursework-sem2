@@ -1,4 +1,0 @@
-<map id="displayHelp" name="displayHelp">
-<area shape="rect" id="node1" title="Отображение справки о возможных параметрах командной строки." alt="" coords="5,5,104,32"/>
-<area shape="rect" id="node2" href="$d3/d42/class_logger.html#af5bd3aa615eb67a5a49c02d8040812db" title="Записывает сообщение в лог." alt="" coords="152,5,247,32"/>
-</map>

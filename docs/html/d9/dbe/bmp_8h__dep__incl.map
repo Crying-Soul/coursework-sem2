@@ -1,5 +1,0 @@
-<map id="include/bmp.h" name="include/bmp.h">
-<area shape="rect" id="node1" title="Заголовочный файл, содержащий определения структур и классов." alt="" coords="63,5,177,32"/>
-<area shape="rect" id="node2" href="$de/d0a/bmp_8cpp.html" title="Реализация методов класса BMP для работы с изображениями в формате BMP." alt="" coords="5,80,107,107"/>
-<area shape="rect" id="node3" href="$df/d0a/main_8cpp.html" title="Главный файл программы" alt="" coords="131,80,237,107"/>
-</map>

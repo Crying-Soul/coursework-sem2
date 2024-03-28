@@ -1,5 +1,0 @@
-<map id="OperationParams" name="OperationParams">
-<area shape="rect" id="node1" title="Структура, представляющая параметры операции над изображением." alt="" coords="42,124,177,151"/>
-<area shape="rect" id="node2" href="$d1/dd9/struct_coordinate.html" title="Структура, представляющая координаты точки на плоскости." alt="" coords="5,5,99,32"/>
-<area shape="rect" id="node3" href="$d3/d2e/struct_r_g_b.html" title="Структура, представляющая цвет в формате RGB." alt="" coords="141,5,192,32"/>
-</map>

@@ -1,0 +1,11 @@
+<map id="Logger::exit" name="Logger::exit">
+<area shape="rect" id="node1" title="Записывает сообщение и завершает программу с заданным кодом выхода." alt="" coords="444,183,543,209"/>
+<area shape="rect" id="node2" href="$class_b_m_p.html#a1a6520856e149fb370934fae327947fd" title="Конструктор класса BMP." alt="" coords="308,5,396,32"/>
+<area shape="rect" id="node3" href="$class_b_m_p.html#aa5efccdbbacffe75174e3c126efc06ad" title="Копировать область изображения." alt="" coords="139,56,229,83"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="Главная функция программы" alt="" coords="5,183,60,209"/>
+<area shape="rect" id="node5" href="$class_b_m_p.html#a6760433189c91bee33a1e884909c3818" title="Отразить изображение относительно указанной оси." alt="" coords="135,157,233,184"/>
+<area shape="rect" id="node6" href="$operation__params_8h.html#a00a944e8a68555a108c478465b5e9018" title="Парсинг командной строки и создание объекта OperationParams." alt="" coords="108,208,260,235"/>
+<area shape="rect" id="node7" href="$operation__params_8h.html#abbd547560acd14f298e5d36dcf0398d3" title="Парсинг строки с RGB&#45;значением цвета." alt="" coords="309,259,395,285"/>
+<area shape="rect" id="node8" href="$class_b_m_p.html#ad6023dacfbf10c0326a59f7e996aba27" title="Сохранить изображение в файл." alt="" coords="139,271,229,297"/>
+<area shape="rect" id="node9" href="$class_b_m_p.html#aaff3df7f32657d64bf3b5f07e76a4edd" title="Разделить изображение на части." alt="" coords="309,360,395,387"/>
+</map>

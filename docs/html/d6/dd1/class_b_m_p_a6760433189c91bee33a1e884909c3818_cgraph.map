@@ -1,5 +1,0 @@
-<map id="BMP::mirror" name="BMP::mirror">
-<area shape="rect" id="node1" title="Отразить изображение относительно указанной оси." alt="" coords="5,5,104,32"/>
-<area shape="rect" id="node2" href="$d3/d42/class_logger.html#ac2b605d549e7b4d89fd229230fe99bb4" title="Записывает сообщение и завершает программу с заданным кодом выхода." alt="" coords="152,5,251,32"/>
-<area shape="rect" id="node3" href="$d3/d42/class_logger.html#ab6042fdfcbb14026098e0df9d6b32f27" title="Записывает ошибку в лог." alt="" coords="299,5,404,32"/>
-</map>

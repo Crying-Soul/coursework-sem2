@@ -1,6 +1,9 @@
 <map id="BMP::copy" name="BMP::copy">
 <area shape="rect" id="node1" title="Копировать область изображения." alt="" coords="5,31,96,57"/>
-<area shape="rect" id="node2" href="$class_logger.html#ac2b605d549e7b4d89fd229230fe99bb4" title="Записывает сообщение и завершает программу с заданным кодом выхода." alt="" coords="148,5,247,32"/>
-<area shape="rect" id="node4" href="$class_logger.html#a24b519e0f53e73937f93edd2da37ea76" title="Записывает предупреждение в лог." alt="" coords="144,56,251,83"/>
-<area shape="rect" id="node3" href="$class_logger.html#ab6042fdfcbb14026098e0df9d6b32f27" title="Записывает ошибку в лог." alt="" coords="299,5,404,32"/>
+<area shape="rect" id="node2" href="$class_logger.html#adaa34620512b5fa13d3098602eb4aef0" title="Записывает сообщение и завершает программу с заданным кодом выхода." alt="" coords="144,5,243,32"/>
+<area shape="rect" id="node7" href="$class_logger.html#a24b519e0f53e73937f93edd2da37ea76" title="Записывает предупреждение в лог с желтым цветом." alt="" coords="291,56,397,83"/>
+<area shape="rect" id="node3" href="$class_logger.html#ab6042fdfcbb14026098e0df9d6b32f27" title="Записывает ошибку в лог с красным цветом." alt="" coords="291,5,397,32"/>
+<area shape="rect" id="node4" href="$class_logger.html#ad83dbe66156650acca19d3772ce41229" title="Записывает сообщение в лог с определенным цветом." alt="" coords="445,31,540,57"/>
+<area shape="rect" id="node5" href="$logger_8cpp.html#afe00396766eb6b8ca4674de4c5d3d949" title=" " alt="" coords="588,5,677,32"/>
+<area shape="rect" id="node6" href="$logger_8cpp.html#a47a17bf6298ba8d1f42d32b14449e277" title=" " alt="" coords="595,56,671,83"/>
 </map>

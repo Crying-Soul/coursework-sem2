@@ -1,6 +1,0 @@
-<map id="BMP::copy" name="BMP::copy">
-<area shape="rect" id="node1" title="Копировать область изображения." alt="" coords="5,31,96,57"/>
-<area shape="rect" id="node2" href="$d3/d42/class_logger.html#ac2b605d549e7b4d89fd229230fe99bb4" title="Записывает сообщение и завершает программу с заданным кодом выхода." alt="" coords="148,5,247,32"/>
-<area shape="rect" id="node4" href="$d3/d42/class_logger.html#a24b519e0f53e73937f93edd2da37ea76" title="Записывает предупреждение в лог." alt="" coords="144,56,251,83"/>
-<area shape="rect" id="node3" href="$d3/d42/class_logger.html#ab6042fdfcbb14026098e0df9d6b32f27" title="Записывает ошибку в лог." alt="" coords="299,5,404,32"/>
-</map>

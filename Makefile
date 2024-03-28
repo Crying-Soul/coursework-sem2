@@ -1,22 +1,18 @@
+CC := g++
+CXXFLAGS := -Wall -Wextra -pedantic -std=c++11 -Wshadow -Wformat=2 -Wconversion -Weffc++ -Wfloat-equal -fstack-protector-strong -fPIE -pie -O2
+SRC_DIR := src
+INCDIR := include
+OBJDIR := obj
+LANGUAGE := -DRU
 
-#! @file   Makefile
-#! @brief  Файл сборки программы
-
-CC=g++
-CXXFLAGS=-Wall -Wextra -pedantic -std=c++11 -Wshadow -Wformat=2 -Wconversion -Weffc++ -Wfloat-equal -fstack-protector-strong -fPIE -pie -O2
-SRC_DIR=src
-INCDIR=include
-OBJDIR=obj
-LANGUAGE=-DRU
-
-SOURCES=$(wildcard $(SRC_DIR)/*.cpp)
-OBJECTS=$(patsubst $(SRC_DIR)/%.cpp, $(OBJDIR)/%.o, $(SOURCES))
-EXECUTABLE=coursework
+SOURCES := $(wildcard $(SRC_DIR)/*.cpp)
+OBJECTS := $(patsubst $(SRC_DIR)/%.cpp, $(OBJDIR)/%.o, $(SOURCES))
+EXECUTABLE := coursework
 
 all: $(EXECUTABLE)
 
 $(EXECUTABLE): $(OBJECTS)
-	$(CC)  $(CXXFLAGS) $(LANGUAGE) $(OBJECTS) -o $@
+	$(CC) $(CXXFLAGS) $(LANGUAGE) $^ -o $@
 
 $(OBJDIR)/%.o: $(SRC_DIR)/%.cpp
 	@mkdir -p $(OBJDIR)
@@ -24,3 +20,5 @@ $(OBJDIR)/%.o: $(SRC_DIR)/%.cpp
 
 clean:
 	$(RM) -r $(OBJDIR) $(EXECUTABLE)
+
+.PHONY: all clean

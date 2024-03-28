@@ -107,4 +107,5 @@ var menudata={children:[
 {text:"r",url:"globals_vars.html#index_r"},
 {text:"s",url:"globals_vars.html#index_s"},
 {text:"t",url:"globals_vars.html#index_t"},
-{text:"u",url:"globals_vars.html#index_u"}]}]}]}]}
+{text:"u",url:"globals_vars.html#index_u"}]},
+{text:"Перечисления",url:"globals_enum.html"}]}]}]}

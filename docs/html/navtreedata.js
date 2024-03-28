@@ -50,7 +50,8 @@ var NAVTREE =
       [ "Список членов всех файлов", "globals.html", [
         [ "Указатель", "globals.html", null ],
         [ "Функции", "globals_func.html", null ],
-        [ "Переменные", "globals_vars.html", null ]
+        [ "Переменные", "globals_vars.html", null ],
+        [ "Перечисления", "globals_enum.html", null ]
       ] ]
     ] ]
   ] ]

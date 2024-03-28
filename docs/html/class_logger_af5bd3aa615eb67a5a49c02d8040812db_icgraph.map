@@ -1,7 +1,0 @@
-<map id="Logger::log" name="Logger::log">
-<area shape="rect" id="node1" title="Записывает сообщение в лог." alt="" coords="455,56,549,83"/>
-<area shape="rect" id="node2" href="$operation__params_8h.html#a1451d6a0f33f9d0a02a4b055e5839e6e" title="Отображение справки о возможных параметрах командной строки." alt="" coords="308,5,407,32"/>
-<area shape="rect" id="node4" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="Главная функция программы" alt="" coords="5,56,60,83"/>
-<area shape="rect" id="node5" href="$class_b_m_p.html#acdebc7da18509fc92374934ad7a99ae2" title="Получить информацию о изображении." alt="" coords="131,107,237,133"/>
-<area shape="rect" id="node3" href="$operation__params_8h.html#a00a944e8a68555a108c478465b5e9018" title="Парсинг командной строки и создание объекта OperationParams." alt="" coords="108,5,260,32"/>
-</map>
