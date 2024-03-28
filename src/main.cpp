@@ -1,17 +1,18 @@
 #include "bmp.h"
 #include "logger.h"
 #include "operation_params.h"
-
+#include "messages.h"
 int main(int argc, char *argv[]) {
   OperationParams params = parseCommandLine(argc, argv);
-  std::string input_file = "imgs/" + params.input_file;
+  const std::string input_file = "imgs/" + params.input_file;
 
-  
+  if (params.input_file == params.output_file) {
+    Logger::exit(1, same_input_output_message);
+  }
 
   BMP bmp(input_file);
   if (!bmp.isValid()) {
-    Logger::error("Invalid bmp file!");
-    return 1;
+    Logger::exit(1, invalid_bmp_message);
   }
 
   if (params.info) {
@@ -19,28 +20,28 @@ int main(int argc, char *argv[]) {
   }
 
   if (params.mirror) {
-    Logger::warn("=Mirror operation requested!=");
+    Logger::warn(mirror_warning);
     bmp.mirror(params.axis, params.left_up, params.right_down);
-    Logger::log("Success!");
+    Logger::log(success_message);
   }
 
   if (params.color_replace) {
-    Logger::warn("=Color replace operation requested!=");
+    Logger::warn(color_replace_warning);
     bmp.colorReplace(params.old_color, params.new_color);
-    Logger::log("Success!");
+    Logger::log(success_message);
   }
 
   if (params.split) {
-    Logger::warn("=Image split operation requested=.");
+    Logger::warn(image_split_warning);
     bmp.split(params.number_x, params.number_y, params.thickness, params.line_color);
-    Logger::log("Success!");
-  }
-  if (params.copy) {
-    Logger::warn("=Image copy operation requested=.");
-    bmp.copy(params.left_up, params.right_down, params.dest_left_up);
-    Logger::log("Success!");
+    Logger::log(success_message);
   }
 
+  if (params.copy) {
+    Logger::warn(image_copy_warning);
+    bmp.copy(params.left_up, params.right_down, params.dest_left_up);
+    Logger::log(success_message);
+  }
 
   bmp.save(params.output_file);
 

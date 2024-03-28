@@ -1,4 +1,5 @@
-*.out
+*.o
 coursework
 .vscode
 out.bmp
+stress_test_out/*

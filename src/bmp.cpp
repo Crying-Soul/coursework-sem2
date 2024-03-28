@@ -1,21 +1,19 @@
 #include "bmp.h"
 #include "logger.h"
-#include <cstring> // Для функции std::strncmp
+#include "messages.h"
+#include <cstring>
 #include <fstream>
 
 BMP::BMP(const std::string &fileName) : header(), pixelData() {
   std::ifstream file(fileName, std::ios::binary);
   if (!file.is_open()) {
-    Logger::error("Failed to open input BMP file: " + fileName);
-    return;
+    Logger::exit(1, open_bmp_error + fileName);
   }
 
   file.read(reinterpret_cast<char *>(&header), sizeof(header));
 
   if (!validateHeader()) {
-    Logger::warn("BMP file header is invalid: " + fileName);
-    file.close();
-    return;
+    Logger::exit(1, invalid_header_error + fileName);
   }
 
   pixelData.resize(header.fileSize - header.dataOffset);
@@ -26,28 +24,28 @@ BMP::BMP(const std::string &fileName) : header(), pixelData() {
 
 bool BMP::validateHeader() const {
   if (std::strncmp(header.signature, "BM", 2) != 0) {
-    Logger::exit(1, "Invalid BMP file signature");
+    Logger::exit(1, invalid_signature_error);
     return false;
   }
 
   if (header.width <= 0 || header.height <= 0) {
-    Logger::exit(1, "Invalid BMP dimensions");
+    Logger::exit(1, invalid_dimensions_error);
     return false;
   }
 
   if (header.bitsPerPixel != 24) {
-    Logger::warn("Invalid BMP bits per pixel, image may be incorrect");
+    Logger::warn(invalid_bpp_warning);
   }
 
   if (header.compression != 0) {
-    Logger::exit(1, "Unsupported BMP compression type");
+    Logger::exit(1, unsupported_compression_error);
     return false;
   }
 
   unsigned int expectedImageSize =
       header.width * header.height * (header.bitsPerPixel / 8);
   if (header.imageSize != expectedImageSize) {
-    Logger::exit(1, "Invalid BMP image size");
+    Logger::exit(1, invalid_image_size_error);
     return false;
   }
 
@@ -60,8 +58,7 @@ void BMP::mirror(const std::string &axis, const Coordinate &left_up,
   int height = right_down.y - left_up.y;
 
   if (axis != "x" && axis != "y") {
-    Logger::warn("Invalid mirror axis specified");
-    return;
+    Logger::exit(1, invalid_mirror_axis_error);
   }
 
   if (axis == "x") {
@@ -90,7 +87,7 @@ void BMP::mirror(const std::string &axis, const Coordinate &left_up,
 void BMP::save(const std::string &fileName) {
   std::ofstream file(fileName, std::ios::binary);
   if (!file.is_open()) {
-    Logger::exit(1, "Failed to create output BMP file: " + fileName);
+    Logger::exit(1, failed_create_output_file + fileName);
     return;
   }
 
@@ -105,8 +102,8 @@ void BMP::save(const std::string &fileName) {
 bool BMP::isValid() const { return !pixelData.empty(); }
 
 RGB BMP::getColor(int x, int y) const {
-  if (x < 0 || x >= header.width || y < 0 || y >= header.height) {
-    Logger::warn("Trying to access color outside image bounds");
+  if ((x < 0 || x >= header.width) || (y < 0 || y >= header.height)) {
+    Logger::warn(access_outside_bounds_warning);
     return RGB();
   }
 
@@ -122,7 +119,7 @@ RGB BMP::getColor(int x, int y) const {
 
 void BMP::setColor(int x, int y, const RGB &newColor) {
   if (x < 0 || x >= header.width || y < 0 || y >= header.height) {
-    Logger::warn("Trying to set color outside image bounds");
+    Logger::warn(set_outside_bounds_warning);
     return;
   }
 
@@ -148,9 +145,10 @@ void BMP::colorReplace(const RGB &old_color, const RGB &new_color) {
 }
 
 void BMP::split(int number_x, int number_y, int thickness, const RGB &color) {
-  if (number_x <= 0 || number_y <= 0 || thickness <= 0) {
-    Logger::warn("Invalid split parameters");
-    return;
+  if ((number_x <= 0 || number_x > header.width) ||
+      (number_y <= 0 || number_y > header.height) ||
+      (thickness <= 0 || thickness > header.width)) {
+    Logger::exit(1, invalid_split_parameters_error);
   }
 
   int gap;
@@ -183,13 +181,12 @@ void BMP::copy(const Coordinate &src_left_up, const Coordinate &src_right_down,
 
   if (src_width <= 0 || src_height <= 0 || dest_width <= 0 ||
       dest_height <= 0) {
-    Logger::warn("Invalid copy region or destination parameters");
+    Logger::exit(1, invalid_copy_region);
     return;
   }
 
   if (src_width > dest_width || src_height > dest_height) {
-    Logger::exit(1, "Copying region exceeds destination image boundaries.");
-    return;
+    Logger::exit(1, copy_exceeds_bounds_error);
   }
 
   int offsetX = 0;

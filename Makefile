@@ -3,6 +3,7 @@ CXXFLAGS=-Wall -Wextra -pedantic -std=c++11 -Wshadow -Wformat=2 -Wconversion -We
 SRC_DIR=src
 INCDIR=include
 OBJDIR=obj
+LANGUAGE=
 
 SOURCES=$(wildcard $(SRC_DIR)/*.cpp)
 OBJECTS=$(patsubst $(SRC_DIR)/%.cpp, $(OBJDIR)/%.o, $(SOURCES))
@@ -11,11 +12,11 @@ EXECUTABLE=coursework
 all: $(EXECUTABLE)
 
 $(EXECUTABLE): $(OBJECTS)
-	$(CC) $(CXXFLAGS) $(OBJECTS) -o $@
+	$(CC)  $(CXXFLAGS) $(LANGUAGE) $(OBJECTS) -o $@
 
 $(OBJDIR)/%.o: $(SRC_DIR)/%.cpp
 	@mkdir -p $(OBJDIR)
-	$(CC) $(CXXFLAGS) -I$(INCDIR) -c $< -o $@
+	$(CC) $(CXXFLAGS) $(LANGUAGE) -I$(INCDIR) -c $< -o $@
 
 clean:
 	$(RM) -r $(OBJDIR) $(EXECUTABLE)
