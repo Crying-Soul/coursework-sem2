@@ -170,33 +170,31 @@ void BMP::split(int number_x, int number_y, int thickness, const RGB &color)
       (number_y <= 0 || number_y > header.height) ||
       (thickness <= 0 || thickness > header.width))
   {
-    Logger::warn(invalid_split_parameters_error);
+    Logger::exit(1, invalid_split_parameters_error);
   }
-  else
-  {
-    int gap;
 
-    for (int i = 1; i < number_y; i++)
+  int gap;
+
+  for (int i = 1; i < number_y; i++)
+  {
+    gap = header.height / number_y;
+    for (int x = 0; x < header.width; x++)
     {
-      gap = header.height / number_y;
-      for (int x = 0; x < header.width; x++)
+      for (int y = 0; y < thickness; y++)
       {
-        for (int y = 0; y < thickness; y++)
-        {
-          setColor(x, i * gap + y, color);
-        }
+        setColor(x, i * gap + y, color);
       }
     }
+  }
 
-    for (int i = 1; i < number_x; i++)
+  for (int i = 1; i < number_x; i++)
+  {
+    gap = header.width / number_x;
+    for (int x = 0; x < thickness; x++)
     {
-      gap = header.width / number_x;
-      for (int x = 0; x < thickness; x++)
+      for (int y = 0; y < header.height; y++)
       {
-        for (int y = 0; y < header.height; y++)
-        {
-          setColor(i * gap + x, y, color);
-        }
+        setColor(i * gap + x, y, color);
       }
     }
   }

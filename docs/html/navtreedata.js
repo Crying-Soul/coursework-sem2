@@ -31,7 +31,7 @@ var NAVTREE =
       [ "Установка", "index.html#autotoc_md3", null ],
       [ "Использование", "index.html#autotoc_md4", null ],
       [ "Пример", "index.html#autotoc_md5", null ],
-      [ "Credits", "index.html#autotoc_md6", [
+      [ "Дополнительно", "index.html#autotoc_md6", [
         [ "Разработчики", "index.html#autotoc_md7", null ],
         [ "Инструменты и библиотеки", "index.html#autotoc_md8", null ]
       ] ]

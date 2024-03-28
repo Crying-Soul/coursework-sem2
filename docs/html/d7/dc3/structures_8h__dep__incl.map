@@ -1,0 +1,8 @@
+<map id="include/structures.h" name="include/structures.h">
+<area shape="rect" id="node1" title="Заголовочный файл, содержащий определения структур и классов." alt="" coords="51,5,202,32"/>
+<area shape="rect" id="node2" href="$d2/dc6/bmp_8h.html" title="Заголовочный файл, содержащий определения структур и классов." alt="" coords="21,155,136,181"/>
+<area shape="rect" id="node5" href="$df/d10/operation__params_8h.html" title="Заголовочный файл, содержащий определения структур и классов." alt="" coords="95,80,297,107"/>
+<area shape="rect" id="node3" href="$de/d0a/bmp_8cpp.html" title="Реализация методов класса BMP для работы с изображениями в формате BMP." alt="" coords="5,229,107,256"/>
+<area shape="rect" id="node4" href="$df/d0a/main_8cpp.html" title="Главный файл программы" alt="" coords="131,229,237,256"/>
+<area shape="rect" id="node6" href="$d8/da4/operation__params_8cpp.html" title="Определяет функции для анализа параметров операций из командной строки." alt="" coords="222,155,413,181"/>
+</map>

@@ -1,0 +1,1693 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<!-- BEGIN opengraph metadata -->
+<meta property="og:title" content="Doxygen Awesome" />
+<meta property="og:image" content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" />
+<meta property="og:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
+<meta property="og:url" content="https://jothepro.github.io/doxygen-awesome-css/" />
+<!-- END opengraph metadata -->
+<!-- BEGIN twitter metadata -->
+<meta name="twitter:image:src" content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" />
+<meta name="twitter:title" content="Doxygen Awesome" />
+<meta name="twitter:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
+<!-- END twitter metadata -->
+<title>Coursework v5.2: Файл include/messages.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<link rel="icon" type="image/svg+xml" href="logo.drawio.svg"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="../../doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="../../doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="../../doxygen-awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../doxygen-awesome-tabs.js"></script>
+<script type="text/javascript" src="../../toggle-alternative-theme.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeParagraphLink.init()
+    DoxygenAwesomeInteractiveToc.init()
+    DoxygenAwesomeTabs.init()
+</script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+<link href="../../doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="../../custom.css" rel="stylesheet" type="text/css"/>
+<link href="../../doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="../../doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="../../custom-alternative.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- https://tholman.com/github-corners/ -->
+<a href="https://github.com/jothepro/doxygen-awesome-css" class="github-corner" title="View source on GitHub" target="_blank" rel="noopener noreferrer">
+    <svg viewBox="0 0 250 250" width="40" height="40" style="position: absolute; top: 0; border: 0; right: 0; z-index: 99;" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="../../logo.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Coursework v5.2
+   </div>
+   <div id="projectbrief">Курсовая работа. Летний семестр. Выполнил Гребнев Егор.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('d5/d48/messages_8h.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#var-members">Переменные</a>  </div>
+  <div class="headertitle">
+<div class="title">Файл messages.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Заголовочный файл, содержащий определения структур и классов.  
+<a href="#details">Подробнее...</a></p>
+<div class="textblock"><div class="dynheader">
+Граф файлов, в которые включается этот файл:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d45/messages_8h__dep__incl.svg" width="592" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="../../d5/d48/messages_8h_source.html">См. исходные тексты.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Переменные</h2></td></tr>
+<tr class="memitem:a663b7b64aeb9a0ca579b14e186ef9d81"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#a663b7b64aeb9a0ca579b14e186ef9d81">invalid_bmp_message</a> [] = &quot;Invalid bmp file!&quot;</td></tr>
+<tr class="memdesc:a663b7b64aeb9a0ca579b14e186ef9d81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Message for invalid <a class="el" href="../../d6/dd1/class_b_m_p.html" title="Класс для работы с изображениями в формате BMP.">BMP</a> file.  <a href="../../d5/d48/messages_8h.html#a663b7b64aeb9a0ca579b14e186ef9d81">Подробнее...</a><br /></td></tr>
+<tr class="separator:a663b7b64aeb9a0ca579b14e186ef9d81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fbf54c9dfafaecf85a1b2bdace130b0"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#a2fbf54c9dfafaecf85a1b2bdace130b0">same_input_output_message</a> [] = &quot;Input file is the same as output file!&quot;</td></tr>
+<tr class="memdesc:a2fbf54c9dfafaecf85a1b2bdace130b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Message when input file is same as output file.  <a href="../../d5/d48/messages_8h.html#a2fbf54c9dfafaecf85a1b2bdace130b0">Подробнее...</a><br /></td></tr>
+<tr class="separator:a2fbf54c9dfafaecf85a1b2bdace130b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64afeabf96cdd9c1bc534846d903bad7"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#a64afeabf96cdd9c1bc534846d903bad7">success_message</a> [] = &quot;Success!&quot;</td></tr>
+<tr class="memdesc:a64afeabf96cdd9c1bc534846d903bad7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Success message.  <a href="../../d5/d48/messages_8h.html#a64afeabf96cdd9c1bc534846d903bad7">Подробнее...</a><br /></td></tr>
+<tr class="separator:a64afeabf96cdd9c1bc534846d903bad7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a483368ca19ec4cd8001f9d956df12ec1"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#a483368ca19ec4cd8001f9d956df12ec1">mirror_warning</a> [] = &quot;=Mirror operation requested!=&quot;</td></tr>
+<tr class="memdesc:a483368ca19ec4cd8001f9d956df12ec1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Warning for requested mirror operation.  <a href="../../d5/d48/messages_8h.html#a483368ca19ec4cd8001f9d956df12ec1">Подробнее...</a><br /></td></tr>
+<tr class="separator:a483368ca19ec4cd8001f9d956df12ec1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a815d1e35b3c0e776a9b3f7bf02b97587"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#a815d1e35b3c0e776a9b3f7bf02b97587">color_replace_warning</a> [] = &quot;=Color replace operation requested!=&quot;</td></tr>
+<tr class="memdesc:a815d1e35b3c0e776a9b3f7bf02b97587"><td class="mdescLeft">&#160;</td><td class="mdescRight">Warning for requested color replace operation.  <a href="../../d5/d48/messages_8h.html#a815d1e35b3c0e776a9b3f7bf02b97587">Подробнее...</a><br /></td></tr>
+<tr class="separator:a815d1e35b3c0e776a9b3f7bf02b97587"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad45d69b12a06b5d1eaa24837b9b8c643"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#ad45d69b12a06b5d1eaa24837b9b8c643">image_split_warning</a> [] = &quot;=Image split operation requested=&quot;</td></tr>
+<tr class="memdesc:ad45d69b12a06b5d1eaa24837b9b8c643"><td class="mdescLeft">&#160;</td><td class="mdescRight">Warning for requested image split operation.  <a href="../../d5/d48/messages_8h.html#ad45d69b12a06b5d1eaa24837b9b8c643">Подробнее...</a><br /></td></tr>
+<tr class="separator:ad45d69b12a06b5d1eaa24837b9b8c643"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a355f172f8e53326effc6a5c3a47ee5b1"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#a355f172f8e53326effc6a5c3a47ee5b1">image_copy_warning</a> [] = &quot;=Image copy operation requested=&quot;</td></tr>
+<tr class="memdesc:a355f172f8e53326effc6a5c3a47ee5b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Warning for requested image copy operation.  <a href="../../d5/d48/messages_8h.html#a355f172f8e53326effc6a5c3a47ee5b1">Подробнее...</a><br /></td></tr>
+<tr class="separator:a355f172f8e53326effc6a5c3a47ee5b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bf3e0d3515b65d1e89142dbfd62f51b"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#a1bf3e0d3515b65d1e89142dbfd62f51b">invalid_color_format_error</a> [] = &quot;Invalid color format&quot;</td></tr>
+<tr class="memdesc:a1bf3e0d3515b65d1e89142dbfd62f51b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error for invalid color format.  <a href="../../d5/d48/messages_8h.html#a1bf3e0d3515b65d1e89142dbfd62f51b">Подробнее...</a><br /></td></tr>
+<tr class="separator:a1bf3e0d3515b65d1e89142dbfd62f51b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae09b12c3f201890dc3f42d292dc676a7"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#ae09b12c3f201890dc3f42d292dc676a7">invalid_color_range_error</a> [] = &quot;Color out of range [0-255] got: &quot;</td></tr>
+<tr class="memdesc:ae09b12c3f201890dc3f42d292dc676a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error when color is out of range [0-255].  <a href="../../d5/d48/messages_8h.html#ae09b12c3f201890dc3f42d292dc676a7">Подробнее...</a><br /></td></tr>
+<tr class="separator:ae09b12c3f201890dc3f42d292dc676a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e41ded6bb0f8cc8915819b780cc104d"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#a7e41ded6bb0f8cc8915819b780cc104d">invalid_coordinate_format_error</a> [] = &quot;Invalid coordinate format&quot;</td></tr>
+<tr class="memdesc:a7e41ded6bb0f8cc8915819b780cc104d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error for invalid coordinate format.  <a href="../../d5/d48/messages_8h.html#a7e41ded6bb0f8cc8915819b780cc104d">Подробнее...</a><br /></td></tr>
+<tr class="separator:a7e41ded6bb0f8cc8915819b780cc104d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c24b485589b782376abdba5f02f0599"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#a5c24b485589b782376abdba5f02f0599">invalid_argument_error</a> [] = &quot;Invalid argument for &quot;</td></tr>
+<tr class="memdesc:a5c24b485589b782376abdba5f02f0599"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error for invalid argument for certain operation.  <a href="../../d5/d48/messages_8h.html#a5c24b485589b782376abdba5f02f0599">Подробнее...</a><br /></td></tr>
+<tr class="separator:a5c24b485589b782376abdba5f02f0599"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7126c59e2b7730756bd7bda452fd41c0"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#a7126c59e2b7730756bd7bda452fd41c0">unexpected_option_warning</a> [] = &quot;Unexpected option: &quot;</td></tr>
+<tr class="memdesc:a7126c59e2b7730756bd7bda452fd41c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Warning for unexpected option.  <a href="../../d5/d48/messages_8h.html#a7126c59e2b7730756bd7bda452fd41c0">Подробнее...</a><br /></td></tr>
+<tr class="separator:a7126c59e2b7730756bd7bda452fd41c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a226f03e8cdedd4fb2c45925697eb228d"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#a226f03e8cdedd4fb2c45925697eb228d">open_bmp_error</a> [] = &quot;Failed to open input <a class="el" href="../../d6/dd1/class_b_m_p.html">BMP</a> file: &quot;</td></tr>
+<tr class="memdesc:a226f03e8cdedd4fb2c45925697eb228d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error when failed to open input <a class="el" href="../../d6/dd1/class_b_m_p.html" title="Класс для работы с изображениями в формате BMP.">BMP</a> file.  <a href="../../d5/d48/messages_8h.html#a226f03e8cdedd4fb2c45925697eb228d">Подробнее...</a><br /></td></tr>
+<tr class="separator:a226f03e8cdedd4fb2c45925697eb228d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16aa3337d50facce19fa6ac2c6315f06"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#a16aa3337d50facce19fa6ac2c6315f06">invalid_header_error</a> [] = &quot;BMP file header is invalid: &quot;</td></tr>
+<tr class="memdesc:a16aa3337d50facce19fa6ac2c6315f06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error when <a class="el" href="../../d6/dd1/class_b_m_p.html" title="Класс для работы с изображениями в формате BMP.">BMP</a> file header is invalid.  <a href="../../d5/d48/messages_8h.html#a16aa3337d50facce19fa6ac2c6315f06">Подробнее...</a><br /></td></tr>
+<tr class="separator:a16aa3337d50facce19fa6ac2c6315f06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac394e1bb9fc1cbd8b0166eb652fc715d"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#ac394e1bb9fc1cbd8b0166eb652fc715d">invalid_signature_error</a> [] = &quot;Invalid <a class="el" href="../../d6/dd1/class_b_m_p.html">BMP</a> file signature&quot;</td></tr>
+<tr class="memdesc:ac394e1bb9fc1cbd8b0166eb652fc715d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error for invalid <a class="el" href="../../d6/dd1/class_b_m_p.html" title="Класс для работы с изображениями в формате BMP.">BMP</a> file signature.  <a href="../../d5/d48/messages_8h.html#ac394e1bb9fc1cbd8b0166eb652fc715d">Подробнее...</a><br /></td></tr>
+<tr class="separator:ac394e1bb9fc1cbd8b0166eb652fc715d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14cbea600ef069ed9853b6644915e1cd"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#a14cbea600ef069ed9853b6644915e1cd">invalid_dimensions_error</a> [] = &quot;Invalid <a class="el" href="../../d6/dd1/class_b_m_p.html">BMP</a> dimensions&quot;</td></tr>
+<tr class="memdesc:a14cbea600ef069ed9853b6644915e1cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error for invalid <a class="el" href="../../d6/dd1/class_b_m_p.html" title="Класс для работы с изображениями в формате BMP.">BMP</a> dimensions.  <a href="../../d5/d48/messages_8h.html#a14cbea600ef069ed9853b6644915e1cd">Подробнее...</a><br /></td></tr>
+<tr class="separator:a14cbea600ef069ed9853b6644915e1cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a821267831977f7c696f6cdb77331b492"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#a821267831977f7c696f6cdb77331b492">invalid_bpp_warning</a> [] = &quot;Invalid <a class="el" href="../../d6/dd1/class_b_m_p.html">BMP</a> bits per pixel, output image may be incorrect&quot;</td></tr>
+<tr class="memdesc:a821267831977f7c696f6cdb77331b492"><td class="mdescLeft">&#160;</td><td class="mdescRight">Warning for invalid <a class="el" href="../../d6/dd1/class_b_m_p.html" title="Класс для работы с изображениями в формате BMP.">BMP</a> bits per pixel.  <a href="../../d5/d48/messages_8h.html#a821267831977f7c696f6cdb77331b492">Подробнее...</a><br /></td></tr>
+<tr class="separator:a821267831977f7c696f6cdb77331b492"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad34ca45414196ab1aa57fb8bbac1a134"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#ad34ca45414196ab1aa57fb8bbac1a134">unsupported_compression_error</a> [] = &quot;Unsupported <a class="el" href="../../d6/dd1/class_b_m_p.html">BMP</a> compression type&quot;</td></tr>
+<tr class="memdesc:ad34ca45414196ab1aa57fb8bbac1a134"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error for unsupported <a class="el" href="../../d6/dd1/class_b_m_p.html" title="Класс для работы с изображениями в формате BMP.">BMP</a> compression type.  <a href="../../d5/d48/messages_8h.html#ad34ca45414196ab1aa57fb8bbac1a134">Подробнее...</a><br /></td></tr>
+<tr class="separator:ad34ca45414196ab1aa57fb8bbac1a134"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b7d726a96d435756a9fb97b13ce4cb1"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#a7b7d726a96d435756a9fb97b13ce4cb1">invalid_image_size_error</a> [] = &quot;Invalid <a class="el" href="../../d6/dd1/class_b_m_p.html">BMP</a> image size, output image may be incorrect&quot;</td></tr>
+<tr class="memdesc:a7b7d726a96d435756a9fb97b13ce4cb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error for invalid <a class="el" href="../../d6/dd1/class_b_m_p.html" title="Класс для работы с изображениями в формате BMP.">BMP</a> image size.  <a href="../../d5/d48/messages_8h.html#a7b7d726a96d435756a9fb97b13ce4cb1">Подробнее...</a><br /></td></tr>
+<tr class="separator:a7b7d726a96d435756a9fb97b13ce4cb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2de61e6aea4f6a6100483124f09685c2"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#a2de61e6aea4f6a6100483124f09685c2">access_outside_bounds_warning</a> [] = &quot;Trying to access color outside image bounds&quot;</td></tr>
+<tr class="memdesc:a2de61e6aea4f6a6100483124f09685c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Warning for trying to access color outside image bounds.  <a href="../../d5/d48/messages_8h.html#a2de61e6aea4f6a6100483124f09685c2">Подробнее...</a><br /></td></tr>
+<tr class="separator:a2de61e6aea4f6a6100483124f09685c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76eaab446bf76eb36d793b4278cea68c"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#a76eaab446bf76eb36d793b4278cea68c">set_outside_bounds_warning</a> [] = &quot;Trying to set color outside image bounds&quot;</td></tr>
+<tr class="memdesc:a76eaab446bf76eb36d793b4278cea68c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Warning for trying to set color outside image bounds.  <a href="../../d5/d48/messages_8h.html#a76eaab446bf76eb36d793b4278cea68c">Подробнее...</a><br /></td></tr>
+<tr class="separator:a76eaab446bf76eb36d793b4278cea68c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77ef77c10448f315ad1d8fd9d6016308"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#a77ef77c10448f315ad1d8fd9d6016308">invalid_mirror_axis_error</a> [] = &quot;Invalid mirror axis specified&quot;</td></tr>
+<tr class="memdesc:a77ef77c10448f315ad1d8fd9d6016308"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error for invalid mirror axis specified.  <a href="../../d5/d48/messages_8h.html#a77ef77c10448f315ad1d8fd9d6016308">Подробнее...</a><br /></td></tr>
+<tr class="separator:a77ef77c10448f315ad1d8fd9d6016308"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63973481e5a220b31aa7eec947c3d4b7"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#a63973481e5a220b31aa7eec947c3d4b7">invalid_split_parameters_error</a> [] = &quot;Invalid split parameters&quot;</td></tr>
+<tr class="memdesc:a63973481e5a220b31aa7eec947c3d4b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error for invalid split parameters.  <a href="../../d5/d48/messages_8h.html#a63973481e5a220b31aa7eec947c3d4b7">Подробнее...</a><br /></td></tr>
+<tr class="separator:a63973481e5a220b31aa7eec947c3d4b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8dbfa2b6b0dd3bc2e695068c72ad4551"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#a8dbfa2b6b0dd3bc2e695068c72ad4551">copy_exceeds_bounds_error</a> [] = &quot;Copying region exceeds destination image boundaries.&quot;</td></tr>
+<tr class="memdesc:a8dbfa2b6b0dd3bc2e695068c72ad4551"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error when copying region exceeds destination image boundaries.  <a href="../../d5/d48/messages_8h.html#a8dbfa2b6b0dd3bc2e695068c72ad4551">Подробнее...</a><br /></td></tr>
+<tr class="separator:a8dbfa2b6b0dd3bc2e695068c72ad4551"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6e3bb55b8b2f1c324c2f8a4267296b8"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#ac6e3bb55b8b2f1c324c2f8a4267296b8">failed_create_output_file</a> [] = &quot;Failed to create output <a class="el" href="../../d6/dd1/class_b_m_p.html">BMP</a> file: &quot;</td></tr>
+<tr class="memdesc:ac6e3bb55b8b2f1c324c2f8a4267296b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error when failed to create output <a class="el" href="../../d6/dd1/class_b_m_p.html" title="Класс для работы с изображениями в формате BMP.">BMP</a> file.  <a href="../../d5/d48/messages_8h.html#ac6e3bb55b8b2f1c324c2f8a4267296b8">Подробнее...</a><br /></td></tr>
+<tr class="separator:ac6e3bb55b8b2f1c324c2f8a4267296b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1705b425e874113bc3845f9c27cdcf9"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#af1705b425e874113bc3845f9c27cdcf9">invalid_copy_region</a> [] = &quot;Invalid copy region or destination parameters&quot;</td></tr>
+<tr class="memdesc:af1705b425e874113bc3845f9c27cdcf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error for invalid copy region or destination parameters.  <a href="../../d5/d48/messages_8h.html#af1705b425e874113bc3845f9c27cdcf9">Подробнее...</a><br /></td></tr>
+<tr class="separator:af1705b425e874113bc3845f9c27cdcf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a161964c485453a6e6482f18a5eeb325d"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#a161964c485453a6e6482f18a5eeb325d">help_usage_description</a> [] = &quot;Usage: program_name [options] filename&quot;</td></tr>
+<tr class="memdesc:a161964c485453a6e6482f18a5eeb325d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Usage description of the program.  <a href="../../d5/d48/messages_8h.html#a161964c485453a6e6482f18a5eeb325d">Подробнее...</a><br /></td></tr>
+<tr class="separator:a161964c485453a6e6482f18a5eeb325d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3945b5b6aaf11b7723c7beedede06076"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#a3945b5b6aaf11b7723c7beedede06076">help_usage_start</a> [] = &quot;Options: &quot;</td></tr>
+<tr class="memdesc:a3945b5b6aaf11b7723c7beedede06076"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start of the description of options.  <a href="../../d5/d48/messages_8h.html#a3945b5b6aaf11b7723c7beedede06076">Подробнее...</a><br /></td></tr>
+<tr class="separator:a3945b5b6aaf11b7723c7beedede06076"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8963c5fa84b954d125b58eb678f84cd"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#ad8963c5fa84b954d125b58eb678f84cd">mirror_option_description</a> [] = &quot; --mirror Mirror operation&quot;</td></tr>
+<tr class="memdesc:ad8963c5fa84b954d125b58eb678f84cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Description of &ndash;mirror option.  <a href="../../d5/d48/messages_8h.html#ad8963c5fa84b954d125b58eb678f84cd">Подробнее...</a><br /></td></tr>
+<tr class="separator:ad8963c5fa84b954d125b58eb678f84cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a633e4265bd8e6ed385395f75b78202eb"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#a633e4265bd8e6ed385395f75b78202eb">axis_option_description</a> [] = &quot; --axis &lt;value&gt; Axis of operation&quot;</td></tr>
+<tr class="memdesc:a633e4265bd8e6ed385395f75b78202eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Description of &ndash;axis option.  <a href="../../d5/d48/messages_8h.html#a633e4265bd8e6ed385395f75b78202eb">Подробнее...</a><br /></td></tr>
+<tr class="separator:a633e4265bd8e6ed385395f75b78202eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9f308ce0253ab5fe75a66b1a2b30350"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#af9f308ce0253ab5fe75a66b1a2b30350">left_up_option_description</a> [] = &quot; --left_up &lt;x.y&gt; Coordinates of left-up corner&quot;</td></tr>
+<tr class="memdesc:af9f308ce0253ab5fe75a66b1a2b30350"><td class="mdescLeft">&#160;</td><td class="mdescRight">Description of &ndash;left_up option.  <a href="../../d5/d48/messages_8h.html#af9f308ce0253ab5fe75a66b1a2b30350">Подробнее...</a><br /></td></tr>
+<tr class="separator:af9f308ce0253ab5fe75a66b1a2b30350"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bc76c548bd0bce58a94dde4f6e9933c"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#a8bc76c548bd0bce58a94dde4f6e9933c">right_down_option_description</a> [] = &quot; --right_down &lt;x.y&gt; Coordinates of right-down corner&quot;</td></tr>
+<tr class="memdesc:a8bc76c548bd0bce58a94dde4f6e9933c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Description of &ndash;right_down option.  <a href="../../d5/d48/messages_8h.html#a8bc76c548bd0bce58a94dde4f6e9933c">Подробнее...</a><br /></td></tr>
+<tr class="separator:a8bc76c548bd0bce58a94dde4f6e9933c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e37209f60570de2719fb2abc5e71466"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#a4e37209f60570de2719fb2abc5e71466">dest_left_up_option_description</a> [] = &quot; --dest_left_up &lt;x.y&gt; Coordinates of destination left-up corner&quot;</td></tr>
+<tr class="memdesc:a4e37209f60570de2719fb2abc5e71466"><td class="mdescLeft">&#160;</td><td class="mdescRight">Description of &ndash;dest_left_up option.  <a href="../../d5/d48/messages_8h.html#a4e37209f60570de2719fb2abc5e71466">Подробнее...</a><br /></td></tr>
+<tr class="separator:a4e37209f60570de2719fb2abc5e71466"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9321c878c6b3f48bfc34e6a960c9709"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#ae9321c878c6b3f48bfc34e6a960c9709">old_color_option_description</a> [] = &quot; --old_color &lt;r.g.b&gt; Old color to replace&quot;</td></tr>
+<tr class="memdesc:ae9321c878c6b3f48bfc34e6a960c9709"><td class="mdescLeft">&#160;</td><td class="mdescRight">Description of &ndash;old_color option.  <a href="../../d5/d48/messages_8h.html#ae9321c878c6b3f48bfc34e6a960c9709">Подробнее...</a><br /></td></tr>
+<tr class="separator:ae9321c878c6b3f48bfc34e6a960c9709"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7057e6fff98cb39c4973b64500d391a"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#ae7057e6fff98cb39c4973b64500d391a">new_color_option_description</a> [] = &quot; --new_color &lt;r.g.b&gt; New color to replace with&quot;</td></tr>
+<tr class="memdesc:ae7057e6fff98cb39c4973b64500d391a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Description of &ndash;new_color option.  <a href="../../d5/d48/messages_8h.html#ae7057e6fff98cb39c4973b64500d391a">Подробнее...</a><br /></td></tr>
+<tr class="separator:ae7057e6fff98cb39c4973b64500d391a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a012b93fcf3db81782015006cfb5f2959"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#a012b93fcf3db81782015006cfb5f2959">color_option_description</a> [] = &quot; --color &lt;r.g.b&gt; Color of line&quot;</td></tr>
+<tr class="memdesc:a012b93fcf3db81782015006cfb5f2959"><td class="mdescLeft">&#160;</td><td class="mdescRight">Description of &ndash;color option.  <a href="../../d5/d48/messages_8h.html#a012b93fcf3db81782015006cfb5f2959">Подробнее...</a><br /></td></tr>
+<tr class="separator:a012b93fcf3db81782015006cfb5f2959"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad13537461be79497ac2019db8cca2530"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#ad13537461be79497ac2019db8cca2530">copy_option_description</a> [] = &quot; --copy Copy operation&quot;</td></tr>
+<tr class="memdesc:ad13537461be79497ac2019db8cca2530"><td class="mdescLeft">&#160;</td><td class="mdescRight">Description of &ndash;copy option.  <a href="../../d5/d48/messages_8h.html#ad13537461be79497ac2019db8cca2530">Подробнее...</a><br /></td></tr>
+<tr class="separator:ad13537461be79497ac2019db8cca2530"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ad482e7fac9d8e5405ab579bb9b7ed1"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#a9ad482e7fac9d8e5405ab579bb9b7ed1">color_replace_option_description</a> [] = &quot; --color_replace Color replace operation&quot;</td></tr>
+<tr class="memdesc:a9ad482e7fac9d8e5405ab579bb9b7ed1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Description of &ndash;color_replace option.  <a href="../../d5/d48/messages_8h.html#a9ad482e7fac9d8e5405ab579bb9b7ed1">Подробнее...</a><br /></td></tr>
+<tr class="separator:a9ad482e7fac9d8e5405ab579bb9b7ed1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a2764e7bbcf0023d6ba3af35d48b215"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#a0a2764e7bbcf0023d6ba3af35d48b215">split_option_description</a> [] = &quot; --split Split operation&quot;</td></tr>
+<tr class="memdesc:a0a2764e7bbcf0023d6ba3af35d48b215"><td class="mdescLeft">&#160;</td><td class="mdescRight">Description of &ndash;split option.  <a href="../../d5/d48/messages_8h.html#a0a2764e7bbcf0023d6ba3af35d48b215">Подробнее...</a><br /></td></tr>
+<tr class="separator:a0a2764e7bbcf0023d6ba3af35d48b215"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab37018f1df3260a0008aef157db3d3df"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#ab37018f1df3260a0008aef157db3d3df">number_x_option_description</a> [] = &quot; --number_x &lt;value&gt; Number of elements along x-axis&quot;</td></tr>
+<tr class="memdesc:ab37018f1df3260a0008aef157db3d3df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Description of &ndash;number_x option.  <a href="../../d5/d48/messages_8h.html#ab37018f1df3260a0008aef157db3d3df">Подробнее...</a><br /></td></tr>
+<tr class="separator:ab37018f1df3260a0008aef157db3d3df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0deddfeaad3ff08ea8582615cd17af16"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#a0deddfeaad3ff08ea8582615cd17af16">number_y_option_description</a> [] = &quot; --number_y &lt;value&gt; Number of elements along y-axis&quot;</td></tr>
+<tr class="memdesc:a0deddfeaad3ff08ea8582615cd17af16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Description of &ndash;number_y option.  <a href="../../d5/d48/messages_8h.html#a0deddfeaad3ff08ea8582615cd17af16">Подробнее...</a><br /></td></tr>
+<tr class="separator:a0deddfeaad3ff08ea8582615cd17af16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96fb56c35cc228f76944ed687bd1479b"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#a96fb56c35cc228f76944ed687bd1479b">thickness_option_description</a> [] = &quot; --thickness &lt;value&gt; Thickness of operation&quot;</td></tr>
+<tr class="memdesc:a96fb56c35cc228f76944ed687bd1479b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Description of &ndash;thickness option.  <a href="../../d5/d48/messages_8h.html#a96fb56c35cc228f76944ed687bd1479b">Подробнее...</a><br /></td></tr>
+<tr class="separator:a96fb56c35cc228f76944ed687bd1479b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad31e8f23b837d32d748693cda61e0f31"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#ad31e8f23b837d32d748693cda61e0f31">output_option_description</a> [] = &quot; -o, --output &lt;file&gt; Output file&quot;</td></tr>
+<tr class="memdesc:ad31e8f23b837d32d748693cda61e0f31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Description of &ndash;output option.  <a href="../../d5/d48/messages_8h.html#ad31e8f23b837d32d748693cda61e0f31">Подробнее...</a><br /></td></tr>
+<tr class="separator:ad31e8f23b837d32d748693cda61e0f31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87a388f0155e9ae2534dec11e197da42"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#a87a388f0155e9ae2534dec11e197da42">input_option_description</a> [] = &quot; -i, --input &lt;file&gt; Input file&quot;</td></tr>
+<tr class="memdesc:a87a388f0155e9ae2534dec11e197da42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Description of &ndash;input option.  <a href="../../d5/d48/messages_8h.html#a87a388f0155e9ae2534dec11e197da42">Подробнее...</a><br /></td></tr>
+<tr class="separator:a87a388f0155e9ae2534dec11e197da42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1e2e8785b8ef82d661f03d4c88e778e"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#ac1e2e8785b8ef82d661f03d4c88e778e">help_option_description</a> [] = &quot; -h, --help Display this information&quot;</td></tr>
+<tr class="memdesc:ac1e2e8785b8ef82d661f03d4c88e778e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Description of &ndash;help option.  <a href="../../d5/d48/messages_8h.html#ac1e2e8785b8ef82d661f03d4c88e778e">Подробнее...</a><br /></td></tr>
+<tr class="separator:ac1e2e8785b8ef82d661f03d4c88e778e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c294d8a7e8dcfb704c08bdb7c0f304c"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#a5c294d8a7e8dcfb704c08bdb7c0f304c">signature_message</a> [] = &quot;Signature: &quot;</td></tr>
+<tr class="memdesc:a5c294d8a7e8dcfb704c08bdb7c0f304c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signature of the file message.  <a href="../../d5/d48/messages_8h.html#a5c294d8a7e8dcfb704c08bdb7c0f304c">Подробнее...</a><br /></td></tr>
+<tr class="separator:a5c294d8a7e8dcfb704c08bdb7c0f304c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe062d26e79b6a6f5709b5f4de96b204"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#abe062d26e79b6a6f5709b5f4de96b204">file_size_message</a> [] = &quot;File size: &quot;</td></tr>
+<tr class="memdesc:abe062d26e79b6a6f5709b5f4de96b204"><td class="mdescLeft">&#160;</td><td class="mdescRight">File size message.  <a href="../../d5/d48/messages_8h.html#abe062d26e79b6a6f5709b5f4de96b204">Подробнее...</a><br /></td></tr>
+<tr class="separator:abe062d26e79b6a6f5709b5f4de96b204"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adba7e1fb98f9e0d2151a24bac9019217"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#adba7e1fb98f9e0d2151a24bac9019217">data_offset_message</a> [] = &quot;Data offset: &quot;</td></tr>
+<tr class="memdesc:adba7e1fb98f9e0d2151a24bac9019217"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data offset message.  <a href="../../d5/d48/messages_8h.html#adba7e1fb98f9e0d2151a24bac9019217">Подробнее...</a><br /></td></tr>
+<tr class="separator:adba7e1fb98f9e0d2151a24bac9019217"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac15e07a70437f412919d4770fd1ff3bb"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#ac15e07a70437f412919d4770fd1ff3bb">header_size_message</a> [] = &quot;Header size: &quot;</td></tr>
+<tr class="memdesc:ac15e07a70437f412919d4770fd1ff3bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Header size message.  <a href="../../d5/d48/messages_8h.html#ac15e07a70437f412919d4770fd1ff3bb">Подробнее...</a><br /></td></tr>
+<tr class="separator:ac15e07a70437f412919d4770fd1ff3bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a476fd79eb182467812d9b205c41e5252"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#a476fd79eb182467812d9b205c41e5252">image_dimensions_message</a> [] = &quot;Image dimensions: &quot;</td></tr>
+<tr class="memdesc:a476fd79eb182467812d9b205c41e5252"><td class="mdescLeft">&#160;</td><td class="mdescRight">Image dimensions message.  <a href="../../d5/d48/messages_8h.html#a476fd79eb182467812d9b205c41e5252">Подробнее...</a><br /></td></tr>
+<tr class="separator:a476fd79eb182467812d9b205c41e5252"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a179d5157dbfe2e3718b61be33cdf7b0f"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#a179d5157dbfe2e3718b61be33cdf7b0f">bits_per_pixel_message</a> [] = &quot;Bits per pixel: &quot;</td></tr>
+<tr class="memdesc:a179d5157dbfe2e3718b61be33cdf7b0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bits per pixel message.  <a href="../../d5/d48/messages_8h.html#a179d5157dbfe2e3718b61be33cdf7b0f">Подробнее...</a><br /></td></tr>
+<tr class="separator:a179d5157dbfe2e3718b61be33cdf7b0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a268b3168eddfa80e2495b6ae3eb9f33c"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#a268b3168eddfa80e2495b6ae3eb9f33c">compression_message</a> [] = &quot;Compression: &quot;</td></tr>
+<tr class="memdesc:a268b3168eddfa80e2495b6ae3eb9f33c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compression message.  <a href="../../d5/d48/messages_8h.html#a268b3168eddfa80e2495b6ae3eb9f33c">Подробнее...</a><br /></td></tr>
+<tr class="separator:a268b3168eddfa80e2495b6ae3eb9f33c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a257b8c1f66e879a6bd27c2ad2a77cbc1"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#a257b8c1f66e879a6bd27c2ad2a77cbc1">image_size_message</a> [] = &quot;Image size: &quot;</td></tr>
+<tr class="memdesc:a257b8c1f66e879a6bd27c2ad2a77cbc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Image size message.  <a href="../../d5/d48/messages_8h.html#a257b8c1f66e879a6bd27c2ad2a77cbc1">Подробнее...</a><br /></td></tr>
+<tr class="separator:a257b8c1f66e879a6bd27c2ad2a77cbc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8887f3f8b6b7ed5e1b99d2148a59304"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#af8887f3f8b6b7ed5e1b99d2148a59304">pixels_per_meter_x_message</a> [] = &quot;Pixels per meter (X axis): &quot;</td></tr>
+<tr class="memdesc:af8887f3f8b6b7ed5e1b99d2148a59304"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pixels per meter message for X axis.  <a href="../../d5/d48/messages_8h.html#af8887f3f8b6b7ed5e1b99d2148a59304">Подробнее...</a><br /></td></tr>
+<tr class="separator:af8887f3f8b6b7ed5e1b99d2148a59304"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12606d0f2bfc4498736997174f1dd23a"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#a12606d0f2bfc4498736997174f1dd23a">pixels_per_meter_y_message</a> [] = &quot;Pixels per meter (Y axis): &quot;</td></tr>
+<tr class="memdesc:a12606d0f2bfc4498736997174f1dd23a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pixels per meter message for Y axis.  <a href="../../d5/d48/messages_8h.html#a12606d0f2bfc4498736997174f1dd23a">Подробнее...</a><br /></td></tr>
+<tr class="separator:a12606d0f2bfc4498736997174f1dd23a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f6d5ce329003b0e3836bf0d2aefa314"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#a9f6d5ce329003b0e3836bf0d2aefa314">colors_used_message</a> [] = &quot;Colors used: &quot;</td></tr>
+<tr class="memdesc:a9f6d5ce329003b0e3836bf0d2aefa314"><td class="mdescLeft">&#160;</td><td class="mdescRight">Colors used message.  <a href="../../d5/d48/messages_8h.html#a9f6d5ce329003b0e3836bf0d2aefa314">Подробнее...</a><br /></td></tr>
+<tr class="separator:a9f6d5ce329003b0e3836bf0d2aefa314"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a433f2491271ff76987dca43299ff6436"><td class="memItemLeft" align="right" valign="top">constexpr char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d48/messages_8h.html#a433f2491271ff76987dca43299ff6436">important_colors_message</a> [] = &quot;Important colors: &quot;</td></tr>
+<tr class="memdesc:a433f2491271ff76987dca43299ff6436"><td class="mdescLeft">&#160;</td><td class="mdescRight">Important colors message.  <a href="../../d5/d48/messages_8h.html#a433f2491271ff76987dca43299ff6436">Подробнее...</a><br /></td></tr>
+<tr class="separator:a433f2491271ff76987dca43299ff6436"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Заголовочный файл, содержащий определения структур и классов. </p>
+</div><h2 class="groupheader">Переменные</h2>
+<a id="a2de61e6aea4f6a6100483124f09685c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2de61e6aea4f6a6100483124f09685c2">&#9670;&nbsp;</a></span>access_outside_bounds_warning</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char access_outside_bounds_warning[] = &quot;Trying to access color outside image bounds&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Warning for trying to access color outside image bounds. </p>
+
+</div>
+</div>
+<a id="a633e4265bd8e6ed385395f75b78202eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a633e4265bd8e6ed385395f75b78202eb">&#9670;&nbsp;</a></span>axis_option_description</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char axis_option_description[] = &quot; --axis &lt;value&gt; Axis of operation&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Description of &ndash;axis option. </p>
+
+</div>
+</div>
+<a id="a179d5157dbfe2e3718b61be33cdf7b0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a179d5157dbfe2e3718b61be33cdf7b0f">&#9670;&nbsp;</a></span>bits_per_pixel_message</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char bits_per_pixel_message[] = &quot;Bits per pixel: &quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Bits per pixel message. </p>
+
+</div>
+</div>
+<a id="a012b93fcf3db81782015006cfb5f2959"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a012b93fcf3db81782015006cfb5f2959">&#9670;&nbsp;</a></span>color_option_description</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char color_option_description[] = &quot; --color &lt;r.g.b&gt; Color of line&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Description of &ndash;color option. </p>
+
+</div>
+</div>
+<a id="a9ad482e7fac9d8e5405ab579bb9b7ed1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ad482e7fac9d8e5405ab579bb9b7ed1">&#9670;&nbsp;</a></span>color_replace_option_description</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char color_replace_option_description[] = &quot; --color_replace Color replace operation&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Description of &ndash;color_replace option. </p>
+
+</div>
+</div>
+<a id="a815d1e35b3c0e776a9b3f7bf02b97587"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a815d1e35b3c0e776a9b3f7bf02b97587">&#9670;&nbsp;</a></span>color_replace_warning</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char color_replace_warning[] = &quot;=Color replace operation requested!=&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Warning for requested color replace operation. </p>
+
+</div>
+</div>
+<a id="a9f6d5ce329003b0e3836bf0d2aefa314"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f6d5ce329003b0e3836bf0d2aefa314">&#9670;&nbsp;</a></span>colors_used_message</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char colors_used_message[] = &quot;Colors used: &quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Colors used message. </p>
+
+</div>
+</div>
+<a id="a268b3168eddfa80e2495b6ae3eb9f33c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a268b3168eddfa80e2495b6ae3eb9f33c">&#9670;&nbsp;</a></span>compression_message</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char compression_message[] = &quot;Compression: &quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Compression message. </p>
+
+</div>
+</div>
+<a id="a8dbfa2b6b0dd3bc2e695068c72ad4551"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8dbfa2b6b0dd3bc2e695068c72ad4551">&#9670;&nbsp;</a></span>copy_exceeds_bounds_error</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char copy_exceeds_bounds_error[] = &quot;Copying region exceeds destination image boundaries.&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Error when copying region exceeds destination image boundaries. </p>
+
+</div>
+</div>
+<a id="ad13537461be79497ac2019db8cca2530"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad13537461be79497ac2019db8cca2530">&#9670;&nbsp;</a></span>copy_option_description</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char copy_option_description[] = &quot; --copy Copy operation&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Description of &ndash;copy option. </p>
+
+</div>
+</div>
+<a id="adba7e1fb98f9e0d2151a24bac9019217"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adba7e1fb98f9e0d2151a24bac9019217">&#9670;&nbsp;</a></span>data_offset_message</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char data_offset_message[] = &quot;Data offset: &quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Data offset message. </p>
+
+</div>
+</div>
+<a id="a4e37209f60570de2719fb2abc5e71466"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e37209f60570de2719fb2abc5e71466">&#9670;&nbsp;</a></span>dest_left_up_option_description</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char dest_left_up_option_description[] = &quot; --dest_left_up &lt;x.y&gt; Coordinates of destination left-up corner&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Description of &ndash;dest_left_up option. </p>
+
+</div>
+</div>
+<a id="ac6e3bb55b8b2f1c324c2f8a4267296b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6e3bb55b8b2f1c324c2f8a4267296b8">&#9670;&nbsp;</a></span>failed_create_output_file</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char failed_create_output_file[] = &quot;Failed to create output <a class="el" href="../../d6/dd1/class_b_m_p.html">BMP</a> file: &quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Error when failed to create output <a class="el" href="../../d6/dd1/class_b_m_p.html" title="Класс для работы с изображениями в формате BMP.">BMP</a> file. </p>
+
+</div>
+</div>
+<a id="abe062d26e79b6a6f5709b5f4de96b204"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe062d26e79b6a6f5709b5f4de96b204">&#9670;&nbsp;</a></span>file_size_message</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char file_size_message[] = &quot;File size: &quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>File size message. </p>
+
+</div>
+</div>
+<a id="ac15e07a70437f412919d4770fd1ff3bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac15e07a70437f412919d4770fd1ff3bb">&#9670;&nbsp;</a></span>header_size_message</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char header_size_message[] = &quot;Header size: &quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Header size message. </p>
+
+</div>
+</div>
+<a id="ac1e2e8785b8ef82d661f03d4c88e778e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1e2e8785b8ef82d661f03d4c88e778e">&#9670;&nbsp;</a></span>help_option_description</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char help_option_description[] = &quot; -h, --help Display this information&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Description of &ndash;help option. </p>
+
+</div>
+</div>
+<a id="a161964c485453a6e6482f18a5eeb325d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a161964c485453a6e6482f18a5eeb325d">&#9670;&nbsp;</a></span>help_usage_description</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char help_usage_description[] = &quot;Usage: program_name [options] filename&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Usage description of the program. </p>
+
+</div>
+</div>
+<a id="a3945b5b6aaf11b7723c7beedede06076"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3945b5b6aaf11b7723c7beedede06076">&#9670;&nbsp;</a></span>help_usage_start</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char help_usage_start[] = &quot;Options: &quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Start of the description of options. </p>
+
+</div>
+</div>
+<a id="a355f172f8e53326effc6a5c3a47ee5b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a355f172f8e53326effc6a5c3a47ee5b1">&#9670;&nbsp;</a></span>image_copy_warning</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char image_copy_warning[] = &quot;=Image copy operation requested=&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Warning for requested image copy operation. </p>
+
+</div>
+</div>
+<a id="a476fd79eb182467812d9b205c41e5252"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a476fd79eb182467812d9b205c41e5252">&#9670;&nbsp;</a></span>image_dimensions_message</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char image_dimensions_message[] = &quot;Image dimensions: &quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Image dimensions message. </p>
+
+</div>
+</div>
+<a id="a257b8c1f66e879a6bd27c2ad2a77cbc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a257b8c1f66e879a6bd27c2ad2a77cbc1">&#9670;&nbsp;</a></span>image_size_message</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char image_size_message[] = &quot;Image size: &quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Image size message. </p>
+
+</div>
+</div>
+<a id="ad45d69b12a06b5d1eaa24837b9b8c643"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad45d69b12a06b5d1eaa24837b9b8c643">&#9670;&nbsp;</a></span>image_split_warning</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char image_split_warning[] = &quot;=Image split operation requested=&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Warning for requested image split operation. </p>
+
+</div>
+</div>
+<a id="a433f2491271ff76987dca43299ff6436"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a433f2491271ff76987dca43299ff6436">&#9670;&nbsp;</a></span>important_colors_message</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char important_colors_message[] = &quot;Important colors: &quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Important colors message. </p>
+
+</div>
+</div>
+<a id="a87a388f0155e9ae2534dec11e197da42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87a388f0155e9ae2534dec11e197da42">&#9670;&nbsp;</a></span>input_option_description</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char input_option_description[] = &quot; -i, --input &lt;file&gt; Input file&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Description of &ndash;input option. </p>
+
+</div>
+</div>
+<a id="a5c24b485589b782376abdba5f02f0599"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c24b485589b782376abdba5f02f0599">&#9670;&nbsp;</a></span>invalid_argument_error</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char invalid_argument_error[] = &quot;Invalid argument for &quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Error for invalid argument for certain operation. </p>
+
+</div>
+</div>
+<a id="a663b7b64aeb9a0ca579b14e186ef9d81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a663b7b64aeb9a0ca579b14e186ef9d81">&#9670;&nbsp;</a></span>invalid_bmp_message</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char invalid_bmp_message[] = &quot;Invalid bmp file!&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Message for invalid <a class="el" href="../../d6/dd1/class_b_m_p.html" title="Класс для работы с изображениями в формате BMP.">BMP</a> file. </p>
+
+</div>
+</div>
+<a id="a821267831977f7c696f6cdb77331b492"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a821267831977f7c696f6cdb77331b492">&#9670;&nbsp;</a></span>invalid_bpp_warning</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char invalid_bpp_warning[] = &quot;Invalid <a class="el" href="../../d6/dd1/class_b_m_p.html">BMP</a> bits per pixel, output image may be incorrect&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Warning for invalid <a class="el" href="../../d6/dd1/class_b_m_p.html" title="Класс для работы с изображениями в формате BMP.">BMP</a> bits per pixel. </p>
+
+</div>
+</div>
+<a id="a1bf3e0d3515b65d1e89142dbfd62f51b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1bf3e0d3515b65d1e89142dbfd62f51b">&#9670;&nbsp;</a></span>invalid_color_format_error</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char invalid_color_format_error[] = &quot;Invalid color format&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Error for invalid color format. </p>
+
+</div>
+</div>
+<a id="ae09b12c3f201890dc3f42d292dc676a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae09b12c3f201890dc3f42d292dc676a7">&#9670;&nbsp;</a></span>invalid_color_range_error</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char invalid_color_range_error[] = &quot;Color out of range [0-255] got: &quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Error when color is out of range [0-255]. </p>
+
+</div>
+</div>
+<a id="a7e41ded6bb0f8cc8915819b780cc104d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e41ded6bb0f8cc8915819b780cc104d">&#9670;&nbsp;</a></span>invalid_coordinate_format_error</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char invalid_coordinate_format_error[] = &quot;Invalid coordinate format&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Error for invalid coordinate format. </p>
+
+</div>
+</div>
+<a id="af1705b425e874113bc3845f9c27cdcf9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1705b425e874113bc3845f9c27cdcf9">&#9670;&nbsp;</a></span>invalid_copy_region</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char invalid_copy_region[] = &quot;Invalid copy region or destination parameters&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Error for invalid copy region or destination parameters. </p>
+
+</div>
+</div>
+<a id="a14cbea600ef069ed9853b6644915e1cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14cbea600ef069ed9853b6644915e1cd">&#9670;&nbsp;</a></span>invalid_dimensions_error</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char invalid_dimensions_error[] = &quot;Invalid <a class="el" href="../../d6/dd1/class_b_m_p.html">BMP</a> dimensions&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Error for invalid <a class="el" href="../../d6/dd1/class_b_m_p.html" title="Класс для работы с изображениями в формате BMP.">BMP</a> dimensions. </p>
+
+</div>
+</div>
+<a id="a16aa3337d50facce19fa6ac2c6315f06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16aa3337d50facce19fa6ac2c6315f06">&#9670;&nbsp;</a></span>invalid_header_error</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char invalid_header_error[] = &quot;BMP file header is invalid: &quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Error when <a class="el" href="../../d6/dd1/class_b_m_p.html" title="Класс для работы с изображениями в формате BMP.">BMP</a> file header is invalid. </p>
+
+</div>
+</div>
+<a id="a7b7d726a96d435756a9fb97b13ce4cb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b7d726a96d435756a9fb97b13ce4cb1">&#9670;&nbsp;</a></span>invalid_image_size_error</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char invalid_image_size_error[] = &quot;Invalid <a class="el" href="../../d6/dd1/class_b_m_p.html">BMP</a> image size, output image may be incorrect&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Error for invalid <a class="el" href="../../d6/dd1/class_b_m_p.html" title="Класс для работы с изображениями в формате BMP.">BMP</a> image size. </p>
+
+</div>
+</div>
+<a id="a77ef77c10448f315ad1d8fd9d6016308"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77ef77c10448f315ad1d8fd9d6016308">&#9670;&nbsp;</a></span>invalid_mirror_axis_error</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char invalid_mirror_axis_error[] = &quot;Invalid mirror axis specified&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Error for invalid mirror axis specified. </p>
+
+</div>
+</div>
+<a id="ac394e1bb9fc1cbd8b0166eb652fc715d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac394e1bb9fc1cbd8b0166eb652fc715d">&#9670;&nbsp;</a></span>invalid_signature_error</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char invalid_signature_error[] = &quot;Invalid <a class="el" href="../../d6/dd1/class_b_m_p.html">BMP</a> file signature&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Error for invalid <a class="el" href="../../d6/dd1/class_b_m_p.html" title="Класс для работы с изображениями в формате BMP.">BMP</a> file signature. </p>
+
+</div>
+</div>
+<a id="a63973481e5a220b31aa7eec947c3d4b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63973481e5a220b31aa7eec947c3d4b7">&#9670;&nbsp;</a></span>invalid_split_parameters_error</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char invalid_split_parameters_error[] = &quot;Invalid split parameters&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Error for invalid split parameters. </p>
+
+</div>
+</div>
+<a id="af9f308ce0253ab5fe75a66b1a2b30350"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9f308ce0253ab5fe75a66b1a2b30350">&#9670;&nbsp;</a></span>left_up_option_description</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char left_up_option_description[] = &quot; --left_up &lt;x.y&gt; Coordinates of left-up corner&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Description of &ndash;left_up option. </p>
+
+</div>
+</div>
+<a id="ad8963c5fa84b954d125b58eb678f84cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8963c5fa84b954d125b58eb678f84cd">&#9670;&nbsp;</a></span>mirror_option_description</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char mirror_option_description[] = &quot; --mirror Mirror operation&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Description of &ndash;mirror option. </p>
+
+</div>
+</div>
+<a id="a483368ca19ec4cd8001f9d956df12ec1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a483368ca19ec4cd8001f9d956df12ec1">&#9670;&nbsp;</a></span>mirror_warning</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char mirror_warning[] = &quot;=Mirror operation requested!=&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Warning for requested mirror operation. </p>
+
+</div>
+</div>
+<a id="ae7057e6fff98cb39c4973b64500d391a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7057e6fff98cb39c4973b64500d391a">&#9670;&nbsp;</a></span>new_color_option_description</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char new_color_option_description[] = &quot; --new_color &lt;r.g.b&gt; New color to replace with&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Description of &ndash;new_color option. </p>
+
+</div>
+</div>
+<a id="ab37018f1df3260a0008aef157db3d3df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab37018f1df3260a0008aef157db3d3df">&#9670;&nbsp;</a></span>number_x_option_description</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char number_x_option_description[] = &quot; --number_x &lt;value&gt; Number of elements along x-axis&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Description of &ndash;number_x option. </p>
+
+</div>
+</div>
+<a id="a0deddfeaad3ff08ea8582615cd17af16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0deddfeaad3ff08ea8582615cd17af16">&#9670;&nbsp;</a></span>number_y_option_description</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char number_y_option_description[] = &quot; --number_y &lt;value&gt; Number of elements along y-axis&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Description of &ndash;number_y option. </p>
+
+</div>
+</div>
+<a id="ae9321c878c6b3f48bfc34e6a960c9709"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9321c878c6b3f48bfc34e6a960c9709">&#9670;&nbsp;</a></span>old_color_option_description</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char old_color_option_description[] = &quot; --old_color &lt;r.g.b&gt; Old color to replace&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Description of &ndash;old_color option. </p>
+
+</div>
+</div>
+<a id="a226f03e8cdedd4fb2c45925697eb228d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a226f03e8cdedd4fb2c45925697eb228d">&#9670;&nbsp;</a></span>open_bmp_error</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char open_bmp_error[] = &quot;Failed to open input <a class="el" href="../../d6/dd1/class_b_m_p.html">BMP</a> file: &quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Error when failed to open input <a class="el" href="../../d6/dd1/class_b_m_p.html" title="Класс для работы с изображениями в формате BMP.">BMP</a> file. </p>
+
+</div>
+</div>
+<a id="ad31e8f23b837d32d748693cda61e0f31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad31e8f23b837d32d748693cda61e0f31">&#9670;&nbsp;</a></span>output_option_description</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char output_option_description[] = &quot; -o, --output &lt;file&gt; Output file&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Description of &ndash;output option. </p>
+
+</div>
+</div>
+<a id="af8887f3f8b6b7ed5e1b99d2148a59304"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8887f3f8b6b7ed5e1b99d2148a59304">&#9670;&nbsp;</a></span>pixels_per_meter_x_message</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char pixels_per_meter_x_message[] = &quot;Pixels per meter (X axis): &quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pixels per meter message for X axis. </p>
+
+</div>
+</div>
+<a id="a12606d0f2bfc4498736997174f1dd23a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12606d0f2bfc4498736997174f1dd23a">&#9670;&nbsp;</a></span>pixels_per_meter_y_message</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char pixels_per_meter_y_message[] = &quot;Pixels per meter (Y axis): &quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pixels per meter message for Y axis. </p>
+
+</div>
+</div>
+<a id="a8bc76c548bd0bce58a94dde4f6e9933c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bc76c548bd0bce58a94dde4f6e9933c">&#9670;&nbsp;</a></span>right_down_option_description</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char right_down_option_description[] = &quot; --right_down &lt;x.y&gt; Coordinates of right-down corner&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Description of &ndash;right_down option. </p>
+
+</div>
+</div>
+<a id="a2fbf54c9dfafaecf85a1b2bdace130b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fbf54c9dfafaecf85a1b2bdace130b0">&#9670;&nbsp;</a></span>same_input_output_message</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char same_input_output_message[] = &quot;Input file is the same as output file!&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Message when input file is same as output file. </p>
+
+</div>
+</div>
+<a id="a76eaab446bf76eb36d793b4278cea68c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76eaab446bf76eb36d793b4278cea68c">&#9670;&nbsp;</a></span>set_outside_bounds_warning</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char set_outside_bounds_warning[] = &quot;Trying to set color outside image bounds&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Warning for trying to set color outside image bounds. </p>
+
+</div>
+</div>
+<a id="a5c294d8a7e8dcfb704c08bdb7c0f304c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c294d8a7e8dcfb704c08bdb7c0f304c">&#9670;&nbsp;</a></span>signature_message</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char signature_message[] = &quot;Signature: &quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Signature of the file message. </p>
+
+</div>
+</div>
+<a id="a0a2764e7bbcf0023d6ba3af35d48b215"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a2764e7bbcf0023d6ba3af35d48b215">&#9670;&nbsp;</a></span>split_option_description</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char split_option_description[] = &quot; --split Split operation&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Description of &ndash;split option. </p>
+
+</div>
+</div>
+<a id="a64afeabf96cdd9c1bc534846d903bad7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64afeabf96cdd9c1bc534846d903bad7">&#9670;&nbsp;</a></span>success_message</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char success_message[] = &quot;Success!&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Success message. </p>
+
+</div>
+</div>
+<a id="a96fb56c35cc228f76944ed687bd1479b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96fb56c35cc228f76944ed687bd1479b">&#9670;&nbsp;</a></span>thickness_option_description</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char thickness_option_description[] = &quot; --thickness &lt;value&gt; Thickness of operation&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Description of &ndash;thickness option. </p>
+
+</div>
+</div>
+<a id="a7126c59e2b7730756bd7bda452fd41c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7126c59e2b7730756bd7bda452fd41c0">&#9670;&nbsp;</a></span>unexpected_option_warning</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char unexpected_option_warning[] = &quot;Unexpected option: &quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Warning for unexpected option. </p>
+
+</div>
+</div>
+<a id="ad34ca45414196ab1aa57fb8bbac1a134"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad34ca45414196ab1aa57fb8bbac1a134">&#9670;&nbsp;</a></span>unsupported_compression_error</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr char unsupported_compression_error[] = &quot;Unsupported <a class="el" href="../../d6/dd1/class_b_m_p.html">BMP</a> compression type&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Error for unsupported <a class="el" href="../../d6/dd1/class_b_m_p.html" title="Класс для работы с изображениями в формате BMP.">BMP</a> compression type. </p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="../../d5/d48/messages_8h.html">messages.h</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>
