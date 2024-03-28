@@ -1,15 +1,22 @@
 #include "bmp.h"
 #include "logger.h"
+#include <cstring> // Для функции std::strncmp
 #include <fstream>
 
 BMP::BMP(const std::string &fileName) : header(), pixelData() {
   std::ifstream file(fileName, std::ios::binary);
   if (!file.is_open()) {
-    Logger::error("Failed to open input BMP file.");
+    Logger::error("Failed to open input BMP file: " + fileName);
     return;
   }
 
   file.read(reinterpret_cast<char *>(&header), sizeof(header));
+
+  if (!validateHeader()) {
+    Logger::warn("BMP file header is invalid: " + fileName);
+    file.close();
+    return;
+  }
 
   pixelData.resize(header.fileSize - header.dataOffset);
   file.read(reinterpret_cast<char *>(pixelData.data()), pixelData.size());
@@ -17,10 +24,46 @@ BMP::BMP(const std::string &fileName) : header(), pixelData() {
   file.close();
 }
 
+bool BMP::validateHeader() const {
+  if (std::strncmp(header.signature, "BM", 2) != 0) {
+    Logger::exit(1, "Invalid BMP file signature");
+    return false;
+  }
+
+  if (header.width <= 0 || header.height <= 0) {
+    Logger::exit(1, "Invalid BMP dimensions");
+    return false;
+  }
+
+  if (header.bitsPerPixel != 24) {
+    Logger::warn("Invalid BMP bits per pixel, image may be incorrect");
+  }
+
+  if (header.compression != 0) {
+    Logger::exit(1, "Unsupported BMP compression type");
+    return false;
+  }
+
+  unsigned int expectedImageSize =
+      header.width * header.height * (header.bitsPerPixel / 8);
+  if (header.imageSize != expectedImageSize) {
+    Logger::exit(1, "Invalid BMP image size");
+    return false;
+  }
+
+  return true;
+}
+
 void BMP::mirror(const std::string &axis, const Coordinate &left_up,
                  const Coordinate &right_down) {
   int width = right_down.x - left_up.x;
   int height = right_down.y - left_up.y;
+
+  if (axis != "x" && axis != "y") {
+    Logger::warn("Invalid mirror axis specified");
+    return;
+  }
+
   if (axis == "x") {
     for (int y = left_up.y; y < right_down.y; ++y) {
       for (int x = left_up.x; x < left_up.x + width / 2; ++x) {
@@ -47,12 +90,14 @@ void BMP::mirror(const std::string &axis, const Coordinate &left_up,
 void BMP::save(const std::string &fileName) {
   std::ofstream file(fileName, std::ios::binary);
   if (!file.is_open()) {
-    Logger::error("Failed to create output BMP file.");
+    Logger::exit(1, "Failed to create output BMP file: " + fileName);
     return;
   }
 
-  file.write(reinterpret_cast<char *>(&header), sizeof(header));
-  file.write(reinterpret_cast<char *>(pixelData.data()), pixelData.size());
+  file.write(reinterpret_cast<const char *>(&header), sizeof(header));
+
+  file.write(reinterpret_cast<const char *>(pixelData.data()),
+             pixelData.size());
 
   file.close();
 }
@@ -60,6 +105,11 @@ void BMP::save(const std::string &fileName) {
 bool BMP::isValid() const { return !pixelData.empty(); }
 
 RGB BMP::getColor(int x, int y) const {
+  if (x < 0 || x >= header.width || y < 0 || y >= header.height) {
+    Logger::warn("Trying to access color outside image bounds");
+    return RGB();
+  }
+
   unsigned int index =
       ((header.height - 1 - y) * header.width + x) * (header.bitsPerPixel / 8);
 
@@ -71,6 +121,11 @@ RGB BMP::getColor(int x, int y) const {
 }
 
 void BMP::setColor(int x, int y, const RGB &newColor) {
+  if (x < 0 || x >= header.width || y < 0 || y >= header.height) {
+    Logger::warn("Trying to set color outside image bounds");
+    return;
+  }
+
   unsigned int index =
       ((header.height - 1 - y) * header.width + x) * (header.bitsPerPixel / 8);
 
@@ -78,6 +133,7 @@ void BMP::setColor(int x, int y, const RGB &newColor) {
   pixelData[index + 1] = newColor.green;
   pixelData[index + 2] = newColor.red;
 }
+
 void BMP::colorReplace(const RGB &old_color, const RGB &new_color) {
   for (int y = 0; y < header.height; y++) {
     for (int x = 0; x < header.width; x++) {
@@ -90,18 +146,26 @@ void BMP::colorReplace(const RGB &old_color, const RGB &new_color) {
     }
   }
 }
+
 void BMP::split(int number_x, int number_y, int thickness, const RGB &color) {
+  if (number_x <= 0 || number_y <= 0 || thickness <= 0) {
+    Logger::warn("Invalid split parameters");
+    return;
+  }
+
+  int gap;
 
   for (int i = 1; i < number_y; i++) {
-    int gap = header.height / number_y;
+    gap = header.height / number_y;
     for (int x = 0; x < header.width; x++) {
       for (int y = 0; y < thickness; y++) {
         setColor(x, i * gap + y, color);
       }
     }
   }
+
   for (int i = 1; i < number_x; i++) {
-    int gap = header.width / number_x;
+    gap = header.width / number_x;
     for (int x = 0; x < thickness; x++) {
       for (int y = 0; y < header.height; y++) {
         setColor(i * gap + x, y, color);
@@ -109,8 +173,38 @@ void BMP::split(int number_x, int number_y, int thickness, const RGB &color) {
     }
   }
 }
-void BMP::getInfo() const {
 
+void BMP::copy(const Coordinate &src_left_up, const Coordinate &src_right_down,
+               const Coordinate &dest_left_up) {
+  int src_width = src_right_down.x - src_left_up.x;
+  int src_height = src_right_down.y - src_left_up.y;
+  int dest_width = header.width - dest_left_up.x;
+  int dest_height = header.height - dest_left_up.y;
+
+  if (src_width <= 0 || src_height <= 0 || dest_width <= 0 ||
+      dest_height <= 0) {
+    Logger::warn("Invalid copy region or destination parameters");
+    return;
+  }
+
+  if (src_width > dest_width || src_height > dest_height) {
+    Logger::exit(1, "Copying region exceeds destination image boundaries.");
+    return;
+  }
+
+  int offsetX = 0;
+  for (int x = src_left_up.x; x < src_right_down.x; x++) {
+    int offsetY = 0;
+    for (int y = src_left_up.y; y < src_right_down.y; y++) {
+      setColor(dest_left_up.x + offsetX, dest_left_up.y + offsetY,
+               getColor(x, y));
+      offsetY++;
+    }
+    offsetX++;
+  }
+}
+
+void BMP::getInfo() const {
   Logger::log("Signature: " + std::string(header.signature, 2));
   Logger::log("File size: " + std::to_string(header.fileSize) + " bytes");
   Logger::log("Data offset: " + std::to_string(header.dataOffset) + " bytes");

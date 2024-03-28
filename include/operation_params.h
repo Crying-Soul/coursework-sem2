@@ -6,7 +6,8 @@
 #include <vector>
 
 OperationParams parseCommandLine(int argc, char *argv[]);
-
+std::vector<int> parseValues(const std::string &str);
 RGB parseRGB(const std::string &str);
+void displayHelp();
 
 #endif

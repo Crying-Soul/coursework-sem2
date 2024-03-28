@@ -6,7 +6,7 @@ int main(int argc, char *argv[]) {
   OperationParams params = parseCommandLine(argc, argv);
   std::string input_file = "imgs/" + params.input_file;
 
-  Logger::setColorsEnabled(params.colorful);
+  
 
   BMP bmp(input_file);
   if (!bmp.isValid()) {
@@ -35,6 +35,12 @@ int main(int argc, char *argv[]) {
     bmp.split(params.number_x, params.number_y, params.thickness, params.line_color);
     Logger::log("Success!");
   }
+  if (params.copy) {
+    Logger::warn("=Image copy operation requested=.");
+    bmp.copy(params.left_up, params.right_down, params.dest_left_up);
+    Logger::log("Success!");
+  }
+
 
   bmp.save(params.output_file);
 

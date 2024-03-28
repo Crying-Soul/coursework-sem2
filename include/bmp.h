@@ -13,6 +13,7 @@
 class BMP {
 private:
   BMPHeader header;
+  bool validateHeader() const;
   std::vector<char> pixelData;
 
 public:

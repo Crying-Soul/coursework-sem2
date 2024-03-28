@@ -39,7 +39,6 @@ struct OperationParams {
   std::string input_file;
   std::string output_file = "out.bmp";
   bool info = false;
-  bool colorful = false;
   bool mirror = false;
   std::string axis;
   Coordinate left_up;
@@ -56,8 +55,8 @@ struct OperationParams {
   RGB line_color;
 
   OperationParams()
-      : input_file(), output_file("out.bmp"), info(false), colorful(false),
-        mirror(false), axis(), left_up(), right_down(), copy(false),
-        dest_left_up(), color_replace(false), old_color(), new_color(),
-        split(false), number_x(1), number_y(1), thickness(1), line_color() {}
+      : input_file(), output_file("out.bmp"), info(false), mirror(false),
+        axis(), left_up(), right_down(), copy(false), dest_left_up(),
+        color_replace(false), old_color(), new_color(), split(false),
+        number_x(1), number_y(1), thickness(1), line_color() {}
 };

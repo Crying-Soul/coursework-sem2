@@ -1,5 +1,6 @@
 #include "operation_params.h"
 #include "logger.h"
+#include <algorithm>
 #include <iostream>
 #include <sstream>
 #include <stdexcept>
@@ -19,10 +20,37 @@ std::vector<int> parseValues(const std::string &str) {
 RGB parseRGB(const std::string &str) {
   std::vector<int> values = parseValues(str);
   if (values.size() != 3) {
-    throw std::invalid_argument("Invalid color format");
+    Logger::exit(1, "Invalid color format");
+  }
+  for (int value : values) {
+    if (value < 0 || value > 255) {
+      Logger::exit(1, "Color out of range [0-255]");
+    }
   }
   return {static_cast<uint8_t>(values[0]), static_cast<uint8_t>(values[1]),
           static_cast<uint8_t>(values[2])};
+}
+void displayHelp() {
+  Logger::log("Usage: program_name [options] filename");
+  Logger::log("Options:");
+  Logger::log("  --mirror               Mirror operation");
+  Logger::log("  --axis <value>         Axis of operation");
+  Logger::log("  --left_up <x.y>        Coordinates of left-up corner");
+  Logger::log("  --right_down <x.y>     Coordinates of right-down corner");
+  Logger::log(
+      "  --dest_left_up <x.y>   Coordinates of destination left-up corner");
+  Logger::log("  --old_color <r.g.b>    Old color to replace");
+  Logger::log("  --new_color <r.g.b>    New color to replace with");
+  Logger::log("  --color <r.g.b>        Color of line");
+  Logger::log("  --copy                 Copy operation");
+  Logger::log("  --color_replace        Color replace operation");
+  Logger::log("  --split                Split operation");
+  Logger::log("  --number_x <value>     Number of elements along x-axis");
+  Logger::log("  --number_y <value>     Number of elements along y-axis");
+  Logger::log("  --thickness <value>    Thickness of operation");
+  Logger::log("  -o, --output <file>    Output file");
+  Logger::log("  -i, --input <file>     Input file");
+  Logger::log("  -h, --help             Display this information");
 }
 
 OperationParams parseCommandLine(int argc, char *argv[]) {
@@ -32,29 +60,13 @@ OperationParams parseCommandLine(int argc, char *argv[]) {
     const std::string arg = argv[i];
 
     if (arg == "--help" || arg == "-h") {
-      Logger::log("Usage: program_name [options] filename");
-      Logger::log("Options:");
-      Logger::log("  --mirror               Mirror operation");
-      Logger::log("  --axis <value>         Axis of operation");
-      Logger::log("  --left_up <x.y>        Coordinates of left-up corner");
-      Logger::log("  --right_down <x.y>     Coordinates of right-down corner");
-      Logger::log(
-          "  --dest_left_up <x.y>   Coordinates of destination left-up corner");
-      Logger::log("  --old_color <r.g.b>    Old color to replace");
-      Logger::log("  --new_color <r.g.b>    New color to replace with");
-      Logger::log("  --color <r.g.b>        Color of line");
-      Logger::log("  --copy                 Copy operation");
-      Logger::log("  --color_replace        Color replace operation");
-      Logger::log("  --split                Split operation");
-      Logger::log("  --number_x <value>     Number of elements along x-axis");
-      Logger::log("  --number_y <value>     Number of elements along y-axis");
-      Logger::log("  --thickness <value>    Thickness of operation");
-      Logger::log("  -o, --output <file>    Output file");
-      Logger::log("  -h, --help             Display this information");
-
-      return params;
+      displayHelp();
+      Logger::exit(0, "");
     } else if (arg == "-colorful") {
-      params.colorful = true;
+      Logger::setColorsEnabled(true);
+
+    } else if (arg == "-info") {
+      params.info = true;
     } else if (arg == "--mirror") {
       params.mirror = true;
     } else if (arg == "--axis") {
@@ -69,7 +81,7 @@ OperationParams parseCommandLine(int argc, char *argv[]) {
           Coordinate coord;
           std::vector<int> parsed_values = parseValues(value);
           if (parsed_values.size() != 2) {
-            throw std::invalid_argument("Invalid coordinate format");
+            Logger::exit(1, "Invalid coordinate format");
           }
           coord.x = parsed_values[0];
           coord.y = parsed_values[1];
@@ -80,7 +92,8 @@ OperationParams parseCommandLine(int argc, char *argv[]) {
           else if (arg == "--dest_left_up")
             params.dest_left_up = coord;
         } catch (const std::invalid_argument &e) {
-          Logger::error("Invalid argument for " + arg);
+
+          Logger::exit(1, "Invalid argument for " + arg);
         }
       }
     } else if (arg == "--old_color" || arg == "--new_color" ||
@@ -96,7 +109,7 @@ OperationParams parseCommandLine(int argc, char *argv[]) {
           else if (arg == "--color")
             params.line_color = color;
         } catch (const std::invalid_argument &e) {
-          Logger::error("Invalid argument for " + arg);
+          Logger::exit(1, "Invalid argument for " + arg);
         }
       }
     } else if (arg == "--copy") {
@@ -118,15 +131,20 @@ OperationParams parseCommandLine(int argc, char *argv[]) {
           else if (arg == "--thickness")
             params.thickness = intValue;
         } catch (const std::invalid_argument &e) {
-          Logger::error("Invalid argument for " + arg);
+          Logger::exit(1, "Invalid argument for " + arg);
         }
       }
     } else if (arg == "--output" || arg == "-o") {
       if (i + 1 < argc) {
         params.output_file = argv[++i];
       }
+    } else if (arg == "--input" || arg == "-i") {
+      if (i + 1 < argc) {
+
+        params.input_file = argv[++i];
+      }
     } else {
-      params.input_file = arg;
+      Logger::warn("Unexpected option " + arg);
     }
   }
 
