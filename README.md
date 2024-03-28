@@ -23,7 +23,7 @@ This is a command-line tool for processing BMP image files according to the spec
 `
 ## Usage
 ```css
-./bmp_processor [--mirror --axis <x/y> --left_up <x.y> --right_down <x.y>] \
+./coursework [--mirror --axis <x/y> --left_up <x.y> --right_down <x.y>] \
                 [--copy --left_up <x.y> --right_down <x.y> --dest_left_up <x.y>] \
                 [--color_replace --old_color <rrr.ggg.bbb> --new_color <rrr.ggg.bbb>] \
                 [--split --number_x <N> --number_y <M> --thickness <T> --color <rrr.ggg.bbb>] \
@@ -46,7 +46,7 @@ This is a command-line tool for processing BMP image files according to the spec
 
 ## Example
 ```css
-./bmp_processor --mirror --axis x --left_up 100.100 --right_down 200.200 \
+./coursework --mirror --axis x --left_up 100.100 --right_down 200.200 \
                 --copy --left_up 50.50 --right_down 150.150 --dest_left_up 300.300 \
                 --color_replace --old_color 255.0.0 --new_color 0.255.0 \
                 --split --number_x 3 --number_y 3 --thickness 2 --color 0.0.255 \
