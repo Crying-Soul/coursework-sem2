@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['left_5fup_236',['left_up',['../struct_operation_params.html#a955b1e8536787030139e2bba11fb535d',1,'OperationParams']]],
-  ['left_5fup_5foption_5fdescription_237',['left_up_option_description',['../messages_8h.html#af9f308ce0253ab5fe75a66b1a2b30350',1,'messages.h']]],
-  ['line_5fcolor_238',['line_color',['../struct_operation_params.html#abc4596d7b480d1998336cad2633bd15d',1,'OperationParams']]]
+  ['left_5fup_238',['left_up',['../struct_operations.html#afe141c20a3cd118682239c32e23fc1f8',1,'Operations']]],
+  ['left_5fup_5foption_5fdescription_239',['left_up_option_description',['../messages_8h.html#a38cf77c92003cbb791c287e8e96c3719',1,'messages.h']]],
+  ['line_5fcolor_240',['line_color',['../struct_operations.html#aaaee3dddb03bb21ffe6d7306307ad0b0',1,'Operations']]]
 ];

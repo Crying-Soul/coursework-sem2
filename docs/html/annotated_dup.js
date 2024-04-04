@@ -4,6 +4,6 @@ var annotated_dup =
     [ "BMPHeader", "struct_b_m_p_header.html", "struct_b_m_p_header" ],
     [ "Coordinate", "struct_coordinate.html", "struct_coordinate" ],
     [ "Logger", "class_logger.html", "class_logger" ],
-    [ "OperationParams", "struct_operation_params.html", "struct_operation_params" ],
+    [ "Operations", "struct_operations.html", "struct_operations" ],
     [ "RGB", "struct_r_g_b.html", "struct_r_g_b" ]
 ];

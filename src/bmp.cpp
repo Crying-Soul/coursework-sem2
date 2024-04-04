@@ -1,6 +1,7 @@
 /**
  * @file bmp.cpp
- * @brief Реализация методов класса BMP для работы с изображениями в формате BMP.
+ * @brief Реализация методов класса BMP для работы с изображениями в формате
+ * BMP.
  */
 
 #include "bmp.h"
@@ -9,19 +10,16 @@
 #include <cstring>
 #include <fstream>
 
-BMP::BMP(const std::string &fileName) : header(), pixelData()
-{
+BMP::BMP(const std::string &fileName) : header(), pixelData() {
   std::ifstream file(fileName, std::ios::binary);
-  if (!file.is_open())
-  {
-    Logger::exit(1, open_bmp_error + fileName);
+  if (!file.is_open()) {
+    Logger::exit(ERR_FILE_NOT_FOUND, open_bmp_error + fileName);
   }
 
   file.read(reinterpret_cast<char *>(&header), sizeof(header));
 
-  if (!validateHeader())
-  {
-    Logger::exit(1, invalid_header_error + fileName);
+  if (!validateHeader()) {
+    Logger::exit(ERR_INCORRECT_FILE_FORMAT, invalid_header_error + fileName);
   }
 
   int rowSize = ((header.width * header.bitsPerPixel + 31) / 32) * 4;
@@ -34,35 +32,29 @@ BMP::BMP(const std::string &fileName) : header(), pixelData()
   file.close();
 }
 
-bool BMP::validateHeader() const
-{
-  if (std::strncmp(header.signature, "BM", 2) != 0)
-  {
-    Logger::exit(1, invalid_signature_error);
+bool BMP::validateHeader() const {
+  if (std::strncmp(header.signature, "BM", 2) != 0) {
+    Logger::exit(ERR_INCORRECT_FILE_FORMAT, invalid_signature_error);
     return false;
   }
 
-  if (header.width <= 0 || header.height <= 0)
-  {
-    Logger::exit(1, invalid_dimensions_error);
+  if (header.width <= 0 || header.height <= 0) {
+    Logger::exit(ERR_INCORRECT_FILE_FORMAT, invalid_dimensions_error);
     return false;
   }
 
-  if (header.bitsPerPixel != 24)
-  {
+  if (header.bitsPerPixel != 24) {
     Logger::warn(invalid_bpp_warning);
   }
 
-  if (header.compression != 0)
-  {
-    Logger::exit(1, unsupported_compression_error);
+  if (header.compression != 0) {
+    Logger::exit(ERR_INCORRECT_FILE_FORMAT, unsupported_compression_error);
     return false;
   }
 
   unsigned int expectedImageSize =
       header.width * header.height * (header.bitsPerPixel / 8);
-  if (header.imageSize != expectedImageSize)
-  {
+  if (header.imageSize != expectedImageSize) {
 
     Logger::warn(invalid_image_size_error);
   }
@@ -72,10 +64,8 @@ bool BMP::validateHeader() const
 
 bool BMP::isValid() const { return !pixelData.empty(); }
 
-RGB BMP::getColor(int x, int y) const
-{
-  if ((x < 0 || x >= header.width) || (y < 0 || y >= header.height))
-  {
+RGB BMP::getColor(int x, int y) const {
+  if ((x < 0 || x >= header.width) || (y < 0 || y >= header.height)) {
     Logger::warn(access_outside_bounds_warning);
     return RGB();
   }
@@ -90,10 +80,8 @@ RGB BMP::getColor(int x, int y) const
   return color;
 }
 
-void BMP::setColor(int x, int y, const RGB &newColor)
-{
-  if (x < 0 || x >= header.width || y < 0 || y >= header.height)
-  {
+void BMP::setColor(int x, int y, const RGB &newColor) {
+  if (x < 0 || x >= header.width || y < 0 || y >= header.height) {
     Logger::warn(set_outside_bounds_warning);
     return;
   }
@@ -106,17 +94,13 @@ void BMP::setColor(int x, int y, const RGB &newColor)
   pixelData[index + 2] = newColor.red;
 }
 
-void BMP::colorReplace(const RGB &old_color, const RGB &new_color)
-{
-  for (int y = 0; y < header.height; y++)
-  {
-    for (int x = 0; x < header.width; x++)
-    {
+void BMP::colorReplace(const RGB &old_color, const RGB &new_color) {
+  for (int y = 0; y < header.height; y++) {
+    for (int x = 0; x < header.width; x++) {
       RGB current_color = getColor(x, y);
       if (current_color.red == old_color.red &&
           current_color.green == old_color.green &&
-          current_color.blue == old_color.blue)
-      {
+          current_color.blue == old_color.blue) {
         setColor(x, y, new_color);
       }
     }
@@ -124,22 +108,17 @@ void BMP::colorReplace(const RGB &old_color, const RGB &new_color)
 }
 
 void BMP::mirror(const std::string &axis, const Coordinate &left_up,
-                 const Coordinate &right_down)
-{
+                 const Coordinate &right_down) {
   int width = right_down.x - left_up.x;
   int height = right_down.y - left_up.y;
 
-  if (axis != "x" && axis != "y")
-  {
-    Logger::exit(1, invalid_mirror_axis_error);
+  if (axis != "x" && axis != "y") {
+    Logger::exit(ERR_INVALID_ARGUMENT, invalid_mirror_axis_error);
   }
 
-  if (axis == "x")
-  {
-    for (int y = left_up.y; y < right_down.y; ++y)
-    {
-      for (int x = left_up.x; x < left_up.x + width / 2; ++x)
-      {
+  if (axis == "x") {
+    for (int y = left_up.y; y < right_down.y; ++y) {
+      for (int x = left_up.x; x < left_up.x + width / 2; ++x) {
         int mirroredX = right_down.x - (x - left_up.x) - 1;
 
         RGB tempColor = getColor(x, y);
@@ -147,13 +126,9 @@ void BMP::mirror(const std::string &axis, const Coordinate &left_up,
         setColor(mirroredX, y, tempColor);
       }
     }
-  }
-  else if (axis == "y")
-  {
-    for (int y = left_up.y; y < left_up.y + height / 2; ++y)
-    {
-      for (int x = left_up.x; x < right_down.x; ++x)
-      {
+  } else if (axis == "y") {
+    for (int y = left_up.y; y < left_up.y + height / 2; ++y) {
+      for (int x = left_up.x; x < right_down.x; ++x) {
         int mirroredY = right_down.y - (y - left_up.y) - 1;
 
         RGB tempColor = getColor(x, y);
@@ -164,36 +139,28 @@ void BMP::mirror(const std::string &axis, const Coordinate &left_up,
   }
 }
 
-void BMP::split(int number_x, int number_y, int thickness, const RGB &color)
-{
+void BMP::split(int number_x, int number_y, int thickness, const RGB &color) {
   if ((number_x <= 0 || number_x > header.width) ||
       (number_y <= 0 || number_y > header.height) ||
-      (thickness <= 0 || thickness > header.width))
-  {
-    Logger::exit(1, invalid_split_parameters_error);
+      (thickness <= 0 || thickness > header.width)) {
+    Logger::exit(ERR_INVALID_ARGUMENT, invalid_split_parameters_error);
   }
 
   int gap;
 
-  for (int i = 1; i < number_y; i++)
-  {
+  for (int i = 1; i < number_y; i++) {
     gap = header.height / number_y;
-    for (int x = 0; x < header.width; x++)
-    {
-      for (int y = 0; y < thickness; y++)
-      {
+    for (int x = 0; x < header.width; x++) {
+      for (int y = 0; y < thickness; y++) {
         setColor(x, i * gap + y, color);
       }
     }
   }
 
-  for (int i = 1; i < number_x; i++)
-  {
+  for (int i = 1; i < number_x; i++) {
     gap = header.width / number_x;
-    for (int x = 0; x < thickness; x++)
-    {
-      for (int y = 0; y < header.height; y++)
-      {
+    for (int x = 0; x < thickness; x++) {
+      for (int y = 0; y < header.height; y++) {
         setColor(i * gap + x, y, color);
       }
     }
@@ -201,12 +168,10 @@ void BMP::split(int number_x, int number_y, int thickness, const RGB &color)
 }
 
 void BMP::copy(const Coordinate &src_left_up, const Coordinate &src_right_down,
-               const Coordinate &dest_left_up)
-{
+               const Coordinate &dest_left_up) {
   if (src_left_up.x < 0 || src_left_up.y < 0 || dest_left_up.x <= 0 ||
-      dest_left_up.x < 0)
-  {
-    Logger::exit(1, invalid_copy_region);
+      dest_left_up.x < 0) {
+    Logger::exit(ERR_INVALID_ARGUMENT, invalid_copy_region);
     return;
   }
   int src_width = src_right_down.x - src_left_up.x;
@@ -215,24 +180,18 @@ void BMP::copy(const Coordinate &src_left_up, const Coordinate &src_right_down,
   int dest_height = header.height - dest_left_up.y;
 
   if (src_width <= 0 || src_height <= 0 || dest_width <= 0 ||
-      dest_height <= 0)
-  {
-    Logger::exit(1, invalid_copy_region);
+      dest_height <= 0) {
+    Logger::exit(ERR_INVALID_ARGUMENT, invalid_copy_region);
     return;
   }
 
-  if (src_width > dest_width || src_height > dest_height)
-  {
+  if (src_width > dest_width || src_height > dest_height) {
     Logger::warn(copy_exceeds_bounds_error);
-  }
-  else
-  {
+  } else {
     int offsetX = 0;
-    for (int x = src_left_up.x; x < src_right_down.x; x++)
-    {
+    for (int x = src_left_up.x; x < src_right_down.x; x++) {
       int offsetY = 0;
-      for (int y = src_left_up.y; y < src_right_down.y; y++)
-      {
+      for (int y = src_left_up.y; y < src_right_down.y; y++) {
         setColor(dest_left_up.x + offsetX, dest_left_up.y + offsetY,
                  getColor(x, y));
         offsetY++;
@@ -242,12 +201,10 @@ void BMP::copy(const Coordinate &src_left_up, const Coordinate &src_right_down,
   }
 }
 
-void BMP::save(const std::string &fileName)
-{
+void BMP::save(const std::string &fileName) {
   std::ofstream file(fileName, std::ios::binary);
-  if (!file.is_open())
-  {
-    Logger::exit(1, failed_create_output_file + fileName);
+  if (!file.is_open()) {
+    Logger::exit(ERR_FILE_WRITE_ERROR, failed_create_output_file + fileName);
     return;
   }
 
@@ -260,8 +217,7 @@ void BMP::save(const std::string &fileName)
 
   file.write(reinterpret_cast<const char *>(&header), sizeof(header));
 
-  for (int y = 0; y < header.height; ++y)
-  {
+  for (int y = 0; y < header.height; ++y) {
     file.write(reinterpret_cast<const char *>(pixelData.data() + y * rowSize),
                rowSize);
   }
@@ -269,12 +225,13 @@ void BMP::save(const std::string &fileName)
   file.close();
 }
 
-void BMP::getInfo() const
-{
+void BMP::getInfo() const {
   Logger::log(signature_message + std::string(header.signature, 2));
   Logger::log(file_size_message + std::to_string(header.fileSize) + " bytes");
-  Logger::log(data_offset_message + std::to_string(header.dataOffset) + " bytes");
-  Logger::log(header_size_message + std::to_string(header.headerSize) + " bytes");
+  Logger::log(data_offset_message + std::to_string(header.dataOffset) +
+              " bytes");
+  Logger::log(header_size_message + std::to_string(header.headerSize) +
+              " bytes");
   Logger::log(image_dimensions_message + std::to_string(header.width) + "x" +
               std::to_string(header.height));
   Logger::log(bits_per_pixel_message + std::to_string(header.bitsPerPixel));
@@ -285,5 +242,6 @@ void BMP::getInfo() const
   Logger::log(pixels_per_meter_y_message +
               std::to_string(header.yPixelsPerMeter));
   Logger::log(colors_used_message + std::to_string(header.colorsUsed));
-  Logger::log(important_colors_message + std::to_string(header.colorsImportant));
+  Logger::log(important_colors_message +
+              std::to_string(header.colorsImportant));
 }

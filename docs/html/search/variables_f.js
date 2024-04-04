@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['thickness_268',['thickness',['../struct_operation_params.html#acee8ac784c0f18c7799959a909d11ac2',1,'OperationParams']]],
-  ['thickness_5foption_5fdescription_269',['thickness_option_description',['../messages_8h.html#a96fb56c35cc228f76944ed687bd1479b',1,'messages.h']]]
+  ['thickness_270',['thickness',['../struct_operations.html#a5cfa3f99aba9bcc7dee92fd298a4b82a',1,'Operations']]],
+  ['thickness_5foption_5fdescription_271',['thickness_option_description',['../messages_8h.html#ad7f08176f688ceed0ff93eb3b69d67a3',1,'messages.h']]]
 ];

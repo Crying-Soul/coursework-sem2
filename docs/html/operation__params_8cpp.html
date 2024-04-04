@@ -123,22 +123,22 @@ $(document).ready(function(){initNavTree('operation__params_8cpp.html',''); init
 <div class="title">Файл operation_params.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>Определяет функции для анализа параметров операций из командной строки.  
-<a href="#details">Подробнее...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="operation__params_8h_source.html">operation_params.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="logger_8h_source.html">logger.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="messages_8h_source.html">messages.h</a>&quot;</code><br />
-<code>#include &lt;algorithm&gt;</code><br />
+<code>#include &lt;getopt.h&gt;</code><br />
+<code>#include &lt;cstring&gt;</code><br />
+<code>#include &lt;functional&gt;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;map&gt;</code><br />
 <code>#include &lt;sstream&gt;</code><br />
 <code>#include &lt;stdexcept&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
+<code>#include &quot;<a class="el" href="logger_8h_source.html">logger.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="messages_8h_source.html">messages.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Граф включаемых заголовочных файлов для operation_params.cpp:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="operation__params_8cpp__incl.svg" width="899" height="262"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="operation__params_8cpp__incl.svg" width="1168" height="262"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div><table class="memberdecls">
@@ -150,16 +150,16 @@ $(document).ready(function(){initNavTree('operation__params_8cpp.html',''); init
 <tr class="memitem:abbd547560acd14f298e5d36dcf0398d3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_r_g_b.html">RGB</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="operation__params_8cpp.html#abbd547560acd14f298e5d36dcf0398d3">parseRGB</a> (const std::string &amp;str)</td></tr>
 <tr class="memdesc:abbd547560acd14f298e5d36dcf0398d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Парсинг строки с RGB-значением цвета.  <a href="operation__params_8cpp.html#abbd547560acd14f298e5d36dcf0398d3">Подробнее...</a><br /></td></tr>
 <tr class="separator:abbd547560acd14f298e5d36dcf0398d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfab6ddfafab9bed92ac967c3a0fe0dd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_coordinate.html">Coordinate</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="operation__params_8cpp.html#adfab6ddfafab9bed92ac967c3a0fe0dd">parseCoordinate</a> (const std::string &amp;str)</td></tr>
+<tr class="separator:adfab6ddfafab9bed92ac967c3a0fe0dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1451d6a0f33f9d0a02a4b055e5839e6e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="operation__params_8cpp.html#a1451d6a0f33f9d0a02a4b055e5839e6e">displayHelp</a> ()</td></tr>
 <tr class="memdesc:a1451d6a0f33f9d0a02a4b055e5839e6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Отображение справки о возможных параметрах командной строки.  <a href="operation__params_8cpp.html#a1451d6a0f33f9d0a02a4b055e5839e6e">Подробнее...</a><br /></td></tr>
 <tr class="separator:a1451d6a0f33f9d0a02a4b055e5839e6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00a944e8a68555a108c478465b5e9018"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_operation_params.html">OperationParams</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="operation__params_8cpp.html#a00a944e8a68555a108c478465b5e9018">parseCommandLine</a> (int argc, char *argv[])</td></tr>
-<tr class="memdesc:a00a944e8a68555a108c478465b5e9018"><td class="mdescLeft">&#160;</td><td class="mdescRight">Парсинг командной строки и создание объекта <a class="el" href="struct_operation_params.html" title="Структура, представляющая параметры операции над изображением.">OperationParams</a>.  <a href="operation__params_8cpp.html#a00a944e8a68555a108c478465b5e9018">Подробнее...</a><br /></td></tr>
-<tr class="separator:a00a944e8a68555a108c478465b5e9018"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0048eb016cc89e79b003ff63259ea264"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_operations.html">Operations</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="operation__params_8cpp.html#a0048eb016cc89e79b003ff63259ea264">parseCommandLine</a> (int argc, char *argv[])</td></tr>
+<tr class="memdesc:a0048eb016cc89e79b003ff63259ea264"><td class="mdescLeft">&#160;</td><td class="mdescRight">Парсинг командной строки и создание объекта <a class="el" href="struct_operations.html" title="Структура, представляющая параметры операции над изображением.">Operations</a>.  <a href="operation__params_8cpp.html#a0048eb016cc89e79b003ff63259ea264">Подробнее...</a><br /></td></tr>
+<tr class="separator:a0048eb016cc89e79b003ff63259ea264"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
-<div class="textblock"><p>Определяет функции для анализа параметров операций из командной строки. </p>
-</div><h2 class="groupheader">Функции</h2>
+<h2 class="groupheader">Функции</h2>
 <a id="a1451d6a0f33f9d0a02a4b055e5839e6e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1451d6a0f33f9d0a02a4b055e5839e6e">&#9670;&nbsp;</a></span>displayHelp()</h2>
 
@@ -191,14 +191,14 @@ $(document).ready(function(){initNavTree('operation__params_8cpp.html',''); init
 
 </div>
 </div>
-<a id="a00a944e8a68555a108c478465b5e9018"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a00a944e8a68555a108c478465b5e9018">&#9670;&nbsp;</a></span>parseCommandLine()</h2>
+<a id="a0048eb016cc89e79b003ff63259ea264"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0048eb016cc89e79b003ff63259ea264">&#9670;&nbsp;</a></span>parseCommandLine()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct_operation_params.html">OperationParams</a> parseCommandLine </td>
+          <td class="memname"><a class="el" href="struct_operations.html">Operations</a> parseCommandLine </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>argc</em>, </td>
@@ -217,7 +217,7 @@ $(document).ready(function(){initNavTree('operation__params_8cpp.html',''); init
       </table>
 </div><div class="memdoc">
 
-<p>Парсинг командной строки и создание объекта <a class="el" href="struct_operation_params.html" title="Структура, представляющая параметры операции над изображением.">OperationParams</a>. </p>
+<p>Парсинг командной строки и создание объекта <a class="el" href="struct_operations.html" title="Структура, представляющая параметры операции над изображением.">Operations</a>. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
     <tr><td class="paramname">argc</td><td>Количество аргументов командной строки. </td></tr>
@@ -225,17 +225,47 @@ $(document).ready(function(){initNavTree('operation__params_8cpp.html',''); init
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Возвращает</dt><dd><a class="el" href="struct_operation_params.html" title="Структура, представляющая параметры операции над изображением.">OperationParams</a> объект, содержащий параметры операции. </dd></dl>
+<dl class="section return"><dt>Возвращает</dt><dd><a class="el" href="struct_operations.html" title="Структура, представляющая параметры операции над изображением.">Operations</a> объект, содержащий параметры операции. </dd></dl>
 <div class="dynheader">
 Граф вызовов:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="operation__params_8cpp_a00a944e8a68555a108c478465b5e9018_cgraph.svg" width="986" height="247"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="operation__params_8cpp_a0048eb016cc89e79b003ff63259ea264_cgraph.svg" width="1135" height="331"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
 Граф вызова функции:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="operation__params_8cpp_a00a944e8a68555a108c478465b5e9018_icgraph.svg" width="266" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="operation__params_8cpp_a0048eb016cc89e79b003ff63259ea264_icgraph.svg" width="266" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="adfab6ddfafab9bed92ac967c3a0fe0dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfab6ddfafab9bed92ac967c3a0fe0dd">&#9670;&nbsp;</a></span>parseCoordinate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_coordinate.html">Coordinate</a> parseCoordinate </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="operation__params_8cpp_adfab6ddfafab9bed92ac967c3a0fe0dd_cgraph.svg" width="870" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="operation__params_8cpp_adfab6ddfafab9bed92ac967c3a0fe0dd_icgraph.svg" width="443" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -268,7 +298,7 @@ $(document).ready(function(){initNavTree('operation__params_8cpp.html',''); init
 <div class="dynheader">
 Граф вызовов:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="operation__params_8cpp_abbd547560acd14f298e5d36dcf0398d3_cgraph.svg" width="680" height="114"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="operation__params_8cpp_abbd547560acd14f298e5d36dcf0398d3_cgraph.svg" width="827" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
@@ -305,9 +335,15 @@ $(document).ready(function(){initNavTree('operation__params_8cpp.html',''); init
 </dl>
 <dl class="section return"><dt>Возвращает</dt><dd>Вектор целых чисел, полученных из строки. </dd></dl>
 <div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="operation__params_8cpp_acb9b051691fc7054f0232d28aef686c4_cgraph.svg" width="692" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
 Граф вызова функции:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="operation__params_8cpp_acb9b051691fc7054f0232d28aef686c4_icgraph.svg" width="550" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="operation__params_8cpp_acb9b051691fc7054f0232d28aef686c4_icgraph.svg" width="592" height="106"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 

@@ -93,7 +93,7 @@
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:href="operation__params_8cpp.html" target="_top" xlink:title="Определяет функции для анализа параметров операций из командной строки.">
+<g id="a_node6"><a xlink:href="operation__params_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="162.5,-56.5 162.5,-75.5 305.5,-75.5 305.5,-56.5 162.5,-56.5"/>
 <text text-anchor="middle" x="234" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/operation_params.cpp</text>
 </a>

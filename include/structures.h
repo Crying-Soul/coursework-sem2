@@ -54,7 +54,7 @@ struct Coordinate {
 /**
  * @brief Структура, представляющая параметры операции над изображением.
  */
-struct OperationParams {
+struct Operations {
   std::string input_file; /**< Путь к входному файлу. */
   std::string output_file = "out.bmp"; /**< Путь к выходному файлу (по умолчанию "out.bmp"). */
   bool info = false; /**< Флаг вывода информации о изображении. */
@@ -76,7 +76,7 @@ struct OperationParams {
   /**
    * @brief Конструктор по умолчанию для инициализации параметров операции.
    */
-  OperationParams()
+  Operations()
       : input_file(), output_file("out.bmp"), info(false), mirror(false),
         axis(), left_up(), right_down(), copy(false), dest_left_up(),
         color_replace(false), old_color(), new_color(), split(false),

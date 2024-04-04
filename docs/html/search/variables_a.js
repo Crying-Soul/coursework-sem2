@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['new_5fcolor_242',['new_color',['../struct_operation_params.html#a47e72b0d4c8bece374e385597c303703',1,'OperationParams']]],
-  ['new_5fcolor_5foption_5fdescription_243',['new_color_option_description',['../messages_8h.html#ae7057e6fff98cb39c4973b64500d391a',1,'messages.h']]],
-  ['number_5fx_244',['number_x',['../struct_operation_params.html#a0b3bd87acf5d8c4165f76344b1029ca7',1,'OperationParams']]],
-  ['number_5fx_5foption_5fdescription_245',['number_x_option_description',['../messages_8h.html#ab37018f1df3260a0008aef157db3d3df',1,'messages.h']]],
-  ['number_5fy_246',['number_y',['../struct_operation_params.html#a9647d58a6745fd536bf5b709f39b62f0',1,'OperationParams']]],
-  ['number_5fy_5foption_5fdescription_247',['number_y_option_description',['../messages_8h.html#a0deddfeaad3ff08ea8582615cd17af16',1,'messages.h']]]
+  ['new_5fcolor_244',['new_color',['../struct_operations.html#a85d1d40cfcc049c45136fcf7edbec667',1,'Operations']]],
+  ['new_5fcolor_5foption_5fdescription_245',['new_color_option_description',['../messages_8h.html#a77c9716ef35de3e25a58603178982ae0',1,'messages.h']]],
+  ['number_5fx_246',['number_x',['../struct_operations.html#aca4bb2bd4bb4a340fc2766d5481e0ac5',1,'Operations']]],
+  ['number_5fx_5foption_5fdescription_247',['number_x_option_description',['../messages_8h.html#a2866892c6b4cc1cd3d602feb96c45b79',1,'messages.h']]],
+  ['number_5fy_248',['number_y',['../struct_operations.html#ae1302cf8629102e1d2cf03eaedef8ea4',1,'Operations']]],
+  ['number_5fy_5foption_5fdescription_249',['number_y_option_description',['../messages_8h.html#af9a459768c74901702d3496c9aace7ee',1,'messages.h']]]
 ];

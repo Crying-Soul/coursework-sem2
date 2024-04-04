@@ -1,15 +1,15 @@
 var searchData=
 [
-  ['color_5foption_5fdescription_188',['color_option_description',['../messages_8h.html#a012b93fcf3db81782015006cfb5f2959',1,'messages.h']]],
-  ['color_5freplace_189',['color_replace',['../struct_operation_params.html#a385e0a830625e1614079ac11f6039d97',1,'OperationParams']]],
-  ['color_5freplace_5foption_5fdescription_190',['color_replace_option_description',['../messages_8h.html#a9ad482e7fac9d8e5405ab579bb9b7ed1',1,'messages.h']]],
-  ['color_5freplace_5fwarning_191',['color_replace_warning',['../messages_8h.html#a815d1e35b3c0e776a9b3f7bf02b97587',1,'messages.h']]],
-  ['colors_5fused_5fmessage_192',['colors_used_message',['../messages_8h.html#a9f6d5ce329003b0e3836bf0d2aefa314',1,'messages.h']]],
-  ['colorsimportant_193',['colorsImportant',['../struct_b_m_p_header.html#a8bf42d66190417e374c91dfa26680b40',1,'BMPHeader']]],
-  ['colorsused_194',['colorsUsed',['../struct_b_m_p_header.html#a38c308e36bbfdf3167f88903de61a1ed',1,'BMPHeader']]],
-  ['compression_195',['compression',['../struct_b_m_p_header.html#a058960007f8e8702f6582697e9bb56a8',1,'BMPHeader']]],
-  ['compression_5fmessage_196',['compression_message',['../messages_8h.html#a268b3168eddfa80e2495b6ae3eb9f33c',1,'messages.h']]],
-  ['copy_197',['copy',['../struct_operation_params.html#ad2138b36d9e4b33a007d53b906d15b6c',1,'OperationParams']]],
-  ['copy_5fexceeds_5fbounds_5ferror_198',['copy_exceeds_bounds_error',['../messages_8h.html#a8dbfa2b6b0dd3bc2e695068c72ad4551',1,'messages.h']]],
-  ['copy_5foption_5fdescription_199',['copy_option_description',['../messages_8h.html#ad13537461be79497ac2019db8cca2530',1,'messages.h']]]
+  ['color_5foption_5fdescription_190',['color_option_description',['../messages_8h.html#ac84b7286d39e97a1b2d21712327e0517',1,'messages.h']]],
+  ['color_5freplace_191',['color_replace',['../struct_operations.html#adbb3ea81538bdf7b5c0460452c292abd',1,'Operations']]],
+  ['color_5freplace_5foption_5fdescription_192',['color_replace_option_description',['../messages_8h.html#a7c6447a9eb3845355810a987d603ab15',1,'messages.h']]],
+  ['color_5freplace_5fwarning_193',['color_replace_warning',['../messages_8h.html#a5eb4010d0c46b9f9f9f75d3d1790f0fb',1,'messages.h']]],
+  ['colors_5fused_5fmessage_194',['colors_used_message',['../messages_8h.html#a33a08f8e92296b60db4f91927cefbb60',1,'messages.h']]],
+  ['colorsimportant_195',['colorsImportant',['../struct_b_m_p_header.html#a8bf42d66190417e374c91dfa26680b40',1,'BMPHeader']]],
+  ['colorsused_196',['colorsUsed',['../struct_b_m_p_header.html#a38c308e36bbfdf3167f88903de61a1ed',1,'BMPHeader']]],
+  ['compression_197',['compression',['../struct_b_m_p_header.html#a058960007f8e8702f6582697e9bb56a8',1,'BMPHeader']]],
+  ['compression_5fmessage_198',['compression_message',['../messages_8h.html#a874b0aad9c692f1a02d8b8d6755c71e6',1,'messages.h']]],
+  ['copy_199',['copy',['../struct_operations.html#adf9d72f1d1a81696e58bc94d22917352',1,'Operations']]],
+  ['copy_5fexceeds_5fbounds_5ferror_200',['copy_exceeds_bounds_error',['../messages_8h.html#a2c695e6b713c6ddc0c5278d31e5fa0b3',1,'messages.h']]],
+  ['copy_5foption_5fdescription_201',['copy_option_description',['../messages_8h.html#a4b09ca69b374882ee0c2f8ecee6fb42b',1,'messages.h']]]
 ];

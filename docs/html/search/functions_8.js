@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['operationparams_172',['OperationParams',['../struct_operation_params.html#a111d19dc43f8e114dbd54a099c859065',1,'OperationParams']]]
+  ['operations_173',['Operations',['../struct_operations.html#af344ca561c1a08118f686551abb08efb',1,'Operations']]]
 ];

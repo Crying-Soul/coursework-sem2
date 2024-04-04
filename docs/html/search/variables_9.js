@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['mirror_239',['mirror',['../struct_operation_params.html#a0cd3dab284cd7145d7c088fb32785009',1,'OperationParams']]],
-  ['mirror_5foption_5fdescription_240',['mirror_option_description',['../messages_8h.html#ad8963c5fa84b954d125b58eb678f84cd',1,'messages.h']]],
-  ['mirror_5fwarning_241',['mirror_warning',['../messages_8h.html#a483368ca19ec4cd8001f9d956df12ec1',1,'messages.h']]]
+  ['mirror_241',['mirror',['../struct_operations.html#aae513a0bbf72809046a23ce91b3a53fd',1,'Operations']]],
+  ['mirror_5foption_5fdescription_242',['mirror_option_description',['../messages_8h.html#a4c161fb1aea07b3318bc5957944db484',1,'messages.h']]],
+  ['mirror_5fwarning_243',['mirror_warning',['../messages_8h.html#ac0e3b4bfa7f2d9e67fabf0d179ce7315',1,'messages.h']]]
 ];

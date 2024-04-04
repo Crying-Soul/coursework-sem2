@@ -1,52 +1,61 @@
-/**
- * @file operation_params.cpp
- * @brief Определяет функции для анализа параметров операций из командной строки.
- */
-
 #include "operation_params.h"
-#include "logger.h"
-#include "messages.h"
-#include <algorithm>
+
+#include <getopt.h>
+
+#include <cstring>
+#include <functional>
 #include <iostream>
+#include <map>
 #include <sstream>
 #include <stdexcept>
 #include <string>
 #include <vector>
 
+#include "logger.h"
+#include "messages.h"
 
-std::vector<int> parseValues(const std::string &str)
-{
+std::vector<int> parseValues(const std::string &str) {
   std::vector<int> values;
   std::stringstream ss(str);
   std::string token;
-  while (std::getline(ss, token, '.'))
-  {
-    values.emplace_back(std::stoi(token));
+  while (std::getline(ss, token, '.')) {
+    try {
+      values.push_back(std::stoi(token));
+    } catch (const std::invalid_argument &e) {
+      Logger::exit(ERR_INVALID_ARGUMENT,
+                   invalid_argument_error + std::string(token));
+    }
   }
   return values;
 }
 
-
-RGB parseRGB(const std::string &str)
-{
+RGB parseRGB(const std::string &str) {
   std::vector<int> values = parseValues(str);
-  if (values.size() != 3)
-  {
-    Logger::exit(1, invalid_color_format_error);
+  if (values.size() != 3) {
+    Logger::exit(ERR_INVALID_ARGUMENT, invalid_color_format_error);
   }
-  for (int value : values)
-  {
-    if (value < 0 || value > 255)
-    {
-      Logger::exit(1, invalid_color_range_error + std::to_string(value));
+  for (int value : values) {
+    if (value < 0 || value > 255) {
+      Logger::exit(ERR_INVALID_ARGUMENT,
+                   invalid_color_range_error + std::to_string(value));
     }
   }
   return {static_cast<uint8_t>(values[0]), static_cast<uint8_t>(values[1]),
           static_cast<uint8_t>(values[2])};
 }
 
-void displayHelp()
-{
+Coordinate parseCoordinate(const std::string &str) {
+  Coordinate coord;
+  std::vector<int> values = parseValues(str);
+  if (values.size() != 2) {
+    Logger::exit(ERR_INVALID_ARGUMENT, invalid_color_format_error);
+  }
+  coord.x = values[0];
+  coord.y = values[1];
+  return coord;
+}
+
+void displayHelp() {
   Logger::log(help_usage_description);
   Logger::log(help_usage_start);
   Logger::log(mirror_option_description);
@@ -68,143 +77,98 @@ void displayHelp()
   Logger::log(help_option_description);
 }
 
+Operations parseCommandLine(int argc, char *argv[]) {
+  Operations params;
 
-OperationParams parseCommandLine(int argc, char *argv[])
-{
-  OperationParams params;
+  const std::map<int, std::function<void(const char *)>> optionHandlers = {
+      {'h', [&](const char *) {
+         if (argc != 2) 
+          Logger::exit(ERR_INVALID_ARGUMENT, invalid_argument_error + "--help (-h)");
+         displayHelp();
+         Logger::exit(EXIT_SUCCESS, "");
+       }},
+      {'i', [&](const char *option_argument) { params.input_file = option_argument; }},
+      {'o', [&](const char *option_argument) { params.output_file = option_argument; }},
+      {256, [&](const char *) { params.mirror = true; }},
+      {257, [&](const char *option_argument) {
+         if (strcmp(option_argument, "x") != 0 && strcmp(option_argument, "y") != 0) 
+           Logger::exit(ERR_INVALID_ARGUMENT, invalid_argument_error + "--axis (x/y)");
+         params.axis = option_argument;
+       }},
+      {258, [&](const char *option_argument) { params.left_up = parseCoordinate(option_argument); }},
+      {259, [&](const char *option_argument) { params.right_down = parseCoordinate(option_argument); }},
+      {260, [&](const char *option_argument) { params.dest_left_up = parseCoordinate(option_argument); }},
+      {261, [&](const char *option_argument) { params.old_color = parseRGB(option_argument); }},
+      {262, [&](const char *option_argument) { params.new_color = parseRGB(option_argument); }},
+      {263, [&](const char *option_argument) { params.line_color = parseRGB(option_argument); }},
+      {264, [&](const char *) { params.copy = true; }},
+      {265, [&](const char *) { params.color_replace = true; }},
+      {266, [&](const char *) { params.split = true; }},
+      {267, [&](const char *option_argument) { params.number_x = parseValues(option_argument)[0]; }},
+      {268, [&](const char *option_argument) { params.number_y = parseValues(option_argument)[0]; }},
+      {269, [&](const char *option_argument) { params.thickness = parseValues(option_argument)[0]; }},
+      {270, [&](const char *) { params.info = true; }},
+      {271, [&](const char *) { Logger::setColorsEnabled(true); }}
+  };
 
-  for (int i = 1; i < argc; ++i)
-  {
-    const std::string arg = argv[i];
 
-    if (arg == "--help" || arg == "-h")
-    {
-      displayHelp();
-      Logger::exit(0, "");
-    }
-    else if (arg == "-colorful")
-    {
-      Logger::setColorsEnabled(true);
-    }
-    else if (arg == "-info")
-    {
-      params.info = true;
-    }
-    else if (arg == "--mirror")
-    {
-      params.mirror = true;
-    }
-    else if (arg == "--axis")
-    {
-      if (i + 1 < argc)
-      {
-        params.axis = argv[++i];
-      }
-    }
-    else if (arg == "--left_up" || arg == "--right_down" ||
-             arg == "--dest_left_up")
-    {
-      if (i + 1 < argc)
-      {
-        try
-        {
-          std::string value = argv[++i];
-          Coordinate coord;
-          std::vector<int> parsed_values = parseValues(value);
-          if (parsed_values.size() != 2)
-          {
-            Logger::exit(1, invalid_coordinate_format_error);
-          }
-          coord.x = parsed_values[0];
-          coord.y = parsed_values[1];
-          if (arg == "--left_up")
-            params.left_up = coord;
-          else if (arg == "--right_down")
-            params.right_down = coord;
-          else if (arg == "--dest_left_up")
-            params.dest_left_up = coord;
-        }
-        catch (const std::invalid_argument &e)
-        {
+  const char *short_options = "hi:o:";
 
-          Logger::exit(1, invalid_argument_error + arg);
-        }
+  static struct option long_options[] = {
+      {"help", no_argument, NULL, 'h'},
+      {"input", required_argument, NULL, 'i'},
+      {"output", required_argument, NULL, 'o'},
+      {"mirror", no_argument, NULL, 256},
+      {"axis", required_argument, NULL, 257},
+      {"left_up", required_argument, NULL, 258},
+      {"right_down", required_argument, NULL, 259},
+      {"dest_left_up", required_argument, NULL, 260},
+      {"old_color", required_argument, NULL, 261},
+      {"new_color", required_argument, NULL, 262},
+      {"color", required_argument, NULL, 263},
+      {"copy", no_argument, NULL, 264},
+      {"color_replace", no_argument, NULL, 265},
+      {"split", no_argument, NULL, 266},
+      {"number_x", required_argument, NULL, 267},
+      {"number_y", required_argument, NULL, 268},
+      {"thickness", required_argument, NULL, 269},
+      {"info", no_argument, NULL, 270},
+      {"colorful", no_argument, NULL, 271},
+      {NULL, 0, NULL, 0}};
+
+  int opt;
+  while ((opt = getopt_long(argc, argv, short_options, long_options, NULL)) !=
+         -1) {
+
+      if (opt == '?'){
+        Logger::warn("|-----------------------------------^");
+      }else{
+        auto handler = optionHandlers.find(opt);
+      if (handler != optionHandlers.end()) {
+        handler->second(optarg);
+      } 
       }
+   
+      
+    
+  }
+
+  if (params.mirror && params.copy) {
+    Logger::exit(ERR_INVALID_ARGUMENT, "Unsupported double function");
+  }
+
+  if (params.input_file.empty()) {
+    if (optind == argc - 1) {
+      params.input_file = argv[optind];
+    } else if (optind < argc - 1) {
+      Logger::exit(ERR_INVALID_ARGUMENT, "Too many arguments");
+    } else {
+      Logger::exit(ERR_INVALID_ARGUMENT, "No input file provided");
     }
-    else if (arg == "--old_color" || arg == "--new_color" ||
-             arg == "--color")
-    {
-      if (i + 1 < argc)
-      {
-        try
-        {
-          std::string value = argv[++i];
-          RGB color = parseRGB(value);
-          if (arg == "--old_color")
-            params.old_color = color;
-          else if (arg == "--new_color")
-            params.new_color = color;
-          else if (arg == "--color")
-            params.line_color = color;
-        }
-        catch (const std::invalid_argument &e)
-        {
-          Logger::exit(1, invalid_argument_error + arg);
-        }
-      }
-    }
-    else if (arg == "--copy")
-    {
-      params.copy = true;
-    }
-    else if (arg == "--color_replace")
-    {
-      params.color_replace = true;
-    }
-    else if (arg == "--split")
-    {
-      params.split = true;
-    }
-    else if (arg == "--number_x" || arg == "--number_y" ||
-             arg == "--thickness")
-    {
-      if (i + 1 < argc)
-      {
-        try
-        {
-          std::string value = argv[++i];
-          int intValue = std::stoi(value);
-          if (arg == "--number_x")
-            params.number_x = intValue;
-          else if (arg == "--number_y")
-            params.number_y = intValue;
-          else if (arg == "--thickness")
-            params.thickness = intValue;
-        }
-        catch (const std::invalid_argument &e)
-        {
-          Logger::exit(1, invalid_argument_error + arg);
-        }
-      }
-    }
-    else if (arg == "--output" || arg == "-o")
-    {
-      if (i + 1 < argc)
-      {
-        params.output_file = argv[++i];
-      }
-    }
-    else if (arg == "--input" || arg == "-i")
-    {
-      if (i + 1 < argc)
-      {
-        params.input_file = argv[++i];
-      }
-    }
-    else
-    {
-      Logger::warn(unexpected_option_warning + arg);
-    }
+  }
+
+  if (params.input_file == params.output_file) {
+    Logger::exit(ERR_INVALID_ARGUMENT, same_input_output_message);
   }
 
   return params;

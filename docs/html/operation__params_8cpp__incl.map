@@ -1,14 +1,17 @@
 <map id="src/operation_params.cpp" name="src/operation_params.cpp">
-<area shape="rect" id="node1" title="Определяет функции для анализа параметров операций из командной строки." alt="" coords="323,5,514,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="511,5,702,32"/>
 <area shape="rect" id="node2" href="$operation__params_8h.html" title="Заголовочный файл, содержащий определения структур и классов." alt="" coords="40,80,192,107"/>
 <area shape="rect" id="node5" title=" " alt="" coords="181,229,240,256"/>
 <area shape="rect" id="node6" title=" " alt="" coords="179,155,242,181"/>
-<area shape="rect" id="node7" href="$logger_8h.html" title="Заголовочный файл, содержащий определения структур и классов." alt="" coords="317,155,392,181"/>
-<area shape="rect" id="node8" href="$messages_8h.html" title="Заголовочный файл, содержащий определения структур и классов." alt="" coords="369,80,469,107"/>
-<area shape="rect" id="node9" title=" " alt="" coords="493,80,579,107"/>
-<area shape="rect" id="node10" title=" " alt="" coords="603,80,683,107"/>
-<area shape="rect" id="node11" title=" " alt="" coords="707,80,781,107"/>
-<area shape="rect" id="node12" title=" " alt="" coords="806,80,893,107"/>
+<area shape="rect" id="node7" title=" " alt="" coords="318,80,394,107"/>
+<area shape="rect" id="node8" title=" " alt="" coords="419,80,485,107"/>
+<area shape="rect" id="node9" title=" " alt="" coords="510,80,597,107"/>
+<area shape="rect" id="node10" title=" " alt="" coords="621,80,701,107"/>
+<area shape="rect" id="node11" title=" " alt="" coords="725,80,776,107"/>
+<area shape="rect" id="node12" title=" " alt="" coords="800,80,875,107"/>
+<area shape="rect" id="node13" title=" " alt="" coords="899,80,986,107"/>
+<area shape="rect" id="node14" href="$logger_8h.html" title="Заголовочный файл, содержащий определения структур и классов." alt="" coords="652,155,727,181"/>
+<area shape="rect" id="node15" href="$messages_8h.html" title="Заголовочный файл, содержащий определения структур и классов." alt="" coords="1062,80,1162,107"/>
 <area shape="rect" id="node3" href="$structures_8h.html" title="Заголовочный файл, содержащий определения структур и классов." alt="" coords="5,155,104,181"/>
 <area shape="rect" id="node4" title=" " alt="" coords="21,229,88,256"/>
 </map>

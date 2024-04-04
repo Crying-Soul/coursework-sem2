@@ -10,6 +10,6 @@ var dir_d44c64559bbebec7f509842c48db8b23 =
       [ "BMPHeader", "struct_b_m_p_header.html", "struct_b_m_p_header" ],
       [ "RGB", "struct_r_g_b.html", "struct_r_g_b" ],
       [ "Coordinate", "struct_coordinate.html", "struct_coordinate" ],
-      [ "OperationParams", "struct_operation_params.html", "struct_operation_params" ]
+      [ "Operations", "struct_operations.html", "struct_operations" ]
     ] ]
 ];

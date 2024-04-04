@@ -1,5 +1,5 @@
 <map id="displayHelp" name="displayHelp">
 <area shape="rect" id="node1" title="Отображение справки о возможных параметрах командной строки." alt="" coords="308,5,407,32"/>
-<area shape="rect" id="node2" href="$operation__params_8h.html#a00a944e8a68555a108c478465b5e9018" title="Парсинг командной строки и создание объекта OperationParams." alt="" coords="108,5,260,32"/>
+<area shape="rect" id="node2" href="$operation__params_8h.html#a0048eb016cc89e79b003ff63259ea264" title="Парсинг командной строки и создание объекта Operations." alt="" coords="108,5,260,32"/>
 <area shape="rect" id="node3" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="Главная функция программы" alt="" coords="5,5,60,32"/>
 </map>

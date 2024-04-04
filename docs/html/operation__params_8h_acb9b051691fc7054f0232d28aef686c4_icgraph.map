@@ -1,6 +1,7 @@
 <map id="parseValues" name="parseValues">
-<area shape="rect" id="node1" title="Парсинг строки с числами, разделенными пробелами." alt="" coords="443,5,544,32"/>
-<area shape="rect" id="node2" href="$operation__params_8h.html#a00a944e8a68555a108c478465b5e9018" title="Парсинг командной строки и создание объекта OperationParams." alt="" coords="108,5,260,32"/>
-<area shape="rect" id="node4" href="$operation__params_8h.html#abbd547560acd14f298e5d36dcf0398d3" title="Парсинг строки с RGB&#45;значением цвета." alt="" coords="308,31,395,57"/>
-<area shape="rect" id="node3" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="Главная функция программы" alt="" coords="5,5,60,32"/>
+<area shape="rect" id="node1" title="Парсинг строки с числами, разделенными пробелами." alt="" coords="485,22,587,49"/>
+<area shape="rect" id="node2" href="$operation__params_8h.html#a0048eb016cc89e79b003ff63259ea264" title="Парсинг командной строки и создание объекта Operations." alt="" coords="108,22,260,49"/>
+<area shape="rect" id="node4" href="$operation__params_8cpp.html#adfab6ddfafab9bed92ac967c3a0fe0dd" title=" " alt="" coords="308,22,437,49"/>
+<area shape="rect" id="node5" href="$operation__params_8h.html#abbd547560acd14f298e5d36dcf0398d3" title="Парсинг строки с RGB&#45;значением цвета." alt="" coords="329,73,416,100"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="Главная функция программы" alt="" coords="5,22,60,49"/>
 </map>

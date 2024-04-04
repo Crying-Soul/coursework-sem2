@@ -12,13 +12,13 @@
 #include <vector>
 
 /**
- * @brief Парсинг командной строки и создание объекта OperationParams.
+ * @brief Парсинг командной строки и создание объекта Operations.
  * 
  * @param argc Количество аргументов командной строки.
  * @param argv Массив строк, содержащих аргументы командной строки.
- * @return OperationParams объект, содержащий параметры операции.
+ * @return Operations объект, содержащий параметры операции.
  */
-OperationParams parseCommandLine(int argc, char *argv[]);
+Operations parseCommandLine(int argc, char *argv[]);
 
 /**
  * @brief Парсинг строки с числами, разделенными пробелами.
