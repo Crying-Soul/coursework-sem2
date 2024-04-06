@@ -12,6 +12,7 @@ var messages_8h =
     [ "copy_option_description", "messages_8h.html#a4b09ca69b374882ee0c2f8ecee6fb42b", null ],
     [ "data_offset_message", "messages_8h.html#a900b7e2b7c5b0636d905350dfeb885ab", null ],
     [ "dest_left_up_option_description", "messages_8h.html#a38b4bf821692bfa5ea4a425ee3082437", null ],
+    [ "double_function_use_err_en", "messages_8h.html#a14f6232a97e68a184947b5da49594281", null ],
     [ "failed_create_output_file", "messages_8h.html#a4c223bdd74d28220ed0cef7f0c5a2221", null ],
     [ "file_size_message", "messages_8h.html#a9d28fc12b224d67854c2b8aaddb45895", null ],
     [ "header_size_message", "messages_8h.html#a4fb533024c4a09986c95cf9129a3e6df", null ],
@@ -55,6 +56,7 @@ var messages_8h =
     [ "split_option_description", "messages_8h.html#a13cb7075981aa5ccb373e5a1f9259bf5", null ],
     [ "success_message", "messages_8h.html#a12a0caa1ab4a4a987a4c4f5484756d3c", null ],
     [ "thickness_option_description", "messages_8h.html#ad7f08176f688ceed0ff93eb3b69d67a3", null ],
+    [ "too_many_args_err_en", "messages_8h.html#a5eaed2dd93586addcfc9fb474b3c79d0", null ],
     [ "unexpected_option_warning", "messages_8h.html#a0b5c770a3338afca1f0ea60e5ba86cf3", null ],
     [ "unsupported_compression_error", "messages_8h.html#aa0ae33e41df467014210407985a7bdef", null ]
 ];

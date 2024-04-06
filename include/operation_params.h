@@ -7,7 +7,7 @@
 #ifndef OPERATION_PARAMS_H
 #define OPERATION_PARAMS_H
 
-#include "structures.h" // Включаем определение структур
+#include "structures.h"
 #include <string>
 #include <vector>
 

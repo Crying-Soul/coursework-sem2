@@ -1,6 +1,5 @@
 <map id="Logger::warn" name="Logger::warn">
-<area shape="rect" id="node1" title="Записывает предупреждение в лог с желтым цветом." alt="" coords="308,56,415,83"/>
-<area shape="rect" id="node2" href="$class_b_m_p.html#aa5efccdbbacffe75174e3c126efc06ad" title="Копировать область изображения." alt="" coords="139,5,229,32"/>
-<area shape="rect" id="node3" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="Главная функция программы" alt="" coords="5,56,60,83"/>
-<area shape="rect" id="node4" href="$operation__params_8h.html#a0048eb016cc89e79b003ff63259ea264" title="Парсинг командной строки и создание объекта Operations." alt="" coords="108,107,260,133"/>
+<area shape="rect" id="node1" title="Записывает предупреждение в лог с желтым цветом." alt="" coords="247,31,353,57"/>
+<area shape="rect" id="node2" href="$class_b_m_p.html#aa5efccdbbacffe75174e3c126efc06ad" title="Копировать область изображения." alt="" coords="108,5,199,32"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="Главная функция программы" alt="" coords="5,31,60,57"/>
 </map>

@@ -308,6 +308,20 @@ const std::string colors_used_message = "Используемые цвета: ";
  */
 const std::string important_colors_message = "Важные цвета: ";
 
+/**
+ * @brief Error message for the usage of two incompatible functions.
+ */
+const std::string double_function_use_err = "Несовместимые функции";
+
+/**
+ * @brief Error message for too many arguments provided.
+ */
+const std::string too_many_args_err = "Слишком много аргументов";
+
+/**
+ * @brief Error message for missing input file.
+ */
+
 #else
 // MAIN
 
@@ -603,5 +617,15 @@ const std::string colors_used_message = "Colors used: ";
  * @brief Important colors message.
  */
 const std::string important_colors_message = "Important colors: ";
+
+/**
+ * @brief Error message for the usage of two incompatible functions.
+ */
+const std::string double_function_use_err = "Incompatible functions";
+
+/**
+ * @brief Error message for too many arguments provided.
+ */
+const std::string too_many_args_err_en = "Too many arguments";
 
 #endif
