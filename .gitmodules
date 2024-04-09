@@ -2,3 +2,6 @@
 [submodule "docs/extra/doxygen-awesome-css"]
 	path = docs/extra/doxygen-awesome-css
 	url = https://github.com/jothepro/doxygen-awesome-css.git
+[submodule "include/libs/nlohmann"]
+	path = include/libs/nlohmann
+	url = https://github.com/nlohmann/json.git
