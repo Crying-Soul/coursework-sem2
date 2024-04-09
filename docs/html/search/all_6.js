@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['getinfo_38',['getInfo',['../class_b_m_p.html#acdebc7da18509fc92374934ad7a99ae2',1,'BMP']]],
-  ['green_39',['green',['../struct_r_g_b.html#a165f9a144b000655025edaacae2cae6b',1,'RGB']]],
-  ['green_40',['GREEN',['../logger_8h.html#ab87bacfdad76e61b9412d7124be44c1ca9de0e5dd94e861317e74964bed179fa0',1,'logger.h']]]
+  ['readme_2emd_11',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
+  ['resetcolor_12',['resetColor',['../logger_8cpp.html#a3ae85e4766efbf5abe5eaf6e5c4afc32',1,'logger.cpp']]],
+  ['run_2esh_13',['run.sh',['../run_8sh.html',1,'']]]
 ];

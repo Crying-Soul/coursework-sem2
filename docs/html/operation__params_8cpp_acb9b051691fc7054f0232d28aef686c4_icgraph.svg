@@ -12,7 +12,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title="Парсинг строки с числами, разделенными пробелами.">
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="#bfbfbf" stroke="black" points="360,-38.5 360,-57.5 436,-57.5 436,-38.5 360,-38.5"/>
 <text text-anchor="middle" x="398" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">parseValues</text>
 </a>
@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="operation__params_8h.html#a0048eb016cc89e79b003ff63259ea264" target="_top" xlink:title="Парсинг командной строки и создание объекта Operations.">
+<g id="a_node2"><a xlink:href="operation__params_8cpp.html#a0048eb016cc89e79b003ff63259ea264" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="77,-38.5 77,-57.5 191,-57.5 191,-38.5 77,-38.5"/>
 <text text-anchor="middle" x="134" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">parseCommandLine</text>
 </a>
@@ -51,7 +51,7 @@
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="operation__params_8h.html#abbd547560acd14f298e5d36dcf0398d3" target="_top" xlink:title="Парсинг строки с RGB&#45;значением цвета.">
+<g id="a_node5"><a xlink:href="operation__params_8cpp.html#abbd547560acd14f298e5d36dcf0398d3" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="243,-0.5 243,-19.5 308,-19.5 308,-0.5 243,-0.5"/>
 <text text-anchor="middle" x="275.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">parseRGB</text>
 </a>

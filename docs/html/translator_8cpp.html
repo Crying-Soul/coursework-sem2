@@ -16,7 +16,7 @@
 <meta name="twitter:title" content="Doxygen Awesome" />
 <meta name="twitter:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
 <!-- END twitter metadata -->
-<title>Coursework v5.2: Курсовая работа</title>
+<title>Coursework v5.2: Файл src/translator.cpp</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link rel="icon" type="image/svg+xml" href="logo.drawio.svg"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -98,7 +98,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('index.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('translator_8cpp.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -116,89 +116,24 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </iframe>
 </div>
 
-<div class="PageDoc"><div class="header">
+<div class="header">
   <div class="headertitle">
-<div class="title">Курсовая работа </div>  </div>
+<div class="title">Файл translator.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md_README"></a> Это инструмент командной строки для обработки файлов изображений BMP в соответствии с указанными функциональными возможностями. Он позволяет выполнять операции, такие как отражение, копирование областей, замена цвета и разделение изображений на несколько частей.</p>
-<h1><a class="anchor" id="autotoc_md1"></a>
-Содержание</h1>
-<ul>
-<li><a href="#предварительные-требования">Предварительные требования</a></li>
-<li><a href="#установка">Установка</a></li>
-<li><a href="#использование">Использование</a></li>
-<li><a href="#пример">Пример</a></li>
-<li><a href="#авторы">Авторы</a></li>
-</ul>
-<p><a class="anchor" id="предварительные-требования"></a></p>
-<h1><a class="anchor" id="autotoc_md2"></a>
-Предварительные требования</h1>
-<ul>
-<li>Компилятор C++</li>
-<li>Make</li>
-</ul>
-<p><a class="anchor" id="установка"></a></p>
-<h1><a class="anchor" id="autotoc_md3"></a>
-Установка</h1>
-<ol type="1">
-<li>Клонируйте репозиторий:<code>git clone <a href="https://github.com/Crying-Soul/coursework-sem2.git">https://github.com/Crying-Soul/coursework-sem2.git</a> ./cw</code></li>
-<li>Перейдите в каталог проекта:<code>cd cw</code></li>
-<li>Соберите проект с помощью make:<code>make</code> <a class="anchor" id="использование"></a></li>
-</ol>
-<h1><a class="anchor" id="autotoc_md4"></a>
-Использование</h1>
-<div class="fragment"><div class="line">./coursework [--mirror --axis &lt;x/y&gt; --left_up &lt;x.y&gt; --right_down &lt;x.y&gt;] \</div>
-<div class="line">                [--copy --left_up &lt;x.y&gt; --right_down &lt;x.y&gt; --dest_left_up &lt;x.y&gt;] \</div>
-<div class="line">                [--color_replace --old_color &lt;rrr.ggg.bbb&gt; --new_color &lt;rrr.ggg.bbb&gt;] \</div>
-<div class="line">                [--split --number_x &lt;N&gt; --number_y &lt;M&gt; --thickness &lt;T&gt; --color &lt;rrr.ggg.bbb&gt;] \</div>
-<div class="line">                -i &lt;input_file.bmp&gt; -o &lt;output_file.bmp&gt;</div>
-</div><!-- fragment --><ul>
-<li><code>--mirror</code>: Отражает указанную область изображения.</li>
-<li><code>--axis</code>: Указывает ось (x или y) для отражения.</li>
-<li><code>--left_up</code>: Координаты верхнего левого угла области.</li>
-<li><code>--right_down</code>: Координаты нижнего правого угла области.</li>
-<li><code>--copy</code>: Копирует указанную область изображения в другое место.</li>
-<li><code>--dest_left_up</code>: Координаты верхнего левого угла целевой области.</li>
-<li><code>--color_replace</code>: Заменяет все пиксели указанного цвета другим цветом.</li>
-<li><code>--old_color</code>: Цвет для замены (в формате rrr.ggg.bbb).</li>
-<li><code>--new_color</code>: Цвет для замены (в формате rrr.ggg.bbb).</li>
-<li><code>--split</code>: Делит изображение на N*M частей с указанной толщиной линии и цветом.</li>
-<li><code>--number_x</code>: Количество частей вдоль оси Y.</li>
-<li><code>--number_y</code>: Количество частей вдоль оси X.</li>
-<li><code>--thickness</code>: Толщина разделительных линий.</li>
-<li><code>--color</code>: Цвет разделительных линий (в формате rrr.ggg.bbb).</li>
-</ul>
-<p><a class="anchor" id="example"></a></p>
-<h1><a class="anchor" id="autotoc_md5"></a>
-Пример</h1>
-<div class="fragment"><div class="line">./coursework --mirror --axis x --left_up 100.100 --right_down 200.200 \</div>
-<div class="line">                --copy --left_up 50.50 --right_down 150.150 --dest_left_up 300.300 \</div>
-<div class="line">                --color_replace --old_color 255.0.0 --new_color 0.255.0 \</div>
-<div class="line">                --split --number_x 3 --number_y 3 --thickness 2 --color 0.0.255 \</div>
-<div class="line">                -i input.bmp -o output.bmp</div>
-</div><!-- fragment --><p> <a class="anchor" id="credits"></a></p>
-<h1><a class="anchor" id="autotoc_md6"></a>
-Дополнительно</h1>
-<h2><a class="anchor" id="autotoc_md7"></a>
-Разработчики</h2>
-<ul>
-<li><b>Grebnev Egor</b> - Project Lead, Frontend Developer</li>
-<li><b>ChatGPT</b> - Backend Developer</li>
-</ul>
-<h2><a class="anchor" id="autotoc_md8"></a>
-Инструменты и библиотеки</h2>
-<p>Наш проект использует следующие инструменты и библиотеки:</p>
-<ul>
-<li><b><a href="https://doxygen.nl">Doxygen</a></b> - Инструмент для генерации документации из комментариев в исходном коде.</li>
-<li><b><a href="https://github.com/jothepro/doxygen-awesome-css">DoxygenAwesome</a></b> - Пользовательская тема CSS для документации Doxygen. </li>
-</ul>
-</div></div><!-- PageDoc -->
-</div><!-- contents -->
+<div class="textblock"><code>#include &quot;translator.hpp&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Граф включаемых заголовочных файлов для translator.cpp:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="translator_8cpp__incl.svg" width="146" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="translator_8cpp.html">translator.cpp</a></li>
     <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

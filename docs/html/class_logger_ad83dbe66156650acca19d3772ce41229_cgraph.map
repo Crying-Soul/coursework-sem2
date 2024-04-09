@@ -1,5 +1,0 @@
-<map id="Logger::log" name="Logger::log">
-<area shape="rect" id="node1" title="Записывает сообщение в лог с определенным цветом." alt="" coords="5,31,100,57"/>
-<area shape="rect" id="node2" href="$logger_8cpp.html#afe00396766eb6b8ca4674de4c5d3d949" title=" " alt="" coords="148,5,237,32"/>
-<area shape="rect" id="node3" href="$logger_8cpp.html#a47a17bf6298ba8d1f42d32b14449e277" title=" " alt="" coords="155,56,231,83"/>
-</map>

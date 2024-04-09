@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['isvalid_168',['isValid',['../class_b_m_p.html#a3b83e47741d70614c50d625649979176',1,'BMP']]]
+  ['translator_38',['translator',['../logger_8cpp.html#a3f9f785db75953395caaea4ab45be64c',1,'logger.cpp']]]
 ];

@@ -36,22 +36,12 @@ var NAVTREE =
         [ "Инструменты и библиотеки", "index.html#autotoc_md8", null ]
       ] ]
     ] ],
-    [ "Классы", "annotated.html", [
-      [ "Классы", "annotated.html", "annotated_dup" ],
-      [ "Алфавитный указатель классов", "classes.html", null ],
-      [ "Члены классов", "functions.html", [
-        [ "Указатель", "functions.html", null ],
-        [ "Функции", "functions_func.html", null ],
-        [ "Переменные", "functions_vars.html", null ]
-      ] ]
-    ] ],
     [ "Файлы", "files.html", [
       [ "Файлы", "files.html", "files_dup" ],
       [ "Список членов всех файлов", "globals.html", [
         [ "Указатель", "globals.html", null ],
         [ "Функции", "globals_func.html", null ],
-        [ "Переменные", "globals_vars.html", null ],
-        [ "Перечисления", "globals_enum.html", null ]
+        [ "Переменные", "globals_vars.html", null ]
       ] ]
     ] ]
   ] ]

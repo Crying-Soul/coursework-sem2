@@ -118,93 +118,146 @@ $(document).ready(function(){initNavTree('logger_8cpp.html',''); initResizable()
 
 <div class="header">
   <div class="summary">
-<a href="#func-members">Функции</a>  </div>
+<a href="#func-members">Функции</a> &#124;
+<a href="#var-members">Переменные</a>  </div>
   <div class="headertitle">
 <div class="title">Файл logger.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Implementation file for the <a class="el" href="class_logger.html">Logger</a> class.  
+<p>Implementation file for the Logger class.  
 <a href="#details">Подробнее...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="logger_8h_source.html">logger.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="messages_8h_source.html">messages.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;logger.hpp&quot;</code><br />
+<code>#include &quot;messages.hpp&quot;</code><br />
+<code>#include &quot;translator.hpp&quot;</code><br />
+<code>#include &lt;cstdlib&gt;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Граф включаемых заголовочных файлов для logger.cpp:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="logger_8cpp__incl.svg" width="314" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="logger_8cpp__incl.svg" width="572" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Функции</h2></td></tr>
-<tr class="memitem:a47a17bf6298ba8d1f42d32b14449e277"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger_8cpp.html#a47a17bf6298ba8d1f42d32b14449e277">setColor</a> (const <a class="el" href="logger_8h.html#ab87bacfdad76e61b9412d7124be44c1c">Color</a> color)</td></tr>
-<tr class="separator:a47a17bf6298ba8d1f42d32b14449e277"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe00396766eb6b8ca4674de4c5d3d949"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger_8cpp.html#afe00396766eb6b8ca4674de4c5d3d949">resetColor</a> ()</td></tr>
-<tr class="separator:afe00396766eb6b8ca4674de4c5d3d949"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f9f785db75953395caaea4ab45be64c"><td class="memItemLeft" align="right" valign="top">Translator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger_8cpp.html#a3f9f785db75953395caaea4ab45be64c">translator</a> (<a class="el" href="logger_8cpp.html#a999166c69977dd67339a4efc6665d47d">yandexToken</a> !=nullptr ? std::string(<a class="el" href="logger_8cpp.html#a999166c69977dd67339a4efc6665d47d">yandexToken</a>) :&quot;&quot;, <a class="el" href="logger_8cpp.html#a89b655481be750822b81ff864333d88d">yandexFolder</a> !=nullptr ? std::string(<a class="el" href="logger_8cpp.html#a89b655481be750822b81ff864333d88d">yandexFolder</a>) :&quot;&quot;)</td></tr>
+<tr class="separator:a3f9f785db75953395caaea4ab45be64c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81d09f8360558968e2402c1565126734"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger_8cpp.html#a81d09f8360558968e2402c1565126734">setColor</a> (const Color color, std::ostream &amp;stream=std::cout)</td></tr>
+<tr class="separator:a81d09f8360558968e2402c1565126734"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ae85e4766efbf5abe5eaf6e5c4afc32"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger_8cpp.html#a3ae85e4766efbf5abe5eaf6e5c4afc32">resetColor</a> (std::ostream &amp;stream=std::cout)</td></tr>
+<tr class="separator:a3ae85e4766efbf5abe5eaf6e5c4afc32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Переменные</h2></td></tr>
+<tr class="memitem:a999166c69977dd67339a4efc6665d47d"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger_8cpp.html#a999166c69977dd67339a4efc6665d47d">yandexToken</a> = std::getenv(&quot;IAM_TOKEN&quot;)</td></tr>
+<tr class="separator:a999166c69977dd67339a4efc6665d47d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89b655481be750822b81ff864333d88d"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger_8cpp.html#a89b655481be750822b81ff864333d88d">yandexFolder</a> = std::getenv(&quot;FOLDER_ID&quot;)</td></tr>
+<tr class="separator:a89b655481be750822b81ff864333d88d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
-<div class="textblock"><p>Implementation file for the <a class="el" href="class_logger.html">Logger</a> class. </p>
+<div class="textblock"><p>Implementation file for the Logger class. </p>
 </div><h2 class="groupheader">Функции</h2>
-<a id="afe00396766eb6b8ca4674de4c5d3d949"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afe00396766eb6b8ca4674de4c5d3d949">&#9670;&nbsp;</a></span>resetColor()</h2>
+<a id="a3ae85e4766efbf5abe5eaf6e5c4afc32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ae85e4766efbf5abe5eaf6e5c4afc32">&#9670;&nbsp;</a></span>resetColor()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void resetColor </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>stream</em> = <code>std::cout</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
-<div class="dynheader">
-Граф вызова функции:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="logger_8cpp_afe00396766eb6b8ca4674de4c5d3d949_icgraph.svg" width="1180" height="683"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
 
 </div>
 </div>
-<a id="a47a17bf6298ba8d1f42d32b14449e277"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a47a17bf6298ba8d1f42d32b14449e277">&#9670;&nbsp;</a></span>setColor()</h2>
+<a id="a81d09f8360558968e2402c1565126734"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81d09f8360558968e2402c1565126734">&#9670;&nbsp;</a></span>setColor()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void setColor </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="logger_8h.html#ab87bacfdad76e61b9412d7124be44c1c">Color</a>&#160;</td>
-          <td class="paramname"><em>color</em></td><td>)</td>
+          <td class="paramtype">const Color&#160;</td>
+          <td class="paramname"><em>color</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>stream</em> = <code>std::cout</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
-<div class="dynheader">
-Граф вызова функции:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="logger_8cpp_a47a17bf6298ba8d1f42d32b14449e277_icgraph.svg" width="1167" height="683"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+
 </div>
 </div>
+<a id="a3f9f785db75953395caaea4ab45be64c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f9f785db75953395caaea4ab45be64c">&#9670;&nbsp;</a></span>translator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Translator translator </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="logger_8cpp.html#a999166c69977dd67339a4efc6665d47d">yandexToken</a> !&#160;</td>
+          <td class="paramname"> = <code>nullptr&#160;?&#160;std::string(<a class="el" href="logger_8cpp.html#a999166c69977dd67339a4efc6665d47d">yandexToken</a>)&#160;:&quot;&quot;</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="logger_8cpp.html#a89b655481be750822b81ff864333d88d">yandexFolder</a> !&#160;</td>
+          <td class="paramname"> = <code>nullptr&#160;?&#160;std::string(<a class="el" href="logger_8cpp.html#a89b655481be750822b81ff864333d88d">yandexFolder</a>)&#160;:&quot;&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Переменные</h2>
+<a id="a89b655481be750822b81ff864333d88d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89b655481be750822b81ff864333d88d">&#9670;&nbsp;</a></span>yandexFolder</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* yandexFolder = std::getenv(&quot;FOLDER_ID&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a999166c69977dd67339a4efc6665d47d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a999166c69977dd67339a4efc6665d47d">&#9670;&nbsp;</a></span>yandexToken</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* yandexToken = std::getenv(&quot;IAM_TOKEN&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
