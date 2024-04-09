@@ -1,4 +1,4 @@
-#include "operation_params.h"
+#include "operation_params.hpp"
 
 #include <getopt.h>
 
@@ -11,8 +11,8 @@
 #include <string>
 #include <vector>
 
-#include "logger.h"
-#include "messages.h"
+#include "logger.hpp"
+#include "messages.hpp"
 
 std::vector<int> parseValues(const std::string &str) {
     std::vector<int> values;
@@ -108,44 +108,45 @@ Operations parseCommandLine(int argc, char *argv[]) {
             {268, [&](const char *option_argument) { params.number_y = parseValues(option_argument)[0]; }},
             {269, [&](const char *option_argument) { params.thickness = parseValues(option_argument)[0]; }},
             {270, [&](const char *) { params.info = true; }},
-            {271, [&](const char *) { Logger::setColorsEnabled(true); }}
+            {271, [&](const char *) { Logger::setColorsEnabled(true); }},
+            {272, [&](const char *option_argument) { Logger::setLanguage(option_argument); }}
     };
 
 
     const char *short_options = "hi:o:";
 
     static struct option long_options[] = {
-            {"help",          no_argument,       NULL, 'h'},
-            {"input",         required_argument, NULL, 'i'},
-            {"output",        required_argument, NULL, 'o'},
-            {"mirror",        no_argument,       NULL, 256},
-            {"axis",          required_argument, NULL, 257},
-            {"left_up",       required_argument, NULL, 258},
-            {"right_down",    required_argument, NULL, 259},
-            {"dest_left_up",  required_argument, NULL, 260},
-            {"old_color",     required_argument, NULL, 261},
-            {"new_color",     required_argument, NULL, 262},
-            {"color",         required_argument, NULL, 263},
-            {"copy",          no_argument,       NULL, 264},
-            {"color_replace", no_argument,       NULL, 265},
-            {"split",         no_argument,       NULL, 266},
-            {"number_x",      required_argument, NULL, 267},
-            {"number_y",      required_argument, NULL, 268},
-            {"thickness",     required_argument, NULL, 269},
-            {"info",          no_argument,       NULL, 270},
-            {"colorful",      no_argument,       NULL, 271},
-            {NULL,            0,                 NULL, 0}};
+        {"help",          no_argument,       nullptr, 'h'},
+        {"input",         required_argument, nullptr, 'i'},
+        {"output",        required_argument, nullptr, 'o'},
+        {"mirror",        no_argument,       nullptr, 256},
+        {"axis",          required_argument, nullptr, 257},
+        {"left_up",       required_argument, nullptr, 258},
+        {"right_down",    required_argument, nullptr, 259},
+        {"dest_left_up",  required_argument, nullptr, 260},
+        {"old_color",     required_argument, nullptr, 261},
+        {"new_color",     required_argument, nullptr, 262},
+        {"color",         required_argument, nullptr, 263},
+        {"copy",          no_argument,       nullptr, 264},
+        {"color_replace", no_argument,       nullptr, 265},
+        {"split",         no_argument,       nullptr, 266},
+        {"number_x",      required_argument, nullptr, 267},
+        {"number_y",      required_argument, nullptr, 268},
+        {"thickness",     required_argument, nullptr, 269},
+        {"info",          no_argument,       nullptr, 270},
+        {"colorful",      no_argument,       nullptr, 271},
+        {"lang",          required_argument, nullptr, 272},
+        {nullptr,         0,                 nullptr, 0}};
 
     int opt;
 
-    while ((opt = getopt_long(argc, argv, short_options, long_options, NULL)) != -1) {
-
+    while ((opt = getopt_long(argc, argv, short_options, long_options, nullptr)) != -1) {
         auto handler = optionHandlers.find(opt);
         if (handler != optionHandlers.end()) {
             handler->second(optarg);
         }
-
     }
+
 
     if (params.mirror && params.copy) {
         Logger::exit(ERR_INVALID_ARGUMENT, double_function_use_err);

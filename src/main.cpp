@@ -3,10 +3,10 @@
  * @brief  Главный файл программы
  */
 
-#include "bmp.h"
-#include "logger.h"
-#include "messages.h"
-#include "operation_params.h"
+#include "bmp.hpp"
+#include "logger.hpp"
+#include "messages.hpp"
+#include "operation_params.hpp"
 
 /**
  * @brief  Главная функция программы
@@ -22,7 +22,6 @@ int main(int argc, char *argv[]) {
   Operations params = parseCommandLine(argc, argv);
   const std::string input_file = "imgs/" + params.input_file;
 
-  Logger::log(input_file);
 
   // Загрузка изображения BMP
   BMP bmp(input_file);

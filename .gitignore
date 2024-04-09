@@ -1,5 +1,5 @@
 *.o
+.idea
 coursework
 .vscode
 out.bmp
-stress_test_out/*

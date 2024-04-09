@@ -4,9 +4,9 @@
  * BMP.
  */
 
-#include "bmp.h"
-#include "logger.h"
-#include "messages.h"
+#include "bmp.hpp"
+#include "logger.hpp"
+#include "messages.hpp"
 #include <cstring>
 #include <fstream>
 
