@@ -9,7 +9,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include <curl/curl.h>
+#include <libs/curl/include/curl/curl.h>
 #include <libs/nlohmann/single_include/nlohmann/json.hpp>
 
 using json = nlohmann::json;

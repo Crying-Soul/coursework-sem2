@@ -5,3 +5,6 @@
 [submodule "include/libs/nlohmann"]
 	path = include/libs/nlohmann
 	url = https://github.com/nlohmann/json.git
+[submodule "include/libs/curl"]
+	path = include/libs/curl
+	url = https://github.com/curl/curl.git
