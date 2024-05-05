@@ -1,0 +1,5 @@
+<map id="Operations" name="Operations">
+<area shape="rect" id="node1" title="Структура, представляющая параметры операции над изображением." alt="" coords="63,124,156,151"/>
+<area shape="rect" id="node2" href="$struct_coordinate.html" title="Структура, представляющая координаты точки на плоскости." alt="" coords="5,5,99,32"/>
+<area shape="rect" id="node3" href="$struct_r_g_b.html" title="Структура, представляющая цвет в формате RGB." alt="" coords="141,5,192,32"/>
+</map>

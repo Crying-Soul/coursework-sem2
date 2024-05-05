@@ -1,0 +1,8 @@
+<map id="BMP::BMP" name="BMP::BMP">
+<area shape="rect" id="node1" title="Конструктор класса BMP." alt="" coords="5,31,93,57"/>
+<area shape="rect" id="node2" href="$class_logger.html#ad044e18a74f8f7417e2bf8d8b64a9e3d" title="Записывает сообщение и завершает программу с заданным кодом выхода." alt="" coords="141,31,240,57"/>
+<area shape="rect" id="node3" href="$class_logger.html#a32783adace456c614c77d2944036e31b" title="Записывает ошибку в лог с красным цветом." alt="" coords="288,31,393,57"/>
+<area shape="rect" id="node4" href="$class_logger.html#a6faf175f206bf5734a4824c98296c677" title="Записывает сообщение в лог с определенным цветом." alt="" coords="441,31,536,57"/>
+<area shape="rect" id="node5" href="$logger_8cpp.html#a3ae85e4766efbf5abe5eaf6e5c4afc32" title=" " alt="" coords="584,5,673,32"/>
+<area shape="rect" id="node6" href="$logger_8cpp.html#a81d09f8360558968e2402c1565126734" title=" " alt="" coords="591,56,667,83"/>
+</map>

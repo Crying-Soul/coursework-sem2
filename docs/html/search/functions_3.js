@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['resetcolor_36',['resetColor',['../logger_8cpp.html#a3ae85e4766efbf5abe5eaf6e5c4afc32',1,'logger.cpp']]]
+  ['error_172',['error',['../class_logger.html#a32783adace456c614c77d2944036e31b',1,'Logger']]],
+  ['exit_173',['exit',['../class_logger.html#ad044e18a74f8f7417e2bf8d8b64a9e3d',1,'Logger']]]
 ];

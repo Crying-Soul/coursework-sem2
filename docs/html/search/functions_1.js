@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['main_31',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cpp']]]
+  ['colorreplace_169',['colorReplace',['../class_b_m_p.html#a93eafd24ac18b0f450764d631a911e22',1,'BMP']]],
+  ['copy_170',['copy',['../class_b_m_p.html#aa5efccdbbacffe75174e3c126efc06ad',1,'BMP']]]
 ];

@@ -1,8 +1,22 @@
 <map id="main" name="main">
-<area shape="rect" id="node1" title="Главная функция программы" alt="" coords="5,81,60,108"/>
-<area shape="rect" id="node2" href="$operation__params_8cpp.html#a0048eb016cc89e79b003ff63259ea264" title=" " alt="" coords="108,81,260,108"/>
-<area shape="rect" id="node3" href="$operation__params_8cpp.html#a1451d6a0f33f9d0a02a4b055e5839e6e" title=" " alt="" coords="323,5,422,32"/>
-<area shape="rect" id="node4" href="$operation__params_8cpp.html#adfab6ddfafab9bed92ac967c3a0fe0dd" title=" " alt="" coords="308,56,437,83"/>
-<area shape="rect" id="node5" href="$operation__params_8cpp.html#acb9b051691fc7054f0232d28aef686c4" title=" " alt="" coords="485,107,587,133"/>
-<area shape="rect" id="node6" href="$operation__params_8cpp.html#abbd547560acd14f298e5d36dcf0398d3" title=" " alt="" coords="329,157,416,184"/>
+<area shape="rect" id="node1" title="Главная функция программы" alt="" coords="5,436,60,463"/>
+<area shape="rect" id="node2" href="$class_b_m_p.html#a93eafd24ac18b0f450764d631a911e22" title="Заменить цвет на изображении." alt="" coords="113,5,255,32"/>
+<area shape="rect" id="node3" href="$class_b_m_p.html#aa5efccdbbacffe75174e3c126efc06ad" title="Копировать область изображения." alt="" coords="139,56,229,83"/>
+<area shape="rect" id="node4" href="$class_logger.html#ad044e18a74f8f7417e2bf8d8b64a9e3d" title="Записывает сообщение и завершает программу с заданным кодом выхода." alt="" coords="700,461,799,488"/>
+<area shape="rect" id="node6" href="$class_logger.html#a6faf175f206bf5734a4824c98296c677" title="Записывает сообщение в лог с определенным цветом." alt="" coords="1004,208,1099,235"/>
+<area shape="rect" id="node9" href="$class_b_m_p.html#acdebc7da18509fc92374934ad7a99ae2" title="Получить информацию о изображении." alt="" coords="543,157,648,184"/>
+<area shape="rect" id="node10" href="$class_b_m_p.html#a3b83e47741d70614c50d625649979176" title="Проверить, является ли изображение валидным." alt="" coords="133,436,235,463"/>
+<area shape="rect" id="node11" href="$class_b_m_p.html#a6760433189c91bee33a1e884909c3818" title="Отразить изображение относительно указанной оси." alt="" coords="546,613,645,640"/>
+<area shape="rect" id="node12" href="$operation__params_8hpp.html#a0048eb016cc89e79b003ff63259ea264" title="Парсинг командной строки и создание объекта Operations." alt="" coords="108,360,260,387"/>
+<area shape="rect" id="node18" href="$class_b_m_p.html#ad6023dacfbf10c0326a59f7e996aba27" title="Сохранить изображение в файл." alt="" coords="550,563,641,589"/>
+<area shape="rect" id="node19" href="$class_b_m_p.html#aaff3df7f32657d64bf3b5f07e76a4edd" title="Разделить изображение на части." alt="" coords="358,664,445,691"/>
+<area shape="rect" id="node20" href="$class_logger.html#a0ba83481220ad6ddb4686d9d77de00d3" title="Записывает предупреждение в лог с желтым цветом." alt="" coords="696,588,803,615"/>
+<area shape="rect" id="node5" href="$class_logger.html#a32783adace456c614c77d2944036e31b" title="Записывает ошибку в лог с красным цветом." alt="" coords="851,385,956,412"/>
+<area shape="rect" id="node7" href="$logger_8cpp.html#a3ae85e4766efbf5abe5eaf6e5c4afc32" title=" " alt="" coords="1147,183,1236,209"/>
+<area shape="rect" id="node8" href="$logger_8cpp.html#a81d09f8360558968e2402c1565126734" title=" " alt="" coords="1153,233,1229,260"/>
+<area shape="rect" id="node13" href="$operation__params_8cpp.html#a1451d6a0f33f9d0a02a4b055e5839e6e" title="Отображение справки о возможных параметрах командной строки." alt="" coords="854,208,953,235"/>
+<area shape="rect" id="node14" href="$operation__params_8cpp.html#adfab6ddfafab9bed92ac967c3a0fe0dd" title=" " alt="" coords="337,411,466,437"/>
+<area shape="rect" id="node15" href="$operation__params_8cpp.html#acb9b051691fc7054f0232d28aef686c4" title="Парсинг строки с числами, разделенными пробелами." alt="" coords="545,360,646,387"/>
+<area shape="rect" id="node16" href="$operation__params_8cpp.html#abbd547560acd14f298e5d36dcf0398d3" title="Парсинг строки с RGB&#45;значением цвета." alt="" coords="358,259,445,285"/>
+<area shape="rect" id="node17" href="$class_logger.html#ab7e9747c046ab01e065bde00aa26b44b" title="Устанавливает разрешение использования цветов в выводе." alt="" coords="308,309,495,336"/>
 </map>

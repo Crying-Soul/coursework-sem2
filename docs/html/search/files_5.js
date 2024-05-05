@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['translator_2ecpp_28',['translator.cpp',['../translator_8cpp.html',1,'']]]
+  ['structures_2ehpp_166',['structures.hpp',['../structures_8hpp.html',1,'']]]
 ];

@@ -1,0 +1,6 @@
+<map id="Logger::error" name="Logger::error">
+<area shape="rect" id="node1" title="Записывает ошибку в лог с красным цветом." alt="" coords="5,31,111,57"/>
+<area shape="rect" id="node2" href="$class_logger.html#a6faf175f206bf5734a4824c98296c677" title="Записывает сообщение в лог с определенным цветом." alt="" coords="159,31,253,57"/>
+<area shape="rect" id="node3" href="$logger_8cpp.html#a3ae85e4766efbf5abe5eaf6e5c4afc32" title=" " alt="" coords="301,5,391,32"/>
+<area shape="rect" id="node4" href="$logger_8cpp.html#a81d09f8360558968e2402c1565126734" title=" " alt="" coords="308,56,384,83"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="Logger::setColorsEnabled" name="Logger::setColorsEnabled">
+<area shape="rect" id="node1" title="Устанавливает разрешение использования цветов в выводе." alt="" coords="308,31,495,57"/>
+<area shape="rect" id="node2" href="$class_logger.html#a7a1eda8377415680de5f3cfc5ec7ce96" title="Конструктор для класса Logger." alt="" coords="125,5,243,32"/>
+<area shape="rect" id="node3" href="$operation__params_8hpp.html#a0048eb016cc89e79b003ff63259ea264" title="Парсинг командной строки и создание объекта Operations." alt="" coords="108,56,260,83"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="Главная функция программы" alt="" coords="5,56,60,83"/>
+</map>

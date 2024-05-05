@@ -29,7 +29,7 @@
  */
 #define ERR_INSUFFICIENT_ARGUMENTS 45
 
-
+const std::string hello_message = "Course work for option 5.2, created by Egor Grebnev.";
 /**
  * @brief Message for invalid BMP file.
  */

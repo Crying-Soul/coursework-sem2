@@ -1,4 +1,9 @@
 <map id="parseCoordinate" name="parseCoordinate">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,135,32"/>
-<area shape="rect" id="node2" href="$operation__params_8cpp.html#acb9b051691fc7054f0232d28aef686c4" title=" " alt="" coords="183,5,284,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,135,57"/>
+<area shape="rect" id="node2" href="$class_logger.html#ad044e18a74f8f7417e2bf8d8b64a9e3d" title="Записывает сообщение и завершает программу с заданным кодом выхода." alt="" coords="332,31,431,57"/>
+<area shape="rect" id="node7" href="$operation__params_8cpp.html#acb9b051691fc7054f0232d28aef686c4" title="Парсинг строки с числами, разделенными пробелами." alt="" coords="183,56,284,83"/>
+<area shape="rect" id="node3" href="$class_logger.html#a32783adace456c614c77d2944036e31b" title="Записывает ошибку в лог с красным цветом." alt="" coords="479,31,584,57"/>
+<area shape="rect" id="node4" href="$class_logger.html#a6faf175f206bf5734a4824c98296c677" title="Записывает сообщение в лог с определенным цветом." alt="" coords="632,31,727,57"/>
+<area shape="rect" id="node5" href="$logger_8cpp.html#a3ae85e4766efbf5abe5eaf6e5c4afc32" title=" " alt="" coords="775,5,864,32"/>
+<area shape="rect" id="node6" href="$logger_8cpp.html#a81d09f8360558968e2402c1565126734" title=" " alt="" coords="781,56,857,83"/>
 </map>

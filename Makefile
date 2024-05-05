@@ -1,14 +1,14 @@
 CC := g++
 CXXFLAGS := -Wall -Wextra -pedantic -std=c++14 -Wshadow -Wformat=2 -Wconversion -Weffc++ -Wfloat-equal -fstack-protector-strong -fPIE -pie
-LIBS := -lcurl
-SRC_DIR := src
+LIBS := 
+SRC_DIR := source
 INCDIR := include
 OBJDIR := obj
 
 
 SOURCES := $(wildcard $(SRC_DIR)/*.cpp)
 OBJECTS := $(patsubst $(SRC_DIR)/%.cpp, $(OBJDIR)/%.o, $(SOURCES))
-EXECUTABLE := coursework
+EXECUTABLE := cw
 
 DOXYGEN_CONFIG := Doxyfile
 
@@ -25,6 +25,6 @@ clean:
 	$(RM) -r $(OBJDIR) $(EXECUTABLE)
 
 docs:
-	@doxygen $(DOXYGEN_CONFIG)  # Note the tab character before doxygen
+	@doxygen $(DOXYGEN_CONFIG) 
 
 .PHONY: all clean docs

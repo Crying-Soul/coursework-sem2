@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['setcolor_37',['setColor',['../logger_8cpp.html#a81d09f8360558968e2402c1565126734',1,'logger.cpp']]]
+  ['getinfo_174',['getInfo',['../class_b_m_p.html#acdebc7da18509fc92374934ad7a99ae2',1,'BMP']]]
 ];
